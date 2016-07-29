@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-mask.css">
+  <link rel="stylesheet" href="css/myaward.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="../PUBLIC/js/okplus-mask.js"></script>
+  <script src="../PUBLIC/js/general.js"></script>
+  <title>收货地址</title>
+  <style>
+    .wrap-no-bottom{
+      height:100%;
+      background-color: #F2F2F2;
+    }
+  </style>
+</head>
+<body class="bg-f2">
+<div class="scroll scroll-no-bottom">
+
+  <div class="fz-60 pdc-5" style="height:1.55rem;line-height: 1.55rem;">
+    确认奖品的收货地址
+  </div>
+
+  <!--添加项-->
+  <div class="v-section">
+    <div class="pdc-5">
+      <div class="pdr-5">
+        <div class="one-address por">
+        <!--点击a标签-->
+        <a href="" class="v-oldman"></a>
+        <div class=" v-f">
+          <div class="v-i1">
+            <span class="fz-80 c-333 fw-b">上地怡美家园</span>
+            <span class="c-333 fw-b" style="float:right;font-size: .80rem;">13888888888</span>
+            <p class="line-break">
+              海淀区烦烦哒奥山打算发大水范德萨发范德萨打范德萨
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="line-row"></div>
+      <div class="pdr-5">
+      <div class="fz-65 v-fm">
+        <i class="o-radio icon-radio-big icon-radio-big-on"></i><div>送到这里</div>
+        <div  style="margin-left:6rem;" class="c-ff v-f"><div class="o-delete pdc-5">删除</div><div class="o-edit pdc-5">编辑</div></div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <!--添加项-->
+
+  <!--添加新收货地址-->
+  <div class="v-section o-add-address">
+    <div class="pdr-5">
+      <div class="pdc-5 v-fm fz-75 c-71">
+        <img src="images/add-address.png" style="height:2.55rem;width:2.55rem;margin-right:.95rem;" alt="">添加新收货地址
+      </div>
+    </div>
+  </div>
+  <div class="line-space"></div>
+</div>
+<footer class="o-get-award footer tac">
+  兑换奖品
+</footer>
+</body>
+<script>
+  $(function(){
+
+    /*事件：单选按钮 样式改变*/
+    $('.o-radio').click(function(){
+      $('.o-radio').removeClass('icon-radio-big-on');
+      $(this).addClass('icon-radio-big-on');
+    });
+
+    /*事件：删除按钮 弹出弹框提示信息*/
+    $('.o-delete').click(function(){
+      var $o_delete = $(this);
+      mask_okplus('您是否要删除送货地址？','取消','确认');
+      $(document).on('click','.btn-link',function(){
+        $.ajax({
+          url:'',
+          type:'POST',
+          data:'',
+          datatype:'json',
+          success:function(){
+            $o_delete.parents('.v-section').remove();
+          }
+        });
+      });
+    });
+
+    /*时间：编辑按钮 进入地址信息编辑页*/
+    $('.o-edit').click(function(){
+      window.location.href = '';
+    });
+
+    /*事件：添加地址按钮*/
+    $('.o-add-address').click(function(){
+      window.location.href = '';
+    });
+
+    /*事件：兑换精品按钮*/
+    $('.o-get-award').click(function(){
+      window.location.href = '';
+    });
+  });
+</script>
+</html>

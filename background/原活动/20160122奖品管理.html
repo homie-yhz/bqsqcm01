@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link type="text/css" rel="stylesheet" href="css/common.css">
+  <link type="text/css" rel="stylesheet" href="css/newstyle.css">
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <title>分配奖品-排名搜索、昵称编号搜索</title>
+  <style>
+    html{background-color:#f2f2f2;}
+  </style>
+</head>
+
+<body>
+<!--头部部分-->
+<div class="header">
+  <i></i>
+  <span>奖品管理</span>
+  <!--  <div class="right">
+      <input type="text" class="ipt-sea" placeholder="请输入参与人昵称或手机号"/>
+      <a href="javascript:;" class="invest-sea b-e">搜索</a>
+    </div>-->
+</div>
+
+
+<div class="container" style="overflow:hidden;background-color:#f2f2f2;">
+  <div class="container-sea" style="padding:15px 20px 0 15px;background-color:#f2f2f2;border:none;">
+    <div class="hd-head">
+      <a id="bmz" class="hd-active" style="cursor:pointer;" style>分配奖品</a>
+      <a id="tpz" style="cursor:pointer;">奖品列表</a>
+    </div>
+    <div style="padding:38px 77px;border:1px solid #ccc;background-color:#fff;">
+      <ul class="left">
+        <li class="b-e">
+          <span class="pd-l c-w">根据排名搜索</span>
+        </li>
+        <li></li>
+        <li class="txt-al-c">
+          <input class="ipt-ss bg-w" type="number" min="1"/>
+          <span>至</span>
+          <input class="ipt-ss bg-w" type="number" min="1"/></li>
+        <li></li>
+        <li class="txt-al-c">
+          <a class="a-btn-yellow" href="#">搜索</a>
+        </li>
+        <li></li>
+      </ul>
+      <ul class="right">
+        <li class="b-e">
+          <span class="pd-l c-w">根据用户昵称/编号进行搜索</span>
+        </li>
+        <li></li>
+        <li class="txt-al-c">
+          <input class="ipt-sl bg-w" type="search" placeholder="请输入用户昵称/编号进行搜索..."/>
+        </li>
+        <li></li>
+        <li class="txt-al-c">
+          <a class="a-btn-yellow" href="#">搜索</a>
+        </li>
+        <li></li>
+      </ul>
+
+      <table class="tablebox tablebox-bg-g">
+        <tr>
+          <td>排名</td>
+          <td>头像</td>
+          <td>昵称</td>
+          <td>编号</td>
+          <td>手机号</td>
+          <td>已分配奖品</td>
+          <td>操作</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/>1</td>
+          <td><b><img src="images/lufei.png" alt=""/></b></td>
+          <td>海贼王</td>
+          <td>13</td>
+          <td>18888888888</td>
+          <td>无</td>
+          <td><a href="#">分配</a></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/>1</td>
+          <td><b><img src="images/lufei.png" alt=""/></b></td>
+          <td>海贼王</td>
+          <td>13</td>
+          <td>18888888888</td>
+          <td>无</td>
+          <td><a href="#">分配</a></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"/>1</td>
+          <td><b><img src="images/lufei.png" alt=""/></b></td>
+          <td>海贼王</td>
+          <td>13</td>
+          <td>18888888888</td>
+          <td>无</td>
+          <td><a href="#">分配</a></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div style="position:absolute;width:500px;">
+  <div class="ck-all">
+    <input type="checkbox"/> 全选
+    <a href="#" class="b-e c-w">导出</a>
+    <a href="#" class="b-e c-w">批量发货</a>
+  </div>
+</div>
+
+<div class="page">
+  <div class="pagec">
+    <input type="hidden" id="pageCount" value="72" />
+    <ul id="pageUl">
+      <li><a id="arrow-l" class="arrow" href="javascript:prev();"  disabled  ></a></li>
+
+      <li><a  id="curr"  href="javascript:jump2(1);"><span id="page_1">1</span></a></li>
+
+      <li><a  href="javascript:jump2(2);"><span id="page_2">2</span></a></li>
+
+      <li><a  href="javascript:jump2(3);"><span id="page_3">3</span></a></li>
+
+      <li><a  href="javascript:jump2(4);"><span id="page_4">4</span></a></li>
+
+      <li><a  href="javascript:jump2(5);"><span id="page_5">5</span></a></li>
+
+      <li><a id="arrow-r" class="arrow" href="javascript:next();"  ></a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

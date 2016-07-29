@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>有奖问答</title>
+  <link type="text/css" rel="stylesheet" href="../css/reset.css">
+  <link type="text/css" rel="stylesheet" href="../css/base.css">
+  <link type="text/css" rel="stylesheet" href="../css/activity.css">
+  <link type="text/css" rel="stylesheet" href="../css/activityranking.css">
+  <link type="text/css" rel="stylesheet" href="../css/award-ask-answer-2.css"/>
+  <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/activity.js"></script>
+  <!--<script type="text/javascript" src="../js/activity-apply.js"></script>-->
+</head>
+<body class="bg-f2">
+<div class="wrapper">
+  <div class="scroll no-footer" style="padding-bottom:1rem;">
+    <div class="wrap-1" style="margin-bottom:2rem;">
+      <section class="section section-ask">
+        <div class="fz-75" style="width:100%;padding:1rem 2rem 1rem 1rem;">
+          <span>题目 2：</span>
+          <span>萨范萨范萨范萨范萨范萨范萨范萨范萨范萨范萨范</span>
+        </div>
+        <img src="../images/activity/radio.png">
+      </section>
+      <section class="section section-question">
+        <div class="radio-box">
+          <i class="radio radio-position"></i>
+        </div>
+        <img src="../images/icon/icon-a.png" class="icon-letter right">
+        <div class="fz-75">
+          你打范德萨发的说范德萨范德萨阿范德萨范德萨
+        </div>
+      </section>
+      <section class="section section-question">
+        <div class="radio-box">
+          <i class="radio radio-position"></i>
+        </div>
+        <img src="../images/icon/icon-b.png" class="icon-letter right">
+        <div class="">
+          你打
+        </div>
+      </section>
+      <section class="section section-question">
+        <div class="radio-box">
+          <i class="radio radio-position"></i>
+        </div>
+        <img src="../images/icon/icon-c.png" class="icon-letter right">
+        <div>
+          你打范德萨发的说范德萨范德萨阿范德萨范德萨你打范德萨发的说范德萨范德萨阿范德萨范德萨你打范德萨发的说范德萨范德萨阿范德萨范德萨你打范德萨发的说范德萨范德萨阿范德萨范德萨你打范德萨发的说范德萨范德萨阿范德萨范德萨
+        </div>
+      </section>
+      <section class="section section-question">
+        <div class="radio-box">
+          <i class="radio radio-position"></i>
+        </div>
+        <img src="../images/icon/icon-d.png" class="icon-letter right">
+        <div>
+          你打范德萨发的说范德萨范德萨阿范德萨范德萨
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="footer-w-1 txt-al-ct">
+  <a id="next-q" href="有奖问答--改进.html" class="a-btn-submit1 btn-submit-y">下一题</a><i class="ass"></i>
+</div>
+</body>
+<script>
+  $(function(){
+    /*点击单选按钮  改变样式 */
+    $('.radio-box').click(function(){
+      $('.radio').removeClass('radio-on');
+      $('.section-question div').css('color','black');
+     $(this).find('i').addClass('radio-on').parents('.section').find('div').css('color','#FD8C0A');
+      console.log('1');
+    });
+  });
+</script>
+</html>

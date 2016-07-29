@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>注册</title>
+    <link type="text/css" rel="stylesheet" href="../css/reset.css">
+    <link type="text/css" rel="stylesheet" href="../css/base.css">
+    <link type="text/css" rel="stylesheet" href="../css/login.css"/>
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/activity.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+    <style>
+        input::-webkit-input-placeholder{text-align:center;color:#9b9b9b;}
+        input::-ms-input-placeholder{text-align:center;color:#9b9b9b;}
+    </style>
+</head>
+<body class="bg-f2">
+<div class="login">
+    <div class="login-sun">
+        <!--<a href="注册页面.html">刷新</a>-->
+        <img src="../images/activity/chaoyang.png" alt="" class=""/><br/>
+        <input id="phonenum" type="text" maxlength="11" class="ipt-1 fz-26" placeholder="请输入注册手机号码"/>
+        <input id="pwd" type="password" class="ipt-1 fz-26" placeholder="请输入密码"/>
+        <a href="注册（验证手机）.html"  class="ipt-1 ipt-11 ipt-11-l left fz-30">新用户注册</a>
+        <a id="login" class="ipt-1 ipt-11 ipt-11-n right fz-30">登录</a><br/>
+        <a href="#" class="right fw fz-22">忘记密码？</a>
+    </div>
+</div>
+<div class="mask" style="display:none;">
+    <div class="mask-notice">
+        <span>请输入11位正确的手机号!</span>
+        <p>
+            <a href="#" class="btn-mask btn-login">确定</a>
+        </p>
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        $('#login').click(function(){
+            var $num = $('#phonenum').val();
+           if($num!=''){
+               ck_phonenum($('#num'));
+           }else if($('#pwd').val()!=''){
+               ck_pwd($('#pwd'));
+           }
+        });
+    });
+    /*验证手机号格式是否正确！*/
+    function ck_phonenum($num){
+        if(!phoneReg.text($num){
+            /*请输入正确的手机号*/
+            $(".mask").css("display","block");
+        }
+    }
+    /*验证密码格式是否正确！*/
+    function ck_pwd($pwd){
+        var $phonepwd = $pwd.val();
+        if(!pwdReg.test($phonepwd)){
+            console.log("密码输入有误：至少6位数字或者字幕");
+            $(".mask").css("display","block");
+        }
+    }
+</script>
+</html>

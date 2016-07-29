@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>新鲜事内容编辑器说明</title>
+  <link rel="stylesheet" href="css/editor.css">
+  <script src="js/jquery.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <i class="left"></i><span>新鲜事发布</span>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="m-20 fz-18">新鲜事标题</div>
+    <div class="m-20 fz-18"><input class="ipt" type="text" placeholder="请输入新鲜事标题28字以内"></div>
+    <div class="m-20 fz-18">新鲜事内容</div>
+    <div class="m-20 fz-18"><a id="explain">不能使用的样式说明<b class="down"></b></a></div>
+    <div class="fz-16 c-r">在左侧 135 编辑器样式中，有部分样式不能使用，请您在编辑内容时不要进行选择，否则在手机端有可能会出现显示异常的现象：</div>
+    <div class="spread dn skew0">
+      <div class="title">标题</div>
+      <div class="style style-1">
+        <!--<div>
+          <span>
+            我可以是标题
+            也可以是文字
+            我是全能型的~
+          </span><i class="ass"></i>
+        </div>
+        <div>
+          <img src="../images/" alt="">
+        </div>-->
+        <img src="images/p-6.png" alt="">
+      </div>
+      <div class="line"></div>
+      <div class="title">正文</div>
+      <div class="style style-2 c-g">
+        <div class="c-w bg-rr">活动名称</div>
+        <ul>
+          <li class="icon icon-time">活动时间</li>
+          <li class="icon icon-address">活动地点</li>
+        </ul>
+        <div class="c-w bg-rr">活动介绍</div>
+        <ul class="lh30">
+          <li>请输入活动名称</li>
+          <li>请输入活动名称</li>
+          <li>请输入活动名称</li>
+          <li>...</li>
+        </ul>
+      </div>
+      <div class="line"></div>
+      <div class="title">图片</div>
+      <div class="style style-3">
+        <img src="images/three-picture.png" alt="">
+      </div>
+      <div class="line"></div>
+      <div class="title">图文</div>
+      <div class="style style-4">
+        <ul>
+          <li><img src="images/p-1.png" alt=""><span class="ass"></span></li>
+          <li><img src="images/p-2.png" alt=""><span class="ass"></span></li>
+          <li><img src="images/p-3.png" alt=""><span class="ass"></span></li>
+        </ul>
+        <ul>
+          <li><img src="images/p-4.png" alt=""><span class="ass"></span></li>
+          <li><img src="images/p-5.png" alt=""><span class="ass"></span></li>
+          <li><img src="images/p-6.png" alt=""><span class="ass"></span></li>
+        </ul>
+        <ul>
+          <li><img src="images/p-7.png" alt=""><span class="ass"></span></li>
+          <li><img src="images/p-8.png" alt=""><span class="ass"></span></li>
+          <li><img src="images/p-9.png" alt=""><span class="ass"></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shrink dn">
+      <div>
+        <span>收起</span>
+          <div class="up up-double"></div>
+          <div class="up up-double"></div>
+      </div>
+    </div>
+    <img style="margin-top:45px;" src="images/editor-exp.png" alt="体验版图片">
+  </div>
+</body>
+<script>
+$(function(){
+  $("#explain").click(function(){
+    console.log("1");
+    $(this).find("b").toggleClass("up");
+    $(".spread").toggleClass("dn");
+    $(".shrink").toggleClass("dn");
+  });
+  $(".shrink").click(function(){
+    $("#explain").find("b").toggleClass("up");
+    $(".spread").toggleClass("dn");
+    $(".shrink").toggleClass("dn");
+  });
+});
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>有奖问答</title>
+  <link type="text/css" rel="stylesheet" href="../css/reset.css">
+  <link type="text/css" rel="stylesheet" href="../css/base.css">
+  <link type="text/css" rel="stylesheet" href="../css/activity.css">
+  <link type="text/css" rel="stylesheet" href="../css/activityranking.css">
+  <link type="text/css" rel="stylesheet" href="../css/award-ask-answer.css"/>
+  <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/activity.js"></script>
+  <!--<script type="text/javascript" src="../js/activity-apply.js"></script>-->
+</head>
+<body class="bg-f2">
+<div class="wrapper">
+  <div class="scroll no-footer" style="padding-bottom:1rem;">
+    <header class="header" style="top:0;right:0;left:0;position:absolute;">
+      <h1>有奖问答</h1>
+      <a class="btn-back color-ee" href="javascript:;"><i></i>返回</a>
+      <a class="btn-close color-ee" href="javascript:;">关闭</a>
+    </header>
+    <div class="wrap" style="margin-bottom:2rem;">
+      <section class="section section-ask">
+          <div class="fz-75">
+            <span>题目 2：</span>
+            <span>微风玩法而案发的三分王爱疯挖范德萨费瓦feature范德萨费瓦feature范德萨范德萨发达范德萨费瓦feature范德萨费瓦feature范德萨范德萨发达范德萨费瓦feature范德萨费瓦feature范德萨范德萨发达</span>
+          </div>
+        <img src="../images/activity/radio.png">
+      </section>
+      <section class="section section-question">
+        <i class="icon-circle"></i>
+        <input type="radio" name="choice" class="choice"/>
+        <img src="../images/icon/icon-a.png" class="icon-letter right">
+        <div class="fz-75">
+            你打范德萨发的说范德萨范德萨阿范德萨范德萨
+        </div>
+      </section>
+      <section class="section section-question">
+        <i class="icon-circle"></i>
+        <input type="radio" name="choice" class="choice"/>
+        <img src="../images/icon/icon-b.png" class="icon-letter right">
+        <div class="">
+          你打范德萨发的说范德萨范德萨阿范德萨范德萨
+        </div>
+      </section>
+      <section class="section section-question">
+        <i class="icon-circle"></i>
+        <input type="radio" name="choice" class="choice"/>
+        <img src="../images/icon/icon-c.png" class="icon-letter right">
+        <div>
+          你打范德萨发的说范德萨范德萨阿范德萨范德萨
+        </div>
+      </section>
+      <section class="section section-question">
+        <i class="icon-circle"></i>
+        <input type="radio" name="choice" class="choice"/>
+        <img src="../images/icon/icon-d.png" class="icon-letter right">
+        <div>
+          你打范德萨发的说范德萨范德萨阿范德萨范德萨
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="footer-w-1 txt-al-ct">
+  <a id="next-q" class="a-btn-submit1 btn-submit-y">下一题</a><i class="ass"></i>
+</div>
+</body>
+<script>
+  $(function(){
+    /*点击单选按钮  改变样式 */
+    $(":input").click(
+      function(){
+        $(".section-question div").css("color","black");
+        $("img").removeClass("l-r");
+        $("i").removeClass("icon-point");
+        $(this).siblings("div").css("color","#E78E27");
+        $(this).siblings("img").addClass("l-r");
+        $(this).siblings("i").addClass("icon-point");
+        if($('input[type=radio]:checked')){
+          console.log("1")
+          $("#next-q").attr("href","fffffff");
+        }
+      }
+    )
+  })
+</script>
+</html>

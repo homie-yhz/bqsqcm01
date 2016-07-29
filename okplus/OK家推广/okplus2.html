@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>个人展示</title>
+  <link type="text/css" rel="stylesheet" href="css/reset.css">
+  <link type="text/css" rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/swiper.css">
+  <script type="text/javascript" src="js/swiper.js"></script>
+  <style>
+    .bg-rtoy{
+      background: linear-gradient(#EA825D,#AE1718);
+      margin:0;padding:0;
+      height:100%;width:100%;
+      position:relative;
+    }
+    .wrapper{
+      position:absolute;height:22rem;width:100%;
+      left:50%;top:50%;
+      margin:-11rem 0 0 -50%;
+    }
+    .swiper-container{margin:0 auto;height:20rem;padding-bottom:2rem;}
+    .swiper-pagination-bullet-active{background-color:#EA8661;}
+    a{
+      display:block;text-align:center;
+      font-size:.6rem;
+      width:7rem;
+      padding:.5rem 2rem;
+      border:1px solid #EA8661;
+      border-radius:3px;
+      text-decoration: none;
+      color:#EA8661;
+      margin:0 auto;
+    }
+    img{height:22rem;}
+  </style>
+</head>
+<!--绝对定位-->
+<body class="bg-rtoy">
+<!--相对定位   水平垂直居中-->
+<div class="wrapper">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/android-0.png" alt="">
+        <img src="images/homepage-i.png" alt="" style="display:none;">
+      </div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+    <div class="bg">
+      <a id="address" href="#">立即下载</a>
+    </div>
+</div>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true
+  });
+</script>
+</body>
+</html>

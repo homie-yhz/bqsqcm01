@@ -1,0 +1,241 @@
+.icon-radio{
+    display:block;
+    width:.7rem;
+    height:.7rem;
+    background:url("../images/radio-off.png") center center no-repeat;
+    background-size:100%;
+    margin-right:.45rem;
+}
+.icon-radio-big{
+    display:block;
+    width:1.3rem;
+    height:1.3rem;
+    background:url("../images/radio-big-off.png") center center no-repeat;
+    background-size:100%;
+    margin-right:.45rem;
+}
+.icon-radio-on{
+    background:url("../images/radio-on.png") center center no-repeat;
+    background-size:100%;
+}
+.icon-radio-big-on{
+    background:url("../images/radio-big-on.png") center center no-repeat;
+    background-size:100%;
+}
+/*prize-state*/
+.prize-state{
+    background-color:#F2F2F2;
+}
+.prize-state .v-i1{
+    padding:.5rem;
+}
+.prize-state img{
+    width:1.325rem;
+    height:1.3rem;
+}
+.prize-state p{
+    font-size:.65rem;
+    line-height: .65rem;
+    margin-top:.6rem;
+    color:#1a1a1a;
+}
+.prize-state span{
+    font-size: .6rem;color:#8c8c8c;
+}
+/*下面的列表页*/
+.award-listpage{
+    background-color:#fff;
+}
+.award-listpage li{
+    padding:.5rem;
+}
+.award-listpage img{
+    width:4.5rem;
+    height:4.5rem;
+}
+.award-listpage .listpage-r{
+    padding-left:.5rem;
+    height:4.5rem;  /*子元素在flex布局中不能撑开高度使其与本行最高的元素一齐，所以要给低元素一个高度*/
+}
+.award-listpage .listpage-intro{
+    color:#424242;
+    font-size:.8rem;
+    line-height: 1rem;
+    height:2rem;
+}
+.award-listpage .listpage-time{
+    position:absolute;
+    bottom:-.2rem;
+    color:#FF7F2A;
+    font-size:.7rem;
+    line-height: .9rem;
+}
+/*loading*/
+.loading{
+    text-align: center;
+}
+.loading img{
+    width:1rem;
+    height:1rem;
+    vertical-align: middle;
+}
+/*color-bar*/
+.color-bar{height:.3rem;width:100%;padding:0!important;margin:0!important;display:block;}
+.award-phone{
+    padding:.5rem;
+    width:4rem;
+}
+.award-phone img{
+    width:2.375rem;
+    height:2.375rem;
+}
+/*QRcode*/
+.show-QRcode{
+    margin:0 auto;
+    text-align: center;
+    height:2.3rem;
+    line-height:2.3rem;
+    color:#fff;
+    font-size: .8rem;
+}
+
+/**/
+.one-address{}
+.one-address .fz-75{font-weight:bold;}
+
+/**/
+.confirm-stuff{
+    height:3.95rem;
+}
+.confirm-stuff .btn-9-f{
+    border-radius:5px;
+    display:inline-block;
+    width:5.65rem;
+    height:1.75rem;
+    line-height:1.75rem;
+}
+
+.add-address{padding:0 .5rem;}
+.add-address input,.add-address textarea{
+    outline:none;
+    border:0;
+    width:11rem;
+    padding:0;
+    margin:0;
+    display:inline-block;
+}
+.add-address textarea{
+    display: inline-block;
+    line-height: 1.35rem;
+    padding-top: .3rem;
+    resize: none;
+}
+.add-address span{
+    width:4rem;
+    display:inline-block;
+}
+/*.add-address div{
+    padding:.5rem;
+    display:flex;
+    display:-webkit-flex;
+    align-items: center;
+}
+.add-address input{
+    height:1.2rem;
+    margin: 0px;
+    padding: 0px;
+}
+.add-address span,input{
+    display:inline-block;
+!*    width:5rem;*!
+}
+.add-address input,textarea{
+    outline: none;
+    border:0;
+    width:10rem;
+}
+
+.add-address1 input{
+    height:1rem;
+}*/
+
+
+input::-webkit-input-placeholder{
+    color:#999;
+    line-height: 1.95rem;
+    height:1.95rem;
+}
+textarea::-webkit-input-placeholder{
+    color:#999;
+    line-height:1.2rem;
+    padding-top:.05rem;
+}
+
+input,.textarea{
+    position: absolute;
+    z-index:2;
+    background: transparent;
+
+}
+/*天假地址  高度*/
+.address-height{
+    height:1.95rem;
+    line-height: 1.95rem;
+    padding:0;/*不知道为什么input去除边框后会有个上下1px 的padding*/
+}
+
+
+.express{
+    margin: 0 auto .7rem;
+    width: 14.5rem;
+    border: 1px solid #EAEAEA;
+    padding: .5rem;
+    font-size:.65rem;
+}
+.express img{
+    width:3.7rem;
+    height:1.15rem;
+}
+/*reward-address*/
+.award-sex{
+    height:1.95rem;
+    line-height: 1.95rem;
+}
+/*二维码使用页*/
+.QRcode{height:18.35rem;width:100%;  }
+.QRcode>div{
+    border:2px solid #e9e9e9;
+    background-color:#fff;
+    border-radius:5px;
+    width:13.1rem;
+    height:15.25rem;
+}
+.QRcode>div>div{
+    height:10.1rem;
+    width:10.1rem;
+    margin:1.4rem auto;
+}
+.QRcode img{width:100%;height:100%;}
+.info{
+    height:3.55rem;
+    width:100%;
+}
+@media only screen and (min-width: 359px){
+    html {font-size:22.6px;}
+    .homepage a.a-block{ line-height:1.12rem;}
+}
+@media only screen and (min-width: 374px){
+    html {font-size:23.4375px;}
+}
+@media only screen and (min-width: 399px){
+    html {font-size:25px;}
+}
+@media only screen and (min-width: 413px){
+    html {font-size:25.875px;}
+}
+@media only screen and (min-width: 479px){
+    html {font-size:30px;}
+}
+@media only screen and (min-width: 539px){
+    html {font-size:33.75px;}
+}

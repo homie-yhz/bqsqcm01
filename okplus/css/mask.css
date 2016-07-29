@@ -1,0 +1,46 @@
+@charset "utf-8";
+.c-r{color:#f64e29;}
+.c-8f{color:#8f7244;}
+.mask{
+    position:absolute;z-index:1001;
+    left:0;right:0;bottom:0;top:0;
+    background:rgba(0,0,0,0.7);
+}
+
+.mask>div>img:first-child{position:absolute;right:0;width:2rem;height:2rem;top:.8rem;}
+.mask>div{
+    width:12.5rem;height: 17rem;
+    position:absolute;
+    top:50%;left:50%;
+    margin:-8.5rem 0 0 -6.25rem;
+    background: url("../images/activity/jd-sy-tk.png") no-repeat center center;
+    background-size:12.5rem 17rem;
+}
+.mask>div>p{
+    margin:0 auto;
+    text-align: center;
+    margin-top:3rem;
+    color:#F64F2A;
+    font-size:1.3rem;
+}
+.mask>div>span{
+    display: inline-block;
+    padding:.5rem 1rem;}
+.mask>div>img:nth-child(3){
+    display: block;
+    margin:0 auto;
+    width:54%;
+}
+.mask a{
+    display: block;
+    width:10rem;
+    height: 1.5rem;
+    line-height:1.5rem;
+    text-align: center;
+    margin:.5rem auto;
+    background-color: #F64E29;
+    color: #fff;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-mask.css">
+  <link rel="stylesheet" href="css/myaward.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="../PUBLIC/js/okplus-mask.js"></script>
+  <script src="../PUBLIC/js/general.js"></script>
+  <title>领奖方式</title>
+  <style>
+    .wrap-no-bottom{
+      height:100%;
+      background-color: #F2F2F2;
+    }
+  </style>
+</head>
+<body class="bg-f2">
+<div class="wrap-no-bottom">
+  <!--顶部占位-->
+  <div class="v-section-space"></div>
+
+  <!--添加地址-->
+  <div class="add-address v-section">
+    <div class="address-height v-f">
+      <span>收货人</span>
+      <div class="por">
+        <b class="address-height placeholder">收货人姓名</b>
+        <input type="text" class="award-name address-height" maxlength="8">
+      </div>
+    </div>
+    <div class="line-row"></div>
+    <div class="address-height v-f">
+      <span></span>
+      <div class="award-sex v-f c-9">
+        <div class="v-fm o-radio"><i class="icon-radio"></i>先生</div>
+        <div class="v-fm o-radio" style="margin-left:2.5rem;"><i class="icon-radio icon-radio-on"></i>女士</div>
+      </div>
+    </div>
+    <div class="line-row"></div>
+    <div class="address-height v-f">
+      <span>手机号</span>
+      <div>
+        <b class="address-height placeholder">方便联系您的电话</b>
+        <input type="tel" class="award-num address-height" maxlength="11">
+      </div>
+    </div>
+    <div class="line-row"></div>
+    <div class="v-f">
+      <span style="margin-top:.3rem;">收货地址</span>
+      <div class="por" style="height:5rem;">
+        <b class="address-height placeholder" style="line-height: 1.1rem;margin-top:.3rem;">请输入区县街道楼号门牌号等详细信息</b>
+        <div class="textarea"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="o-save-address footer tac ">
+    保存地址
+  </footer>
+</div>
+
+</body>
+<script>
+  $(function(){
+    var reg_name=/^[\u4e00-\u9fa5a-zA-Z]{1,8}$/;
+    var reg_phone = /^1[34578][0-9]{9}$/;
+
+    /*验证：名字验证*/
+    $('.award-name').focus(function(){
+      var $this = $(this);
+      $this.prev().hide();
+    }).focusout(function(){
+      var $this = $(this);
+      $this.val()=='' && $this.prev().show();
+      /*开始验证*/
+      if(!reg_name.test($('.award-name').val())){
+        mask_toggle('请填写正确的名字',1000);
+      }
+    });
+
+    /*验证：电话号码验证*/
+    $('.award-num').focus(function(){
+      var $this = $(this);
+      $this.prev().hide();
+    }).focusout(function(){
+      var $this = $(this);
+      $this.val()=='' && $this.prev().show();
+      /*console.log(parseInt($this.val()));*/
+      /*check();*/
+      if(!reg_phone.test($('.award-num').val())){
+        mask_toggle('请输入正确的电话号码',1000);
+      }
+    });
+
+    /*验证：地址信息*/
+    $('.textarea').focus(function(){
+      var $this = $(this);
+      $this.prev().hide();
+    }).focusout(function(){
+      var $this = $(this);
+      $this.html()=='' && $this.prev().show();
+      /*check();*/
+      if($('.textarea').html()==''){
+        mask_toggle('请输入区县街道楼号门牌号等详细信息',1000);
+      }else if($('.textarea').html().length>50){
+        mask_toggle('不能超过50个字符',1000);
+      }
+    });
+
+    /*事件：单选按钮 样式改变*/
+    $('.o-radio').click(function(){
+        $('.icon-radio').removeClass('icon-radio-on');
+        $('.o-radio').removeClass('o-radio-on c-ff');
+        $(this).addClass('o-radio-on c-ff').children('.icon-radio').addClass('icon-radio-on');
+    });
+
+    /*事件：保存地址 再次验证信息*/
+    $('.o-save-address').click(function(){
+      if(check()){
+        window.location.href = '';
+      }
+    });
+
+    /*方法：信息验证 */
+    function check(){
+      if(!reg_name.test($('.award-name').val())){
+        mask_toggle('请填写正确的名字',1000);
+      }else if(!reg_phone.test($('.award-num').val())){
+        mask_toggle('请输入正确的电话号码',1000);
+      }else if($('.textarea').html()==''){
+        mask_toggle('请输入区县街道楼号门牌号等详细信息',1000);
+      }else if($('.textarea').html().length>50){
+        mask_toggle('不能超过50个字符',1000);
+      }else{
+        return true;
+      }
+    }
+
+  });
+</script>
+</html>

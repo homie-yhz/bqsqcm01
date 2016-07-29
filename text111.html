@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>word-wrap</title>
+  <script src="PUBLIC/js/jquery-1.8.3.min.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="list">
+
+  </div>
+
+</body>
+<script>
+ $(function(){
+      console.log('基本')
+    console.time('list0');
+    for(var i = 0;i< 10000;i++){
+      $('.list').append('添加子元素'+i+'<br>');
+    }
+    console.timeEnd('list0');
+
+    console.log('将jquery对象提出循环，缓存变量')
+    console.time('list1');
+    var list0 = $('.list');
+    for(var i = 0;i< 10000;i++){
+      list0.append('添加子元素'+i+'<br>');
+    }
+    console.timeEnd('list1');
+
+
+
+    console.log('将jquery对象提出循环')
+    console.time('list2');
+    var list1 = $('.list');
+    var html  = '';
+    for(var i = 0;i< 10000;i++){
+      html+='添加子元素'+i+'<br>';
+    }
+    list1.append(html);
+    console.timeEnd('list2');
+
+
+
+   console.log('将jquery对象提出循环')
+   console.time('list');
+   var list1 = $('.list');
+   var html  = '';
+   for(var i = 0;i< 10000;i++){
+     html+='添加子元素'+i+'<br>';
+   }
+   list1.html(html);
+   console.timeEnd('list');
+
+   console.log('将一个标签插入到list中')
+   console.time('list');
+   var list1 = $('.list');
+   var html  = '<div>';
+   for(var i = 0;i< 10000;i++){
+     html+='添加子元素'+i+'<br>';
+   }
+   html+='</div>'
+   list1.html(html);
+   console.timeEnd('list');
+
+
+  });
+</script>
+</html>

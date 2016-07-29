@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-mask.css">
+
+  <script src="../PUBLIC/js/jquery-1.8.3.min.js"></script>
+  <script src="../PUBLIC/js/fastclick.js"></script>
+  <script src="../PUBLIC/js/okplus-mask.js"></script>
+  <title>填写信息</title>
+  <style>
+    input{
+      border:none;border-radius:0;
+      background-color:#fff;margin-bottom:.5rem;
+      width:100%;height:2rem;
+      font-size:.8rem;padding-left:.5rem;
+    }
+    textarea{
+      border:0;width:100%;
+      padding:.5rem;
+      font-size:.8rem;
+      height:7rem;
+      margin-bottom:.5rem;
+    }
+    .footer{background-color:#FF6600;  }
+  </style>
+</head>
+<body class="bg-f2">
+
+  <div class="scroll" style="padding-bottom:2.45rem;">
+    <div class="pd-5">
+      <i class="icon-vertical-red"></i>请填写真实报名信息
+    </div>
+    <form action="http://www.baidu.com" method="post" id="form1" name="form1">
+
+    </form>
+  </div>
+  <div class="footer v-fcm" style="border:none;">
+    <a class="c-f">确定</a>
+  </div>
+</body>
+<script>
+</script>
+<script>
+  FastClick.attach(document.body);
+  var reg_phone = /^1[34578]\d{9}$/;         /*手机号*/
+  var reg_chinese = /^[\u4e00-\u9fa5]+$/;   /*真是姓名*/
+  var reg_all = /^[0-9A-Za-z\u4e00-\u9fa5]+$/;   /*中 英文 数字*/
+  var reg_email = /^[1-9A-Za-z]+@[1-9A-Za-z]+.com$/;  /*邮箱*/
+  var reg_age = /^[0-9]{1,2}$/;                         /*年龄*/
+  var reg_ID = /^[0-9]{17}[0-9*]$/;                 /*身份ID*/
+  var reg_num = /^[0-9]+$/;
+  var reg_birthday = /^[0-9]{8}$/;
+  $(function(){
+    /*后台所给的内容*/
+    var ipts = 'real-name&phone-num&address';
+    var html =
+            '<input type="text" class="real-name" name="real-name" placeholder="请输入真实姓名">&' +
+            '<input type="tel"  class="phone-num" name="phone-num" placeholder="请输入手机号">&' +
+            '<textarea          class="address" name="address"  placeholder="请输入家庭联络地址"></textarea>&' +
+            '<input type="email" class="email" name="email" placeholder="请输入邮箱">&' +
+            '<input type="tel"  class="age" name="age" placeholder="请输入年龄">&' +
+            '<input type="tel"  class="birthday" name="birthday" placeholder="请输入生日（例：19900101）">&' +
+            '<input type="text" class="sex" name="sex" placeholder="请输入性别">&' +
+            '<input type="text" class="local-city" name="local-city" placeholder="请输入所在城市">&' +
+            '<input type="text" class="job" name="job" placeholder="请输入职业">&' +
+            '<input type="tel"  class="work-year" name="work-year" placeholder="请输入工作年限">&' +
+            '<input type="text" class="education" name="education" placeholder="请输入教育程度">&' +
+            '<input type="tel"  class="income" name="income" placeholder="请输入个人收入(单位：元)">&' +
+            '<input type="text" class="word-place" name="word-place" placeholder="请输入工作单位">&' +
+            '<input type="text" class="marriage" name="marriage" placeholder="请输入婚姻状况">&' +
+            '<input type="tel"  class="ID" name="ID" placeholder="请输入身份证号（X用*号代替）">&' +
+            '<textarea          class="specialty" name="specialty" placeholder="请输入个人特长"></textarea>';
+    var forms_arr = html.split('&');
+    var formsLength = forms_arr.length;
+
+    /*事件：动态生成各种表单*/
+    var ipts_arr = ipts.split('&');
+    var iptsLength = ipts_arr.length;
+    var html_finial = '';              //初始化
+    for(var i = 0 ; i < formsLength ; i++){
+      for(var j = 0 ; j < iptsLength ; j++){
+        if(forms_arr[i].indexOf(ipts_arr[j])>0){
+          html_finial += forms_arr[i];
+        }
+      }
+    }
+    $('form').append(html_finial);
+
+    /*事件：点击提交信息*/
+    $('.footer').click(function(){
+      console.log('click');
+      if(check_reg($('.user-name'),reg_all)){
+        mask_okplus('请输入正确的昵称','确定','');
+      }
+      else if( check_reg($('.real-name'),reg_chinese) ){
+        mask_okplus('请输入真实姓名','确定','');
+      }
+      else if( check_reg($('.phone-num'),reg_phone)){
+        mask_okplus('请输入正确的手机号码','确定','');
+      }
+      else if( !!$('.address') && $('.address').val()=='') {
+        mask_okplus('请输入正确的地址', '确定', '')
+      }
+      else if( check_reg($('.email'),reg_email)){
+        mask_okplus('请输入正确的邮箱','确定','')
+      }
+      else if( check_reg($('.age'),reg_age)){
+        mask_okplus('请输入正确的年龄','确定','')
+      }
+      else if( check_reg($('.birthday'),reg_birthday)){
+        mask_okplus('请输入正确的生日','确定','')
+      }
+      else if( check_reg($('.sex'),reg_chinese)){
+        mask_okplus('请输入正确的性别','确定','')
+      }
+      else if( check_reg($('.local-city'),reg_chinese)){
+        mask_okplus('请输入正确的城市名称','确定','')
+      }
+      else if( !!$('.job') && $('.job').val()==''){
+        mask_okplus('请输入正确的职业名称','确定','')
+      }
+      else if( check_reg($('.work-year'),reg_age)){
+        console.log('1');
+        mask_okplus('请输入正确的工作年限','确定','')
+      }
+      else if( check_reg($('.education'),reg_chinese)){
+        mask_okplus('请输入正确的教育程度','确定','')
+      }
+      else if( check_reg($('.income'),reg_num)){
+        mask_okplus('请输入正确的收入','确定','')
+      }
+      else if( !!$('.word-place') && $('.word-place').val()==''){
+        mask_okplus('请输入正确的工作单位','确定','')
+      }
+      else if( check_reg($('.marriage'),reg_chinese)){
+        mask_okplus('请输入婚姻状况','确定','')
+      }
+      else if( check_reg($('.ID'),reg_ID)){
+        mask_okplus('请输入正确的身份证号','确定','')
+      }
+      else if( !!$('.specialty') && $('.specialty').val()==''){
+        mask_okplus('请输入正确的个人特长','确定','')
+      }else{
+        $('#form1').submit();
+      }
+      function check_reg(reg_class,reg){
+        return !!reg_class[0] && !reg.test(reg_class.val());
+      }
+    });
+  });
+
+</script>
+</html>
+

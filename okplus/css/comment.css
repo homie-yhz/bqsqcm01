@@ -1,0 +1,104 @@
+.comment{
+   margin-bottom: 0;
+}
+.comment-img{
+    width: 1.75rem;
+    margin-right: .5rem;
+}
+.comment-img img{
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 1.75rem;
+}
+.comment-detail{
+    padding-left: 2.25rem;
+}
+.comment-detail .detail-head{
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: .5rem;
+}
+.comment-detail .info-del{
+    padding-left: 1.25rem;
+    text-decoration: underline;
+}
+.comment-detail .detail-name{
+    font-size: .65rem;
+}
+.comment-detail .detail-con{
+    display: inline-block;
+    padding: .4rem .7rem;
+    margin-top: .2rem;
+    font-size: .6rem;
+    border-radius: .7rem;
+}
+.comment-detail .detail-info{
+    margin-top: .4rem;
+    font-size: .55rem;
+    color: #999999;
+}
+.comment-detail .comment-support,.comment-detail .comment-count{
+    display: inline-block;
+    height: .8rem;
+    padding-left: 1.25rem;
+    margin-right: .75rem;
+    font-size: .6rem;
+    font-weight: bold;
+    line-height: .8rem;
+    vertical-align: middle;
+}
+.comment-detail .comment-support.color-ee{
+    background: url("../images/icon/comment-support.png") 0 0 no-repeat;
+    background-size: .75rem .75rem;
+    -webkit-background-size: .75rem .75rem;
+}
+.comment-detail .comment-support{
+    background: url("../images/icon/icon.png") 0 -7.7rem no-repeat;
+    background-size: 2.3rem 12.5rem;
+    -webkit-background-size: 2.3rem 12.5rem;
+}
+.comment-detail .comment-count{
+    background: url("../images/icon/comment.png") 0 0 no-repeat;
+    background-size: .8rem .75rem;
+    -webkit-background-size: .8rem .75rem;
+}
+.comment-detail .detail-reply li{
+    padding-top: .5rem;
+}
+.comment-detail .info-address i{
+    display: inline-block;
+    width: .55rem;
+    height: .75rem;
+    vertical-align: text-bottom;
+    margin:0 .3rem 0 .5rem;
+    background: url("../images/icon/icon.png") 0 -6.9rem no-repeat;
+    background-size: 2.3rem 12.5rem;
+    -webkit-background-size: 2.3rem 12.5rem;
+}
+.comment .comment-all{
+    padding: .7rem 0;
+    font-size: .55rem;
+    text-align: center;
+}
+.comment .comment-all a{color: #999;}
+
+/*∆¿¬€œÍ«È*/
+.comment-d{
+    padding: .5rem;
+    margin: 0;
+    border: none;
+}
+.comment-d .comment-detail .detail-head{
+    padding: 0;
+    border: none;
+}
+.d-reply-con{
+    padding: 0 1rem;
+}
+.d-reply-con .reply-total{
+    padding: .4rem 0;
+    font-size: .55rem;
+    color: #999;
+}
+.d-reply-con .detail-reply li{
+    padding:0 0 .7rem;
+}

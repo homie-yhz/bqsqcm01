@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/box.css">
+  <link rel="stylesheet" href="css/mask-final.css">
+  <link rel="stylesheet" href="css/base-car.css">
+  <!--优先加载jquery-->
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/box.js"></script>
+  <title>okplus</title>
+  <style>
+    .d-tcm img{width:4.15rem;height:3.5rem;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+  <button class="add">添加</button>
+  <button class="del">删除</button>
+    <div class="wrap">
+      <ul class="list-page">
+        <li class="pd-5">
+          <div class="d-tcm">
+            <img src="image/cat.png" alt="">
+          </div>
+          <div class="d-tc por">
+            <p class="pdl-5 line-break">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</p>
+            <span class="l-sign bg-ee c-ff tac fz-55">视频</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script>
+$('.add').click(function(){
+  mask_okplus('是否添加','取消','确定');
+  /*$.ajax({
+       url:'user.php',
+    method:'GET',
+      data:
+  });*/
+});
+</script>
+</html>

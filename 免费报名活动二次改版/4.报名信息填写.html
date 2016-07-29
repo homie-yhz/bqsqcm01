@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-mask.css">
+  <link rel="stylesheet" href="css/apply-SEO.css">
+  <script src="../PUBLIC/js/jquery-1.8.3.min.js"></script>
+  <script src="../PUBLIC/js/okplus-mask.js"></script>
+  <script src="../PUBLIC/js/fastclick.js"></script>
+  <title>活动报名</title>
+  <style>
+  </style>
+</head>
+<body class="bg-f2">
+  <div class="scroll" style="padding-bottom:2.5rem;">
+    <div class="pdc-5 mb-10 mt-10">
+      <!--显示场次以及地址信息-->
+      <div class="icon-bg-note">
+        <div class="pdc-5">
+          <p class="fw-b">高端健身私教课体验——量身定制成就你的美,只属于你的私人健身方案。</p>
+          <a class="pdr-5 v-fm fz-70" style="padding-bottom:0;">
+            <div class="icon-time2"></div>
+            <div class="v-i1">06月12日 周三10:00-10:00</div>
+          </a>
+          <a href="" class="pdr-5 v-fm fz-70">
+            <div class="icon-addr2"></div>
+            <div class="v-i1">
+              龙潭湖公园下车后往东走大约40至50米即可到达公园北门（北门进场）
+            </div>
+            <div class="icon-arrows icon-arrows-r"></div>
+          </a>
+        </div>
+      </div>
+      <p class="c-9 fz-70" style="line-height: 1.4;margin-top:.3rem;">提示：手机号码一定要准确呦！您参与活动的资格码将短信发送到这个手机号，请谨慎填写。</p>
+    </div>
+    <div class="pdc-5 mt-10">
+      <div class="v-fcm personal-info-title c-ff">活动报名信息个人基本情况</div>
+      <div class="line-row-dc"></div>
+      <div class="mt-5">
+        <div class="v-fm ipt-box">
+          <div class="">真实姓名:</div>
+          <div class="v-i1"><input type="text" id="user-name"></div>
+        </div>
+        <div class="v-fm ipt-box">
+          <div>手机号码:</div>
+          <div class="v-i1"><input type="text" id="user-phone"></div>
+        </div>
+        <div class="v-fm ipt-box">
+          <div>详细地址:</div>
+          <div class="v-i1"><input type="text" id="user-address"></div>
+        </div>
+        <div class="v-fm ipt-box">
+          <div>电子邮件:</div>
+          <div class="v-i1"><input type="text" id="user-email"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="o-submit footer2 v-fcm">提交</div>
+  <input type="hidden" value="0" id="onsubmit">
+<div class="v-mask pdc-5" style="background:rgba(0,0,0,.8)">
+
+  <div class="v-fcm tac fz-75" style="height:4.97rem;">
+    <div class="c-f">
+      进入 <span class="fz-90 c-ff">北青社区报大兴版公众号</span> 马上参与活动！
+    </div>
+  </div>
+  <div class="fz-75" style="width:14.784rem;padding:0 .8rem;border-radius:5px;margin:1rem auto;border:1px solid #FAD498;color:#ffc91f;">
+    <div class="v-fcm" style="height:2rem;">如何快速进入公众号？</div>
+    <div class="v-f">
+      <i class="db c-ff fz-90" style="margin-right:.3rem;margin-top:-.1rem;">1.</i>
+      <div class="v-i1">按住 <span class="c-ff">可爱的OK猫，</span> 识别二维码后马上进入公众号！</div>
+    </div>
+    <div class="v-f" style="margin:1rem 0;">
+      <i class="db c-ff fz-90" style="margin-right:.3rem;margin-top:-.1rem;">2.</i>
+      <div class="v-i1">回复 精品投票活动，即可马上参与,回复回复回复回复回复回复！</div>
+    </div>
+  </div>
+  <div class="v-fcm">
+    <div class="ibg-QRcat por">
+      <img src="../PUBLIC/images/1468391515.png" alt="" style="width:100%;height:100%;position:absolute;z-index:1000;">
+      <img src="../PUBLIC/images/1468391515.png" alt="" class="poa" style=" width: 2.85rem;height: 2.85rem;bottom: .3rem;right: 1.88rem;">
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  var reg_chinese = /^[\u4e00-\u9fa5]+$/;
+  var reg_phone = /^1[34578]\d{9}$/;
+  var reg_email = /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/;
+
+  var $user_name = $('#user-name');
+  var $user_phone = $('#user-phone');
+  var $user_address = $('#user-address');
+  var $user_email = $('#user-email');
+
+  $(function() {
+
+    $('.o-submit').click(function () {
+      !!$('.mask-toggle')[0]? '' : check_reg();
+    })
+  });
+
+
+
+  function longPress(){
+    timeOutEvent = 0;
+    alert("长按事件触发发");
+  }
+
+  function check_reg(){
+    if(!reg_chinese.test($user_name.val())){
+      mask_toggle('请正确填写真实姓名',2000);
+    }
+    else if(!reg_phone.test($user_phone.val())){
+      mask_okplus('手机号码有误，请重新输入','确定','');
+    }
+    else if($user_address.val()==''){
+      mask_okplus('请填写地址','确定','');
+    }
+    else if(!reg_email.test($user_email.val())){
+      mask_okplus('邮箱输入有误','确定','');
+    }else{
+      /*跳转*/
+      window.location.href = '';
+    }
+
+
+
+  }
+
+
+</script>
+</html>

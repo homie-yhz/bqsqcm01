@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/newstyle.css">
+
+    <title>奖品发放管理</title>
+    <style>
+        html,body{background-color:#f2f2f2;}
+    </style>
+</head>
+<body>
+<div class="header">
+    <i></i>
+    <span>参与人列表</span>
+    <div class="right">
+        <input type="text" class="ipt-sea" placeholder="请输入奖品名称"/>
+        <a href="javascript:;" class="invest-sea b-e">搜索</a>
+    </div>
+</div>
+<div id="activity">
+    <p class="layer-top">【12.12北京】活动名称活动名称</p>
+    <p class="layer-top">正在举行<a class="pd-l" href="#">2015.09.28 12:20 至 2015.10.28 12:00</a></p>
+    <p class="comment-total layer-tops">
+        共有 <span class="tpi-b"> 220 </span> 件奖品，目前剩余 <span class="tpi-y">54</span> 件
+        <span class="pd-ll font-c-b">代发货：<span class="tpi-b">15</span> 件 | 已发货：<span class="tpi-y">53</span> 件</span>
+        <span class="pd-ll font-c-b">未兑换：<span class="tpi-y">30</span> 件 | 已兑换：<span class="tpi-b">53</span> 件</span>
+    </p>
+    <table class="tb left">
+        <tr class="tb-title">
+            <td>奖品信息</td>
+            <td>奖品配送</td>
+            <td>单价</td>
+            <td>奖品总量</td>
+            <td>剩余数量</td>
+            <td>已发货</td>
+            <td>未发货</td>
+        </tr>
+        <tr style="border:1px solid red;">
+            <td>
+                <dl>
+                    <dt><img src="images/reward-detail.png" alt="" class="left"/></dt>
+                    <dd class="left">
+                        <p style="text-align:left;">奖品名A</p>
+                        <p><a href="#">导出中奖人名单</a></p>
+                    </dd>
+                </dl>
+            </td>
+            <td class="tpi-y-normal">送货上门</td>
+            <td>￥ 38.6</td>
+            <td>100</td>
+            <td class="tpi-y-normal">27</td>
+            <td><a href="">43</a></td>
+            <td>30</td>
+        </tr>
+        <tr style="border:1px solid red;">
+            <td>
+                <dl>
+                    <dt><img src="images/reward-detail.png" alt="" class="left"/></dt>
+                    <dd class="left">
+                        <p style="text-align:left;">奖品名A</p>
+                        <p><a href="#">导出中奖人名单</a></p>
+                    </dd>
+                </dl>
+            </td>
+            <td class="tpi-y-normal">送货上门</td>
+            <td>￥ 38.6</td>
+            <td>100</td>
+            <td class="tpi-y-normal">27</td>
+            <td><a href="">43</a></td>
+            <td>30</td>
+        </tr>
+    </table>
+    <div class="right txt-al-c margin-t116">
+        <span>有 <span class="tpi-y">15</span> 件等待发货 </span><br/><br/>
+        <a href="#">去发货</a>
+    </div>
+    <div class="box"></div>
+    <table class="tb left">
+        <tr class="tb-title">
+            <td>奖品信息</td>
+            <td>奖品配送</td>
+            <td>单价</td>
+            <td>奖品总量</td>
+            <td>剩余数量</td>
+            <td>已发货</td>
+            <td>未发货</td>
+        </tr>
+        <tr style="border:1px solid red;">
+            <td>
+                <dl>
+                    <dt><img src="images/reward-detail.png" alt="" class="left"/></dt>
+                    <dd class="left">
+                        <p style="text-align:left;">奖品名A</p>
+                        <p><a href="#">导出中奖人名单</a></p>
+                    </dd>
+                </dl>
+            </td>
+            <td>到店领取</td>
+            <td>￥ 38.6</td>
+            <td>100</td>
+            <td class="tpi-y-normal">27</td>
+            <td><a href="">43</a></td>
+            <td>30</td>
+        </tr>
+        <tr style="border:1px solid red;">
+            <td>
+                <dl>
+                    <dt><img src="images/reward-detail.png" alt="" class="left"/></dt>
+                    <dd class="left">
+                        <p style="text-align:left;">奖品名A</p>
+                        <p><a href="#">导出中奖人名单</a></p>
+                    </dd>
+                </dl>
+            </td>
+            <td>到店领取</td>
+            <td>￥ 38.6</td>
+            <td>100</td>
+            <td class="tpi-y-normal">27</td>
+            <td><a href="">43</a></td>
+            <td>30</td>
+        </tr>
+    </table>
+    <div class="page">
+        <div class="pagec">
+            <input type="hidden" id="pageCount" value="72" />
+            <ul id="pageUl">
+                <li><a id="arrow-l" class="arrow" href="javascript:prev();"  disabled  ></a></li>
+
+                <li><a  id="curr"  href="javascript:jump2(1);"><span id="page_1">1</span></a></li>
+
+                <li><a  href="javascript:jump2(2);"><span id="page_2">2</span></a></li>
+
+                <li><a  href="javascript:jump2(3);"><span id="page_3">3</span></a></li>
+
+                <li><a  href="javascript:jump2(4);"><span id="page_4">4</span></a></li>
+
+                <li><a  href="javascript:jump2(5);"><span id="page_5">5</span></a></li>
+
+                <li><a id="arrow-r" class="arrow" href="javascript:next();"  ></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</div>
+</body>

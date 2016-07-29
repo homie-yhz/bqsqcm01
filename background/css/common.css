@@ -1,0 +1,97 @@
+/*reset*/
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,figure,menu{
+    margin:0;
+    padding:0;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+    display:block
+}
+input,select,textarea{
+    font-size:100%
+}
+fieldset,img{
+    border:0
+}
+ol,ul,li,menu{
+    list-style:none
+}
+caption,th{
+    text-align:left
+}
+h1,h2,h3,h4,h5,h6{
+    font-size:100%;
+    font-weight: normal;
+}
+ins,a{
+    text-decoration:none
+}
+em,i{
+    font-style: normal;
+}
+img{
+    vertical-align: middle;
+}
+input[type="button"]{
+    border:none;
+}
+
+/*common*/
+html{  background:#fff;  }
+body{font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; color: #333333; font-size: 13px; line-height: 18px;}
+.box{width:1024px;height:50px;float:left;}
+.psn-f{position:fixed;}
+.ipt-ss{width:108px;height:30px;}
+.ipt-sl{width:280px;height:34px;}
+.clear-fix:after {content:"\200B"; display:block; height:0; clear:both; }
+.clear-fix { *zoom:1; }
+.left{ float: left;}
+.right{ float: right;}
+.txt-al-c{text-align:center;}
+.container,.layer-container{font-size: 16px; line-height: 22px;}
+.container-sea{font-size:16px;padding:40px 20px 30px 30px;border:1px solid #D3D3D3;background-color:white;}
+.header{width:100%;position:fixed;z-index:1000;  height: 56px;  border-bottom: 1px solid #FF503F;  background-color: #232323; color: #FFF;  font-size: 16px;  line-height: 56px; padding-left:66px; }
+.header .right{padding-right:66px;}
+.header i{width: 28px;  height: 56px;  padding-right: 10px;  display: block; float: left;  background: url("../images/return.png") no-repeat scroll left center;}
+.container{ padding: 58px 56px 10px 56px;}
+.a-btn{ display: inline-block; border-radius: 4px;  color: #fff;  font-size: 16px; text-align: center; height: 40px;line-height: 40px; padding: 0 36px;}
+.a-btn-blue{ background-color: #3399CC; color:#fff;font-size:16px;padding:7px 124px;}
+.a-btn-yellow{ background-color: #EE7800; color:#fff;font-size:16px;padding:7px 124px;}
+.a-btn-r{ background-color: #CA271D; color:#fff;font-size:16px;padding:7px 124px;border-radius:5px;}
+.a-btn-width{ padding: 0; width: 140px;}
+.a-btn-red{ background-color: #cc2515;}
+.a-btn-green{ background-color: #1d9e1a;}
+.a-btn-gray{ background-color: #6a6a6a;}
+.a-btn-rds{display:inline-block;border-top-left-radius: 6px;border-top-right-radius: 6px;
+     line-height:40px;padding:0px 38px;text-align: center;}
+.a-btn-sm-yellow{background-color: #EE7800; color:#fff;font-size:13px;padding:6px 20px;}
+.border{ border-top: 1px dashed #cccccc; border-bottom:1px dashed #cccccc}
+.line{ border-top: 1px dashed #999999;}
+.title{ color: #232323; font-size: 18px; font-weight: bold; padding: 20px 0;}
+
+.layer{width: 100%;  position: fixed;  display: none;  top: 0;  right: 0px;  z-index: 999;  background: rgba(0,0,0,0.3);  height: 100%;}
+.layer-container{width: 492px;  background: #fff;  position: absolute;  right: 0;  top: 0;  height: 100%;}
+.layer-top{ padding-top: 20px;}
+.layer-tops{ padding-top: 40px;padding-bottom:30px;}
+.close{position: absolute;  top: 26px;  right: 13px;  width: 28px;  height: 28px;  background: url(../images/icon/close.png) no-repeat center center;}
+.close-inline{display:inline-block;width:28px;height:28px; background:url(../images/icon/close.png) no-repeat center center; }
+.layer-title{line-height: 60px;  padding: 0 20px; font-size: 24px;}
+.layer-main{bottom: 120px;  overflow: auto;  position: absolute;  top: 80px;  width: 100%;}
+.layer-post{bottom: 120px;  overflow: auto;  position: absolute;  top: 144px;  width: 100%;}
+.layer-content{ padding: 0 20px;}
+.layer-no-bottom{bottom:0;}
+.layer-btn{ position: absolute; bottom:10px; left: 20px; right: 20px;}
+.btn-container{ padding-top: 20px; border-top: 1px solid #999999;}
+
+.pd-l{padding-left:30px;}
+.pdl-100{padding-left:10%;}
+.pd-ll{padding-left:150px;}
+.margin-l{padding-left:75px;}
+.margin-l0{margin-left:0;}
+.margin-t116{margin-top:116px;}
+.font-c-b{color:black !important;}
+.font-c-y{color:#EE7800!important;}
+.font-c-r{color:#FF0000!important;}
+/*page*/
+.page{padding:30px 0;clear:both;}
+.dp-ib{display:inline-block;}
+

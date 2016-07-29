@@ -1,0 +1,30 @@
+.car-channel{
+    width:100%;
+    background:url("../images/car-bg.png") no-repeat;
+    background-size:100%;
+    height:50.2rem;
+    position:relative;
+}
+/*汽车列表页*/
+.wrap-1{overflow-y:auto;height:100%;}
+.list-page{margin:0!important;  padding: 0!important;}
+.list-page>li{border-bottom:1px solid #E1E1E1;}
+.tcl{display:table-cell;}
+.tcl-m{display:table-cell;vertical-align: middle;}
+.c-ff{color:#fff;}
+.fz-65{font-size:.65rem;}
+.fz-55{font-size:.55rem;}
+.pd-5{padding:.5rem;}
+.pdl-5{padding-left:.5rem;}
+.por{position: relative;}
+.tac{ text-align: center;}
+.line-break{
+    display:-webkit-box!important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+}
+.sign-sign{position:absolute;right:0;bottom:0;width:2rem;height:1rem;line-height:1rem;}
+.tcl-m img{width: 4.85rem;  height: 3.5rem;}

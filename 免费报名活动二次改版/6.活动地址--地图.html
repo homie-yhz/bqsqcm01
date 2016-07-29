@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-mask.css">
+  <link rel="stylesheet" href="css/apply-SEO.css">
+  <script src="../PUBLIC/js/jquery-1.8.3.min.js"></script>
+  <script src="../PUBLIC/js/fastclick.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yAHN4TbigADUBammRQMNnd7WzpkdzFDu"></script>
+  <title>活动现场地址</title>
+  <style>
+    #mymap{width:100%;height:100%;}
+  </style>
+</head>
+<body>
+  <div class="scroll">
+    <div id="mymap">
+
+    </div>
+  </div>
+</body>
+<script>
+
+
+if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (p) {
+
+              var y = p.coords.latitude || 40;  //纬度
+              var x = p.coords.longitude || 116; //经度
+
+              var map = new BMap.Map("mymap");    // 创建Map实例
+              var point = new BMap.Point(x, y);   //创建地图 位置
+              var marker = new BMap.Marker(point);  // 创建标注
+
+              console.log(y+'/'+x);
+              map.centerAndZoom(point, 11);  // 初始化地图,设置中心点坐标和地图级别
+              map.addOverlay(marker);               // 将标注添加到地图中*!/
+
+            }, function (e) {//错误信息
+              var aa = e.code + "\n" + e.message;
+              alert(aa);
+            }
+    );
+  }else{
+  alert('浏览器不支持定位');
+}
+</script>
+</html>

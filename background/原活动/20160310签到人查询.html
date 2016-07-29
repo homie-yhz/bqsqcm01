@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link type="text/css" rel="stylesheet" href="css/common.css">
+  <link type="text/css" rel="stylesheet" href="css/newstyle.css">
+  <title>参与人列表</title>
+  <style>
+    body{background-color:#F2F2F2;}
+    html,body{height:100%;background-color:#F2F2F2;}
+  </style>
+</head>
+<body style="font-size:16px;">
+<div class="header">
+  <i></i>
+  <span>参与人列表</span>
+  <div class="right">
+    <input type="text" class="ipt-sea" placeholder="请输入参与人昵称或手机号"/>
+    <a href="javascript:;" class="invest-sea b-e">搜索</a>
+  </div>
+</div>
+<div class="tpi-s">
+  <p class="layer-top">【12.12北京】活动名称活动名称</p>
+  <p class="comment-total layer-tops">共有 <span class="tpi-y layer-content">2189</span> 人参与了活动
+    <a href="#" class="a-btn-sm-yellow right" style="margin-right:0.2%;">导出</a>
+  </p>
+  <table class="tablebox">
+    <tr>
+      <td>序号</td>
+      <td>参与时间</td>
+      <td>头像</td>
+      <td>昵称</td>
+      <td>Openid</td>
+      <td>性别</td>
+      <td>城市</td>
+    </tr>
+    <tr>
+      <td><span>1</span></td>
+      <td><p class="margin-c">2015.09.28 12:00</p></td>
+      <td><b><img src="images/lufei.png" alt=""/></b></td>
+      <td><p class="margin-c">海贼王</p></td>
+      <td><p class="margin-c">罗马家园</p></td>
+<!--      <td>
+        <ul class="dp-ib">
+          <li>联系人：金亮</li>
+          <li>电话：12345678909</li>
+        </ul>
+      </td>-->
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </table>
+</div>
+<div class="page">
+  <div class="pagec">
+    <input type="hidden" id="pageCount" value="72" />
+    <ul id="pageUl">
+      <li><a id="arrow-l" class="arrow" href="javascript:prev();"  disabled  ></a></li>
+
+      <li><a  id="curr"  href="javascript:jump2(1);"><span id="page_1">1</span></a></li>
+
+      <li><a  href="javascript:jump2(2);"><span id="page_2">2</span></a></li>
+
+      <li><a  href="javascript:jump2(3);"><span id="page_3">3</span></a></li>
+
+      <li><a  href="javascript:jump2(4);"><span id="page_4">4</span></a></li>
+
+      <li><a  href="javascript:jump2(5);"><span id="page_5">5</span></a></li>
+
+      <li><a id="arrow-r" class="arrow" href="javascript:next();"  ></a></li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

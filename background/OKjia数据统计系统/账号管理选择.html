@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../PUBLIC/css/box.css">
+  <link rel="stylesheet" href="css/statistics.css">
+  <script src="../PUBLIC/js/jquery-1.8.3.min.js"></script>
+  <script src="js/general.js"></script>
+  <title>账号管理选择</title>
+  <style>
+    html,body{height:100%;overflow:scroll;}
+    /*    input::-webkit-outer-spin-button
+        !*input::-webkit-inner-spin-button*!{
+          -webkit-appearance: none !important;
+          margin: 0;
+        }*/
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+  </style>
+</head>
+<body>
+<div class="header-main">
+  <div class="v-f-b header">
+    <div class="v-fm">
+      <img src="images/okplus.png" alt=""><span>数据统计系统</span><div class="border-right"></div><p class="fz-14">2016.01.01 星期二</p>
+    </div>
+    <div class="v-fm por o-btns">
+      <span class="fz-14 c-3c">jinliag@163.com</span><i class="icon-bottom"></i>
+      <div class=" btns poa fz-16 v-fc" style="display:none;">
+        <div>
+          <div class="btn-send v-fcm" style="margin-top:21px;">修改密码</div>
+          <div class="btn-send v-fcm" style="margin-top:21px;">退出登录</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--开启的数据模块添加 class  block-open -->
+  <div class="tab pdr-50 v-fm">
+    <span class="">影响力报告<i></i></span>
+    <span class="block-open">微信<i class="triangle-up-white"></i></span>
+    <span>OK家<i></i></span>
+    <span>社区报<i></i></span>
+    <span>驿站<i></i></span>
+    <span>线下活动<i></i></span>
+    <span>我的数据<i></i></span>
+  </div>
+</div>
+
+<!--二级标签-->
+<div class="tab2">
+  <div class="tab2-main" style="display: inline-flex">
+    <div class="v-fcm">
+      <div class="por">
+        <img src="images/fans-data.png" alt="">
+        <p class="fz-15">粉丝数据</p>
+        <i class="poa triangle-up-gray"></i>
+      </div>
+    </div>
+    <div class="v-fcm">
+      <div>
+        <img src="images/info-data.png" alt="">
+        <p class="fz-15">内容数据</p>
+        <i class="poa"></i>
+      </div>
+    </div>
+    <div class="v-fcm">
+      <div>
+        <img src="images/need-data.png" alt="">
+        <p class="fz-15">运营分析</p>
+        <i class="poa"></i>
+      </div>
+    </div>
+  </div>
+  <!--三级标签 1号-->
+  <div class="tab2-info">
+    <div class="v-fcm">
+      <div class="v-fcm bg-icon">
+        数据1
+      </div>
+    </div>
+    <div class="v-fcm">
+      <div class="v-fcm">
+        数据2
+      </div>
+    </div>
+    <div class="v-fcm">
+      <div class="v-fcm">
+        数据3
+      </div>
+    </div>
+  </div>
+  <!--三级标签 2号-->
+  <div class="tab2-info" style="display: none;">
+    <div class="v-fcm">
+      <div class="v-fcm bg-icon">
+        数据4
+      </div>
+    </div>
+    <div class="v-fcm">
+      <div class="v-fcm">
+        数据5
+      </div>
+    </div>
+    <div class="v-fcm">
+      <div class="v-fcm">
+        数据6数据6数据6数据6
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 详细内容页面 -->
+<div class="pdr-60">
+
+  <!--头部信息-->
+  <div class="section">
+
+    <div class="section-title v-f-b">
+      <!--左侧-->
+      <div class="v-fm fz-18 section-title-info">全部公众号</div>
+      <!--右侧-->
+      <div class="v-fm fz-15">数据维度: <div>1</div><div>2</div></div>
+    </div>
+    <div>
+      此处放入图表等内容
+    </div>
+  </div>
+  <!--主体信息-->
+  <div class="section">
+    <!--头部信息-->
+    <div class="section-title v-f-b">
+      <!--左侧-->
+      <div class="v-fm fz-18 section-title-info">各公众号</div>
+      <!--右侧-->
+      <div class="v-fm fz-15">数据维度: <div>1</div><div>2</div></div>
+    </div>
+    <!--表格位置-->
+    <div class="section-table" >
+      <!--表格头部-->
+      <table cellspacing='0'>
+        <tr style="background-color:red;">
+          <td>所属大区</td>
+          <td class="border-left">微信公众号</td>
+          <td class="por sort-icon border-left">
+            <div class="question-mask por">
+              <div class="question-info poa" style="display:none;">提示信息</div>
+            </div>
+            微信总量排名
+            <i class="sort"></i>
+          </td>
+          <td class="border-left">粉丝总量</td>
+          <td class="border-left">数量占比</td>
+        </tr>
+        <!--表格内容-->
+        <tr style="border-bottom:1px solid red;">
+          <td>所属大区</td>
+          <td><a href="">微信公众号</a></td>
+          <td>微信总量排</td>
+          <td>粉丝总量</td>
+          <td>数量占比</td>
+        </tr>
+
+      </table>
+    </div>
+    <!---->
+  </div>
+
+
+
+</div>
+
+
+
+</body>
+<script>
+  $(function(){
+    /*事件：按钮框 hover 事件*/
+    $('.o-btns').hover(function(){
+      $('.btns').show();
+    },function(){
+      $('.btns').hide();
+    });
+    /*事件：修改密码的点击事件*/
+
+    /*事件：退出登录的点击事件*/
+
+    /*样式事件：点击标签  出现指示三角*/
+    $('.tab>span').click(function(){
+      if($(this).hasClass('block-open')){
+        $('.tab i').removeClass('triangle-up-white');
+        $(this).children('i').addClass('triangle-up-white');
+      }else{
+        /*提示信息*/
+        $('body').append(
+                '<div class="mask v-fcm"> ' +
+                '<div class="mask-info v-fcm">' +
+                '此数据模块尚未开通，请您耐心等待！ ' +
+                '</div> ' +
+                '</div>'
+        );
+        setTimeout("$('.mask').remove()",1000);
+      }
+    });
+
+    /*样式事件：点击二级标签  出现 指示三角*/
+    $('.tab2-main>div').click(function(){
+      var $index = $(this).index();
+      $('.tab2-main i').removeClass('triangle-up-gray');
+      $('.tab2-info').hide();
+      $(this).find('i').addClass('triangle-up-gray');
+      $('.tab2-info').eq($index).show();
+    });
+
+    /*样式事件：点击三级标签   突出显示北京*/
+    $('.tab2-info>div').click(function(){
+      $('.tab2-info>div>div').removeClass('bg-icon');
+      $(this).find('div').addClass('bg-icon');
+    });
+
+
+  });
+</script>
+</html>

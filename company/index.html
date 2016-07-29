@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>北青社区传媒科技（北京）股份有限公司</title>
+	<meta name="author" content="cooc" />
+	<meta name="description" content="北青社区传媒，经过3多的深耕细作，以29份《北青社区报》为平台依托，以注册用户超百万的Ok家手机平台为平台主体、以及130家社区驿站为线下支点，将小区内的居民紧密黏合在一起。" />
+	<meta name="keywords"  content="社区传媒,社区,驿站,O2O,营销平台,北京青年报,北青社区报,ok家,okjia" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="resource/css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="resource/css/common.css" />
+	<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+	}
+	.intro p{
+		color: #fff;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+	
+	.weixin_fw_div_none{display:none;}
+	a, area {outline:none;-moz-outline:none; border:0px;}
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="resource/jscript/jquery.1.9.1.min.js"></script>
+	<script src="resource/jscript/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="resource/jscript/jquery.slimscroll.min.js"></script>
+
+	<script type="text/javascript" src="resource/jscript/jquery.fullPage.min.js"></script>
+	<script type="text/javascript" src="resource/jscript/common.js"></script>
+
+	<script type="text/javascript">
+		var userAgent = navigator.userAgent;
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['main', 'solutions', 'media', 'store'],
+				sectionsColor: ['#FE7E2B', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+				scrollBar: true,
+				paddingTop:0
+				
+			});
+			$('#weixinfuwu').on('mouseover', this, function(e) {
+				 //$('#weixin_fw_div').css("top",345);
+				 var offset = $(this).offset();
+				 var relativeX = (e.pageX - offset.left);
+				 var relativeY = (e.pageY - offset.top);
+				 var pointX = e.pageX;
+				 //这里可以得到鼠标Y坐标
+				 var pointY = e.pageY;
+				 
+				 //alert($('#okjia').css('top'));
+				 var X = $('#okjia').offset().top;
+				 var Y = $('#okjia').offset().left; 
+				 var XP = $('#okjia').position().top;
+				 var YP = $('#okjia').position().left; 
+				 //alert(X + '<-->' + Y + '<===>' + XP + '<-->' + YP);
+				 if(navigator.userAgent.indexOf("Chrome") != -1) { 		 
+				 	$('#weixin_fw_div').css('top', 720 + X - 370);
+				 } else {
+					$('#weixin_fw_div').css('top', 720 + X - 370);
+				 }
+				 $('#weixin_fw_div').css('left', Y+490);
+				 $('#weixin_fw_div').show();
+			}).on('mouseout',this,function(){
+				$('#weixin_fw_div').hide();
+			});
+			$('#weixin_fw_div').on('mouseout',this,function(){
+				$('#weixin_fw_div').hide();
+			});
+			
+			$('#weixindingyue').on('mouseover', this, function(e) {
+				 //$('#weixin_fw_div').css("top",345);
+				 var offset = $(this).offset();
+				 var relativeX = (e.pageX - offset.left);
+				 var relativeY = (e.pageY - offset.top);
+				 var pointX = e.pageX;
+				 //这里可以得到鼠标Y坐标
+				 var pointY = e.pageY;
+				 
+				 //alert($('#okjia').css('top'));
+				 var X = $('#okjia').offset().top;
+				 var Y = $('#okjia').offset().left; 
+				 var XP = $('#okjia').position().top;
+				 var YP = $('#okjia').position().left; 
+				 //alert(X + '<-->' + Y + '<===>' + XP + '<-->' + YP);
+				 if(navigator.userAgent.indexOf("Chrome") != -1) { 		 
+				 	$('#weixin_dy_div').css('top', 720 + X - 370);
+				 } else {
+					$('#weixin_dy_div').css('top', 720 + X - 370);
+				 }
+				 $('#weixin_dy_div').css('left', Y+290);
+				 $('#weixin_dy_div').show();
+			}).on('mouseout',this,function(){
+				$('#weixin_dy_div').hide();
+			});
+			$('#weixin_fw_div').on('mouseout',this,function(){
+				$('#weixin_dy_div').hide();
+			});
+			
+			$('#okjiaapp').on('mouseover', this, function(e) {
+				 //$('#weixin_fw_div').css("top",345);
+				 var offset = $(this).offset();
+				 var relativeX = (e.pageX - offset.left);
+				 var relativeY = (e.pageY - offset.top);
+				 var pointX = e.pageX;
+				 //这里可以得到鼠标Y坐标
+				 var pointY = e.pageY;
+				 
+				 //alert($('#okjia').css('top'));
+				 var X = $('#okjia').offset().top;
+				 var Y = $('#okjia').offset().left; 
+				 var XP = $('#okjia').position().top;
+				 var YP = $('#okjia').position().left; 
+				 if(navigator.userAgent.indexOf("Chrome") != -1) { 		
+				 	//alert(X + '<-->' + Y + '<===>' + XP + '<-->' + YP + '--' + navigator.userAgent);
+				 	$('#okjia_app_div').css('top', 720 + X - 370);
+				 } else {
+					$('#okjia_app_div').css('top', 720 + X - 370);
+				 }
+				 $('#okjia_app_div').css('left', Y+100);
+				 $('#okjia_app_div').show();
+			}).on('mouseout',this,function(){
+				$('#okjia_app_div').hide();
+			});
+			$('#okjia_app_div').on('mouseout',this,function(){
+				$('#okjia_app_div').hide();
+			});
+			
+		});
+	</script>
+
+</head>
+<body>
+
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<div class="intro">
+			<img src="resource/images/index-01.png" alt="ok家" usemap="#Map" id="okjia" />
+            <map name="Map">
+              <area shape="rect" coords="309,586,464,637" href="#weixindingyue" id="weixindingyue">
+              <area shape="rect" coords="507,587,662,636" href="#weixinfuwu" id="weixinfuwu">
+			  <area shape="rect" coords="109,586,265,637" href="#app" id="okjiaapp">
+              <area shape="rect" coords="518,36,554,64" href="">
+              <area shape="rect" coords="596,35,668,64" href="about_us.html">
+              <area shape="rect" coords="3,5,251,93" href="">
+              <area shape="rect" coords="942,36,1042,64" href="http://okjia.bqsqcm.com/" target="_blank">
+            </map>
+            <div id="weixin_fw_div" class="weixin_fw_div_none" style="position:absolute; top:345px; left:656px;">
+            	<img src="resource/images/ok-fuwuhao.png">
+            </div>
+            <div id="okjia_app_div" class="weixin_fw_div_none" style="position:absolute; top:345px; left:656px;">
+           	  <img src="resource/images/ok-app.png">
+            </div>
+            <div id="weixin_dy_div" class="weixin_fw_div_none" style="position:absolute; top:345px; left:656px;">
+           	  <img src="resource/images/ok-dingyuehao.png">
+            </div>
+		</div>
+	</div>
+	<div class="section" id="section1">
+	    <div class="intro">
+            <img src="resource/images/index-02.jpg" alt="iphone" />
+        </div>
+	</div>
+    <div class="section" id="section2">
+		<div class="intro">
+			<img src="resource/images/index-03.jpg" alt="iphone" />
+		</div>
+	</div>
+	<div class="section" id="section3">
+		<div class="intro">
+			<img src="resource/images/index-04.jpg" alt="iphone" />
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>今天活动参与链接</title>
+  <link rel="stylesheet" href="">
+  <script src="../js/jquery.min.js"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing: border-box;}
+    ul,li{
+      list-style-type: none;}
+    html,body{
+      font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 20px; }
+    .mask-background{
+      border-radius:2px;
+      border:1px solid #ddd;
+      width:1000px;
+      margin:0 auto;
+    }
+    .mask-background>h2{
+      border-bottom:1px solid #ddd;
+      height:46px;
+      line-height:46px;
+      font-weight:bold;
+      padding:0 10px;
+      font-size:20px;
+    }
+    .mask-background>h2>.red-close{float:right;}
+    .mask-background>div{
+      width:800px;margin:30px auto 0;
+    }
+    .mask-background>div>div{
+      margin-top:40px;
+      overflow: hidden;
+    }
+    .link-list{
+      margin-top:20px;
+      border:1px solid #ddd;
+      border-bottom:none;
+    }
+    .link-list>li{
+      font-size:0;
+    }
+    .link-list>li>div{
+      display: inline-block;
+      font-size:20px;
+      border-right:1px solid #ddd;
+      border-bottom:1px solid #ddd;
+      height:38px;
+      line-height: 38px;
+    }
+    .link-list>li>div:first-child{
+      width:10%;
+      text-align: center;
+    }
+    .link-list>li>div:nth-child(2){
+      width:70%;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+    .link-list>li>div:nth-child(2)>div{
+      width:94%;
+      margin:0 15px;
+      overflow:hidden;
+    }
+    .link-list>li>div:last-child{
+      width:20%;
+      text-align: center;
+      border-right:none;
+    }
+    .left{float:left;}
+    .right{float:right;}
+    .o-copy{
+      background-color:black;
+      color:#fff;
+    }
+    .copy-success{
+      background-color:#CD2410;
+      color:#fff;
+    }
+    .information{
+      padding:40px 0;
+      color:#7E7E7E;
+    }
+  </style>
+</head>
+<body>
+  <div class="mask-background">
+    <h2>标题<span class="red-close"><img class="o-close" src="../images/icon/close.png" alt="" style="vertical-align: -5px;"></span></h2>
+    <div>
+      <p>活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称</p>
+      <div>
+        <span class="left">获取链接时间：<span>2015-06-06 16:31</span></span>
+        <span class="right">当前链接失效时间：<span>2015-06-06 16:31</span></span>
+      </div>
+      <ul class="link-list">
+        <li>
+          <div>链接1</div>
+          <div>
+            <div class="link-address">http:ffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsa</div>
+          </div>
+          <div class="o-copy">复制链接</div>
+        </li>
+        <li>
+          <div>链接1</div>
+          <div>
+            <div class="link-address">http:ffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsa</div>
+          </div>
+          <div class="o-copy">复制链接</div>
+        </li>
+        <li>
+          <div>链接1</div>
+          <div>
+            <div class="link-address">http:ffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsa</div>
+          </div>
+          <div class="o-copy">复制链接</div>
+        </li>
+        <li>
+          <div>链接1</div>
+          <div>
+            <div class="link-address">http:ffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsa</div>
+          </div>
+          <div class="o-copy">复制链接</div>
+        </li>
+        <li>
+          <div>链接1</div>
+          <div>
+            <div class="link-address">http:ffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsa</div>
+          </div>
+          <div class="o-copy">复制链接</div>
+        </li>
+        <li>
+          <div>链接1</div>
+          <div>
+            <div class="link-address">http:ffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsa</div>
+          </div>
+          <div class="o-copy">复制链接</div>
+        </li>
+        <li>
+          <div>链接1</div>
+          <div>
+            <div class="link-address">http:ffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsaffdsafdafsdfadsdfsa</div>
+          </div>
+          <div class="o-copy">复制链接</div>
+        </li>
+
+      </ul>
+      <div class="information">
+        <p>注：</p>
+        <p>1. 每日只能获得一次链接，每个链接均在当日有效；</p>
+        <p>2. 每次最多可得到7个链接；</p>
+        <p>3. 每个链接均有一次翻牌机会；</p>
+        <p>4. 请将链接分别复制到【微信后台】—【图文信息】—【原文链接】位置。</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  $(function(){
+    /*事件：点击按钮关闭弹窗*/
+    $('.o-close').click(function(){
+      $('.mask-background').hide();
+    });
+    /*事件：点击复制按钮进行 url复制*/
+    $('.o-copy').click(function(){
+
+      var linkAddress = $(this).parents('li').find('.link-address').html();
+      console.log(''+linkAddress);
+      /*css*/
+      $('.o-copy').removeClass('copy-success').html('复制链接');
+      $(this).addClass('copy-success').html('复制成功');
+
+    });
+  });
+
+</script>
+</html>
+<!--linkAddress：为复制的链接地址 string格式-->

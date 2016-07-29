@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-mask.css">
+  <script src="../PUBLIC/js/jquery-1.8.3.min.js"></script>
+  <script src="../PUBLIC/js/fastclick.js"></script>
+  <script src="../PUBLIC/js/jquery.lazyload.js"></script>
+
+  <title>Title</title>
+</head>
+<body>
+<div class="scroll">
+  <div class="#scroll">
+
+  </div>
+  </div>
+
+
+</body>
+<script>
+  $(function(){
+
+    $("img").lazyload({
+      effect: "fadeIn", // 载入使用何种效果
+      container: $(".scroll")   //一定要配置 img 的父容器  不然会导致失效
+    });
+
+  });
+</script>
+
+</html>

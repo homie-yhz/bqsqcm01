@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../css/common.css">
+    <link type="text/css" rel="stylesheet" href="../css/newstyle.css">
+    <!--<link type="text/css" rel="stylesheet" href="css/news.css">-->
+    <title>新闻发布选择页</title>
+</head>
+<body>
+<div class="header">
+    <i></i>
+    <span>新鲜事发布</span>
+</div>
+<div class="content-left">
+    <div class="title">新鲜事标题</div>
+    <div class="line"></div>
+    <div class="news-ct">标题内容，标题内容，标题内容，标题内容，标题内容，标题内容</div>
+    <div class="line"></div>
+    <div class="news-btn-container"><a href="javascrit:;" class="news-btn b-5">提交审核</a><a href="javascrit:;" class="news-btn b-c">立即发布</a></div>
+    <div class="page">
+        <div class="pagec">
+            <input type="hidden" id="pageCount" value="72" />
+            <ul id="pageUl">
+                <li><a id="arrow-l" class="arrow" href="javascript:prev();"  disabled  ></a></li>
+
+                <li><a  id="curr"  href="javascript:jump2(1);"><span id="page_1">1</span></a></li>
+
+                <li><a  href="javascript:jump2(2);"><span id="page_2">2</span></a></li>
+
+                <li><a  href="javascript:jump2(3);"><span id="page_3">3</span></a></li>
+
+                <li><a  href="javascript:jump2(4);"><span id="page_4">4</span></a></li>
+
+                <li><a  href="javascript:jump2(5);"><span id="page_5">5</span></a></li>
+
+                <li><a id="arrow-r" class="arrow" href="javascript:next();"  ></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

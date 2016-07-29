@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>animate</title>
+  <script src="background/js/jquery.min.js"></script>
+  <style>
+    /*过渡持续1s*/
+    /*翻转图片*/
+    .rotate-pic{
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+    .d{
+      border:1px solid red;width:100px;height:100px;
+      margin:100px auto 0;
+/*      -webkit-transition: transform 1s;
+      -moz-transition: transform 1s ;
+      -ms-transition: transform 1s ;
+      -o-transition: transform 1s ;
+      transition: transform 1s ;*/
+      -webkit-animation:move-loop 10s infinite linear;
+      -o-animation:move-loop 10s infinite linear;
+      animation:move-loop 10s infinite linear;
+    }
+    /*hover  放大1.2*/
+    div:hover{
+    }
+
+
+    /*页面加载后 循环来回移动*/
+    @keyframes move-loop {
+      0%{
+        -webkit-transform: translateX(0px) rotateY(0deg);
+        -moz-transform: translateX(0px) rotateY(0deg);
+        -ms-transform: translateX(0px) rotateY(0deg);
+        -o-transform: translateX(0px) rotateY(0deg);
+        transform: translateX(0px) rotateY(0deg);
+      }
+      49.9999%{
+        -webkit-transform:translateX(300px) rotateY(0deg);
+        -moz-transform:translateX(300px)  rotateY(0deg);
+        -ms-transform:translateX(300px)  rotateY(0deg);
+        -o-transform:translateX(300px) rotateY(0deg);
+        transform:translateX(300px)  rotateY(0deg);
+      }
+      50% {
+        -webkit-transform: translateX(300px) rotateY(180deg);
+        -moz-transform: translateX(300px) rotateY(180deg);
+        -ms-transform: translateX(300px) rotateY(180deg);
+        -o-transform: translateX(300px) rotateY(180deg);
+        transform: translateX(300px) rotateY(180deg);
+      }
+      100% {
+        -webkit-transform: translateX(0px) rotateY(180deg);
+        -moz-transform: translateX(0px) rotateY(180deg);
+        -ms-transform: translateX(0px) rotateY(180deg);
+        -o-transform: translateX(0px) rotateY(180deg);
+        transform: translateX(0px) rotateY(180deg);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="d">
+    正面
+  </div>
+</body>
+<script>
+  $(function(){
+    /*$('.d').addClass('rotate-pic');*/
+  });
+  function rotate_pic(ele){
+    ele.className = 'rotate-pic';
+  }
+</script>
+</html>

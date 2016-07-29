@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/soccer.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/soccer.js"></script>
+  <title>射手榜</title>
+  <style>
+    .bg-2d{background-color:#2D490D;}
+    .wrap-1{height:100%;}
+    .classify{
+      height:1.5rem;
+      color:#67AC19;
+      width:100%;
+      font-size:0;
+    }
+    .body{color:#fff;}
+    .classify span{
+      display:inline-block;
+      line-height: 1.5rem;
+      font-size:.7rem;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .classify img{width:1rem;height:1rem;border-radius: 50%;vertical-align: -.27rem;}
+    .classify span:first-child{width:11%;}
+    .classify span:nth-child(2){width:23%;}
+    .classify span:nth-child(3){width:16%;}
+    .classify span:nth-child(4){width:32%;text-align: left;padding-left:.2rem;}
+    .classify span:nth-child(5){width:18%;}
+    .bg-green{background:url("images/top3.png") center center no-repeat;color:#fff;}
+  </style>
+</head>
+<body>
+<div class="wrap-1 bg-gray">
+  <ul>
+    <!--header-->
+    <li class="classify bg-2d">
+      <span>排行</span>
+      <span>球员</span>
+      <span>区域</span>
+      <span style="text-align: center;">球队</span>
+      <span>进/失球</span>
+    </li>
+    <!--body-->
+    <li class="classify body bg-green">
+      <span>1</span>
+      <span>托马斯奔奔</span>
+      <span>朝阳区</span>
+      <span>
+        <img src="images/f-award.jpg" alt="">传入信信信
+      </span>
+      <span>39/7</span>
+    </li>
+    <li class="classify body bg-green">
+      <span>1</span>
+      <span>托马斯奔奔</span>
+      <span>朝阳区</span>
+      <span>
+        <img src="images/f-award.jpg" alt="">传入信信信
+      </span>
+      <span>39/7</span>
+    </li>
+    <li class="classify body">
+      <span>1</span>
+      <span>托马斯奔奔</span>
+      <span>朝阳区</span>
+      <span>
+        <img src="images/f-award.jpg" alt="">传入信信信
+      </span>
+      <span>39/7</span>
+    </li>
+    <li class="classify body">
+      <span>1</span>
+      <span>托马斯奔奔</span>
+      <span>朝阳区</span>
+      <span>
+        <img src="images/f-award.jpg" alt="">传入信信信
+      </span>
+      <span>39/7</span>
+    </li>
+    <li class="classify body">
+      <span>1</span>
+      <span>托马斯奔奔</span>
+      <span>朝阳区</span>
+      <span>
+        <img src="images/f-award.jpg" alt="">传入信信信
+      </span>
+      <span>39/7</span>
+    </li>
+
+  </ul>
+</div>
+</body>
+</html>

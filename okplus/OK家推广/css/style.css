@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,li,h1,h2,p{ margin:0; padding:0;}
+ul,li{ list-style:none;}
+body,html,.wapper{ width:100%; height:100%; overflow:hidden;}
+
+.wapper{ position:relative;  background-color:#AE1718;}
+h1{ background:url(../images/title.png) no-repeat center center #EA825D;; background-size:10rem 1.85rem; -webkit-background-size:10rem 1.85rem; height:1.85rem; padding:1rem 0;}
+.swiper-container{ width:100%; height:20rem; overflow:hidden; background-color:#fff;
+    background: -webkit-linear-gradient(#EA825D,#AE1718); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#EA825D,#AE1718); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#EA825D,#AE1718); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#EA825D,#AE1718); /* 标准的语法 */
+
+}
+.swiper-wrapper{ width:auto; height:100%; overflow:hidden;}
+.swiper-slide{ width:100%; height:20rem; text-align:center;}
+.swiper-wrapper img{ width:9.75rem; height:20rem;}
+.pagination{ text-align: center;width: 100%;z-index: 1; padding:0.5rem 0;}
+.pagination span{ display:inline-block; border-radius:0.8rem; vertical-align:middle;}
+.pagination .swiper-pagination-switch{ background-color:#D92621; width:0.4rem; height:0.4rem;margin:0 .3rem;}
+.pagination .swiper-active-switch{background-color:#EA8661; width:0.8rem; height:0.8rem;}
+.bg{}
+a{
+  display:block;height:1.775rem;width:8.275rem;line-height:1.775rem;font-size:.6rem;text-align: center;
+    border:1px solid #EA8661;
+    border-radius:3px;
+    text-decoration: none;
+    color:#EA8661;
+    margin:0 auto;
+}
+
+.pd{ margin:0 10px;}
+.pd .jt{ text-align:right; margin-top:6px;}
+.jt img{ width:31px;}
+.tsk{ border:2px solid #fd8b07; padding:16px 10px; border-radius:4px;background:#ffecd6;}
+.tsk img{ width:48px; float:left; margin-right:6px;}
+.tsk p{ font-size:16px; color:#000; line-height:24px; font-weight:bold;}
+
+#grad {
+    background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+    background: linear-gradient(red, blue); /* 标准的语法 */
+}

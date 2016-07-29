@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <title>新闻详情</title>
+  <link type="text/css" rel="stylesheet" href="../css/reset.css">
+  <link type="text/css" rel="stylesheet" href="../css/base.css">
+  <link type="text/css" rel="stylesheet" href="../css/fresh_news.css">
+  <style>
+    .v-f{
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+    }
+    .v-fcm{
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flexbox;
+      display:flex;
+      -webkit-box-pack: center;/* android 2.1-3.0, ios 3.2-4.3 */
+      -webkit-justify-content: center;/* Chrome 21+ */
+      -ms-flex-pack: center;/* WP IE 10 */
+      justify-content: center;/* android 4.4 */
+      -webkit-box-align: center;/* android 2.1-3.0, ios 3.2-4.3 */
+      -webkit-align-items: center;/* Chrome 21+ */
+      -ms-flex-align: center;/* WP IE 10 */
+      align-items: center;/* android 4.4 */
+    }
+    .v-fm{
+      -webkit-box-align: center;/* android 2.1-3.0, ios 3.2-4.3 */
+      -webkit-align-items: center;/* Chrome 21+ */
+      -ms-flex-align: center;/* WP IE 10 */
+      align-items: center;/* android 4.4 */
+    }
+    .download-box{
+      display: block;
+    }
+    .download-box>img{width:100%;}
+/*    .icon-chaoyang{
+      width:1.7rem;
+      height:1.7rem;
+    }
+    .download{
+      border:1px solid #C02417;
+      border-radius:4px;
+      width:4.8rem;
+      height:1.6rem;
+    }
+    .icon-phone{
+      width:.65rem;
+      height:.975rem;
+      margin-right:.2rem;
+    }
+    .v-i1{
+      -webkit-box-flex:1;!* android 2.1-3.0, ios 3.2-4.3 *!
+      -webkit-flex:1;!* Chrome 21+ *!
+      -ms-flex:1;!* WP IE 10 *!
+      flex:1;!* android 4.4 *!
+    }
+    .tac{
+      text-align: center;}*/
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="scroll no-footer">
+    <header class="header">
+      <h1>小区吐槽</h1>
+      <a class="btn-back" href="javascript:;"><i></i></a>
+      <a class="btn-right color-ee js-send">发布</a>
+    </header>
+    <div class="wrap">
+      <div class="declare">
+        <!--立即下载-->
+        <a class="download-box" href="http://www.baidu.com">
+          <img src="../images/icon/chaoyang-download.png" alt="">
+        </a>
+
+
+        <p class="d-title">看完这篇新闻，有啥感想？<br>已有<span class="color-eb">188</span>人表态</p>
+        <div class="des current">
+          <img class="middle" src="../images/ex/ex1.jpg">
+          <span class="des-name middle color-eb">赞同</span>
+            <span class="des-progress middle">
+              <i></i>
+            </span>
+          <span class="des-count middle color-eb">226人</span>
+        </div>
+        <div class="des">
+          <img class="middle" src="../images/ex/ex2.jpg">
+          <span class="des-name middle">无语</span>
+                    <span class="des-progress middle">
+                        <i></i>
+                    </span>
+          <span class="des-count middle">16人</span>
+        </div>
+        <div class="des">
+          <img class="middle" src="../images/ex/ex3.jpg">
+          <span class="des-name middle">讨厌</span>
+                    <span class="des-progress middle">
+                        <i></i>
+                    </span>
+          <span class="des-count middle">226人</span>
+        </div>
+        <div class="des">
+          <img class="middle" src="../images/ex/ex4.jpg">
+          <span class="des-name middle">路过</span>
+                    <span class="des-progress middle">
+                        <i></i>
+                    </span>
+          <span class="des-count middle">226人</span>
+        </div>
+        <div class="des">
+          <img class="middle" src="../images/ex/ex5.jpg">
+          <span class="des-name middle">喜欢</span>
+                    <span class="des-progress middle">
+                        <i></i>
+                    </span>
+          <span class="des-count middle">226人</span>
+        </div>
+        <div class="des">
+          <img class="middle" src="../images/ex/ex6.jpg">
+          <span class="des-name middle">愤怒</span>
+                    <span class="des-progress middle">
+                        <i></i>
+                    </span>
+          <span class="des-count middle">226人</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

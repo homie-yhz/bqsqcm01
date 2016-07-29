@@ -1,0 +1,25 @@
+/*reset*/
+*{margin:0;padding:0;}
+ul,li{list-style-type: none;}
+/*base*/
+
+
+@media only screen and (min-width: 359px){
+    html {font-size:22.5px;}
+    .homepage a.a-block{ line-height:1.12rem;}
+}
+@media only screen and (min-width: 374px){
+    html {font-size:23.4375px;}
+}
+@media only screen and (min-width: 399px){
+    html {font-size:25px;}
+}
+@media only screen and (min-width: 413px){
+    html {font-size:25.875px;}
+}
+@media only screen and (min-width: 479px){
+    html {font-size:30px;}
+}
+@media only screen and (min-width: 539px){
+    html {font-size:33.75px;}
+}

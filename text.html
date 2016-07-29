@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+
+  <link rel="stylesheet" href="PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="PUBLIC/css/okplus-mask.css">
+  <title>Document</title>
+  <link rel="icon" href="http://photoswipe.com/test/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" href="http://photoswipe.com/test/apple-touch-icon-144x144.png">
+  <script src="jquery-1.8.3.min.js "></script>
+  <script src="PUBLIC/js/fastclick.js"></script>
+  <style>
+    .d1{
+      border:5px solid red;
+      border-top:5px solid transparent;
+      border-radius:50%;
+   /*   animation: rotate-1 infinite 500ms;*/
+    }
+
+    @keyframes rotate-1 {
+      from {transform:rotate(0deg);}
+      50%{transform:rotate(180deg);}
+      to{transform:rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+<div class="scroll v-fcm">
+    <div class="d1 v-fcm" style="width:300px;height:300px;">
+      测试文本框
+    </div>
+  <button>点击</button>
+</div>
+</body>
+<script>
+$(function(){
+	$('button').click(function(){
+    console.log('click')
+    $.ajax({
+      type:'GET',
+      success:function(){
+        console.log('1');
+        $('.d1').html('ajax');
+      }
+    });
+	});
+});
+
+
+</script>
+</html>

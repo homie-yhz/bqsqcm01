@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>活动详情</title>
+  <link type="text/css" rel="stylesheet" href="../css/reset.css">
+  <link type="text/css" rel="stylesheet" href="../css/base.css">
+  <link type="text/css" rel="stylesheet" href="../css/comment.css">
+  <link type="text/css" rel="stylesheet" href="../css/activity.css">
+  <link rel="stylesheet" href="../css/activityranking.css">
+  <link rel="stylesheet" href="../css/load-fail.css">
+  <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+</head>
+<body class="bg-f2">
+<div class="wrapper timing-hp">
+  <div class="scroll" style="bottom:0;">
+    <header class="header">
+      <h1>活动详情</h1>
+      <a class="btn-back color-ee" href="99999999" ><i></i>返回</a>
+      <a class="btn-close color-ee" href="javascript:;">关闭</a>
+      <a class="btn-right btn-share"></a>
+    </header>
+    <div class="wrap" style="background-color:#fff;height:100%;padding-top:2.1rem;margin-top:0;">
+      <div class="load-fail oldman">
+        <a href="#" id="load"></a>
+        <img src="../images/activity/load-fail.png" class="cat m-t-2" alt="猫">
+        <p class="m-t-2 color-999">未能加载</p>
+        <p class="color-999">点击重试</p>
+        <div class="m-t-2">
+            <img src="../images/activity/load.png" class="load" alt="加载">
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  $(function(){
+    $("#load").click(function(){
+      $(".load").addClass("rotate720");
+    })
+  })
+</script>
+</html>

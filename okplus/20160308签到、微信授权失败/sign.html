@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>活动名称</title>
+  <link type="text/css" rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/sign.css">
+  <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+</head>
+<body class="bg-f2" style="overflow:scroll;">
+<div class="wrap-wx">
+  <!--背景顶部-->
+  <div class="sign-header">
+    <div class="icon"><!--<img src="../images/activity/test.jpg" alt="">--></div>
+  </div>
+  <!--背景中部-->
+  <div class="sign-body">
+      <p class="act-title fz105 tac c-7d">活动名称活动名称活动名称</p>
+      <p class="act-intro fz80 c-79">活动介绍： 飞鹤奶粉分享视频赢大奖 抽奖得QQ会员 爱奇艺会员 iPad等实物！飞鹤邀您亲眼见证飞鹤奶粉的全产业链，更适合中国宝宝体质的奶粉看得见！</p>
+      <div class="content tac">
+        <p class="fz90 c-ee">您成功签到后,</p>
+        <p class="fz95 c-ee">即可获得<span class="fz105 c-d9">爱奇艺黄金会员卡</span>奖励,先到先得!</p>
+        <!--<p class="fz120 c-7d">您已经进行过签到，</p>
+        <p class="fz120 c-7d">不需要再次签到了哦！</p>
+        <p class="fz120 c-7d">感谢您的参与！</p>-->
+      </div>
+    </div>
+  <!--背景底部-->
+  <div class="sign-footer"></div>
+  <div class="vam tac father">
+   <!-- <a href="sign-success.html"></a>-->
+    <a id="sign"  class="bg-ee tac btn-sign fz90">签到</a>
+  </div>
+</div>
+<div class="mask-full" style="display:none;"></div>
+<div class="mask-top">
+  <p class="c-ff fz80">很抱歉,微信授权失败,请重试。</p>
+</div>
+</body>
+<script>
+  $(function(){
+    $('#sign').click(function(){
+      $('.mask-top').addClass('mask-out');
+      $('.mask-full').show();
+    });
+    $('.mask-full').click(function(){
+      $(this).hide();
+      $('.mask-top').removeClass('mask-out');
+    });
+  });
+</script>
+</html>

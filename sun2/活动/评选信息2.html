@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>活动详情</title>
+  <link type="text/css" rel="stylesheet" href="../css/reset.css">
+  <link type="text/css" rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/activity.css">
+  <link rel="stylesheet" href="../css/okplus.css">
+  <link rel="stylesheet" href="../css/mask-final.css">
+  <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+  <script src="../js/ge.js"></script>
+</head>
+<body class="bg-f2 fz-80">
+<!--奖品展示 头部-->
+<div class="header-top">
+  <div class="wrap-1">
+    <div class="pdr5">
+      <div class="c-eb" style="border-bottom:1px solid #e9e9e9;">
+        <a class="ranking-list c-eb">排行榜</a><a class="newest-apply">最新报名</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--滚动页-->
+<div class="wrap scroll-pt-pb">
+  <div id="ranking-list">
+    <div class="l-table apply-info ps-r" >
+      <a href="评选信息2.html" class="oldman"></a>
+      <div class="l-cell apply-rank fir tac"><i></i></div>
+      <div class="l-cell img">
+        <img src="../images/del/vote1.jpg">
+      </div>
+      <div class="l-cell apply-des">
+        <div class="des-container">
+          <p class="des-number">作品编号:<i>67</i></p>
+          <p class="des-con1">北京大夜景北京大夜景北京大夜景北京大大北京大夜景北京大夜景北京大夜景北京大大</p>
+          <div class="des-author des-right clear-fix">
+            <span class="l-left color-999">作者：麻辣鸡块</span>
+            <span class="l-right color-eb">32809票</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="l-table apply-info ps-r" >
+      <a href="评选信息2.html" class="oldman"></a>
+      <div class="l-cell apply-rank sec tac"><i></i></div>
+      <div class="l-cell img">
+        <img src="../images/del/vote1.jpg">
+      </div>
+      <div class="l-cell apply-des">
+        <div class="des-container">
+          <p class="des-number">作品编号:<i>67</i></p>
+          <p class="des-con1">北京大夜景北京大夜景北京大夜景北京大大北京大夜景北京大夜景北京大夜景北京大大</p>
+          <div class="des-author des-right clear-fix">
+            <span class="l-left color-999">作者：麻辣鸡块</span>
+            <span class="l-right color-eb">32809票</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="l-table apply-info ps-r">
+      <a href="评选信息2.html" class="oldman"></a>
+      <div class="l-cell apply-rank third tac"><i></i></div>
+      <div class="l-cell img">
+        <img src="../images/del/vote1.jpg">
+      </div>
+      <div class="l-cell apply-des">
+        <div class="des-container">
+          <p class="des-number">作品编号:<i>67</i></p>
+          <p class="des-con1">北京大夜景北京大夜景北京大夜景北京大大北京大夜景北京大夜景北京大夜景北京大大</p>
+          <div class="des-author des-right clear-fix">
+            <span class="l-left color-999">作者：麻辣鸡块</span>
+            <span class="l-right color-eb">32809票</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="newest-apply" style="display:none;">
+    <div class="pdr5">
+      <div class="l-table apply-info ps-r">
+        <a href="" class="oldman"></a>
+        <div class="l-cell apply-rank"><i>67.</i></div>
+        <div class="l-cell img">
+          <img src="../images/del/vote1.jpg">
+        </div>
+        <div class="l-cell apply-des">
+          <div class="des-container">
+            <p class="des-con">北京大夜景北京大夜景北京大夜景北京大大北京大夜景北京大夜景北京大夜景北京大大</p>
+            <p class="des-author">作者:麻辣鸡块</p>
+          </div>
+        </div>
+      </div>
+      <div class="l-table apply-info ps-r">
+        <a href="" class="oldman"></a>
+        <div class="l-cell apply-rank"><i>67.</i></div>
+        <div class="l-cell img">
+          <img src="../images/del/vote1.jpg">
+        </div>
+        <div class="l-cell apply-des">
+          <div class="des-container">
+            <p class="des-con">北京大夜景北京大夜景北京大夜景北京大大北京大夜景北京大夜景北京大夜景北京大大</p>
+            <p class="des-author">作者:麻辣鸡块</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--底部-->
+<footer class="footer tac" style="background-color:#fff;">
+  <!--查看我的排名-->
+  <a href="#" id="check-ranking" class="c-eb" style="vertical-align: middle;height:2.4rem;line-height:2.4rem;">查看我的排名</a><i class="ass"></i>
+  <!--进行中 未参与-->
+  <div class="timing-footer l-table" style="display:none;" >
+    <div class="l-cell"><a class="c-rrr fz-80" href="#">我要报名</a></div>
+    <div class="l-cell consult"><a href="#">咨询</a></div>
+  </div>
+  <!--已参与 活动结束-->
+  <div class="timing-footer l-table" style="display:none;" >
+    <div class="l-cell"><a class="c-rrr fz-80" href="#" id="check-vote">查看我的排名</a></div>
+    <div class="l-cell consult"><a href="#">咨询</a></div>
+  </div>
+  <!--倒计时-->
+  <div class="timing-footer l-table" style="display:none;">
+    <div class="l-cell count-down">
+      倒计时<span class="fir bg-rrr">0</span><span class="sec bg-rrr">2</span>天<span class="fir bg-rrr">0</span><span class="sec bg-rrr">2</span>时<span class="fir bg-rrr">0</span><span class="sec bg-rrr">2</span>分
+    </div>
+    <div class="l-cell consult"><a href="#">咨询</a></div>
+  </div>
+</footer>
+<!--mask-->
+<!--<div class="shadow" style="display:block;">
+  <footer>
+    <div class="wrap-3" >
+      <img src="../images/activity/test.jpg">
+        <div>
+          <div>作品编号:<i>126</i></div>
+          <div class="text-of-h">作品编号阿斯顿发送到发大水发大水发大水范德萨范德萨发大水发的撒</div>
+          <div class="of-h">
+            <span class="left fz-55 c-9">当前排名:<span class="c-yy">111</span></span>
+            <span class="right fz-55 left-ticket c-9"><span class="">93333333</span>票</span>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="#" class="btns btns-c  left">关闭</a>
+          <a href="#" class="btns btns-ck right">查看作品</a>
+        </div>
+    </div>
+&lt;!&ndash;    <div class="wrap-3" style="display:none;">
+      <div class="no-tpi">
+        <p class="txt-al-ct">抱歉，您还没有提交报名，快来参与吧</p>
+        <div class="btn-box">
+          <a href="#" class="btns btns-c  left">取消</a>
+          <a href="#" class="btns btns-ck right">立即报名</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap-3">
+      <div class="wait-tpi">
+        <p class="txt-al-ct">您的报名信息我们正在审核，请您耐心等待。</p>
+        <div class="btn-box">
+          <a href="#" class="btns btns-ck">知道了</a>
+        </div>
+      </div>
+    </div>&ndash;&gt;
+  </footer>
+</div>-->
+
+<!--mask-->
+<div class="mask" style="">
+  <div class="mask-notice" style="">
+    <div class="tcl">抱歉,您还没有提交报名,快来参与吧</div>
+    <!--<div class="tcl">您的报名信息我们正在审核，请您耐心等待</div>-->
+    <p class="btn-box">
+      <!--用户已经报名-->
+      <a href="#" class="btn-99">知道了</a>
+      <!--用户还没有报名-->
+      <a href="" class="btn-cancel btn-99 left">取消</a>
+      <a href="" class="btn-eb right">立即报名</a>
+    </p>
+  </div>
+  <footer class="footer-high" style="display:none;">
+    <div class="wrap-3">
+      <img src="../images/activity/test.jpg" class="left">
+      <div style="height:3.75rem;padding-left:4.25rem;position:relative;">
+        <p>作品编号:<i>126</i></p>
+        <p class="tof">作品编号阿斯顿发送你</p>
+        <p class="of-h" style="margin-top:.5rem;">
+          <span class="left fz-55 color-999">当前排名:<span class="c-eb">111</span></span>
+          <span class="right fz-55 left-ticket color-999"><span class="">93333333</span>票</span>
+        </p>
+      </div>
+      <div class="btn-box" style="margin-top:1rem;width:70%;">
+        <a href="#" class="btn-close btn-99 left">关闭</a>
+        <a href="#" class="btn-eb right">查看作品</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+<script>
+  /*切换*/
+  $('.ranking-list').click(function(){
+    $('#ranking-list').show();
+    $('#newest-apply').hide();
+  });
+  $('.newest-apply').click(function(){
+    $('#ranking-list').hide();
+    $('#newest-apply').show();
+  });
+  /*点击查看排名*/
+  $('#check-ranking').click(function(){
+    $('.mask').show();
+  });
+  /*关闭按钮*/
+  $('.btn-close').click(function(){
+    $('.mask').hide();
+  });
+</script>
+</html>

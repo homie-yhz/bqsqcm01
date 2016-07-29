@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'MFLiHei_Noncommercial-Regular';
+    src: url('MFLiHei_Noncommercial-Regular.ttf');
+    /*src: local('造字工房力黑体 Regular'),
+    local('造字工房力黑体'),
+    url('造字工房力黑体.woff') format('woff'),
+    url('造字工房力黑体.ttf') format('truetype'),
+    url('造字工房力黑体.svg#fontName') format('svg');*/
+}
+.bg{width:100%;height:100%;}
+.c-62{color:#62201B;}
+.bg-ffb{background-color:#FFBB2F;}
+.main{overflow: hidden;/*padding-top:1px;*/}
+.left-chance{    margin-top: 8.8rem;
+    height: 2.5rem;
+    text-align: center;
+}
+.cards-box{
+    overflow: hidden;
+    width:14rem;margin:0 auto;
+}
+.card{
+    float: left;
+    width: 4.4rem;
+    height: 6rem;
+    background: url("../images/card.png") center top no-repeat;
+    background-size: 100%;
+    margin-left: .2rem;
+}
+/*获奖名单*/
+.award-list{
+    height: 14rem;
+    width: 100%;
+    background: url("../images/awards-list.png") center top no-repeat;
+    background-size: 100%;
+    margin-top: .5rem;
+    padding-top: 3.5rem;
+}
+.award-list ul{
+    /*这里必须用ul  为了迎合插件*/
+    color: #fff;
+    height: 8.6rem;
+    overflow: hidden;
+    font-size:.6rem;
+    width:13.8rem;
+}
+.award-list li{
+    height:1.2rem;
+    line-height:1.2rem;
+}
+.award-list li:first-child{}
+.award-list li div{
+    text-align: center;}
+.award-list li>div:first-child{width:1.8rem;}
+.award-list li>div:nth-child(2){width:2rem;}
+.award-list li>div:nth-child(3){width:4.2rem;}
+.award-list li>div:last-child{width:6rem;text-align: left;overflow: hidden;}
+.check-more{
+    display: block;
+    background-color:#FCE099;
+    height:2rem;
+    line-height: 2rem;
+    text-align: center;
+    color:#62201B;
+}
+
+.main{
+    width:100%;height:27.1rem;
+    background:url("../images/main.png") center top no-repeat;
+    background-size:100%;
+}
+
+.suprise-award-bg{
+    width:11.375rem;
+    height:3.275rem;
+    background:url("../images/suprise-award.png") center center;
+    background-size:100%;
+}
+.awards-detail{
+    /*height: 12rem;*/
+}
+.awards-detail img{    width: 7.25rem;
+    height: 5rem;
+    margin-left: 0.5rem;
+    margin-top: .5rem;}
+.awards-detail>div{
+    float:left;
+}
+.awards-detail>div:last-child{margin-bottom:.5rem;}
+.awards-detail>div>p{
+    background:rgba(0,0,0,.4);
+    bottom:0;right:0;
+    width:7.25rem;
+    color:#fff;
+    overflow: hidden;
+    white-space:nowrap;
+    text-align: center;
+    padding-left:.2rem;
+}
+
+
+.cards-box > div {
+    display: block;
+    float: left;
+    width: 4.4rem;
+    height: 6rem;
+    margin-left: .2rem;
+    text-align: center;
+    position: relative;
+}
+
+.cards-box > .item > img {
+    width: 4.4rem;
+    height: 5.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cards-box > .item>a{font-family: 'MFLiHei_Noncommercial-Regular';color:#3E2508;}
+/*领取奖品*/
+.get-award{color:#fff;font-size:.45rem;font-family:'微软雅黑';}
+.prize-name{height:2rem;padding:0 .3rem;line-height:.75rem;}
+    /*翻牌 前面以及后面的默认样式*/
+.bg-award-checked {
+    display: block;
+    height: 6rem;
+    width: 4.4rem;
+    background: url("../images/bg-award-checked.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.card-no-award-checked {
+    display: block;
+    height: 6rem;
+    width: 4.4rem;
+    background: url("../images/card-no-award-checked.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.card-no-award {
+    display: block;
+    height: 6rem;
+    width: 4.4rem;
+    background: url("../images/card-no-award.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.bg-award {
+    display: block;
+    height: 6rem;
+    width: 4.4rem;
+    background: url("../images/bg-award.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.card-back {
+    display: block;
+    margin: 0 auto;
+    width: 4.4rem;
+    height: 0;
+    position: absolute;
+    top: 2.9rem;
+    overflow: hidden;
+    background: url("../images/bg-award.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.card-checked{
+    display: block;
+    width: 4.4rem;
+    background: url("../images/bg-award-checked.png") center center no-repeat;
+    background-size: 100% 100%;
+    color:#fff!important;
+}
+.award-img-s {
+    width: 3.3rem !important;
+    height: 2.7rem !important;
+}
+
+/*展示页面样式*/
+.card-back-show{
+    display: block;
+    margin: 0 auto;
+    width: 4.4rem;
+    height: 6rem;
+    overflow: hidden;
+    background: url("../images/bg-award.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+.card-back-show-checked{
+
+}
+
+/*活动规则样式*/
+.activity-rule{
+    background-color: #FFFDDB;
+    height: 100%;
+    padding: 4.4rem 1rem 0;
+    font-size: .75rem;
+}
+.activity-rule>img{
+    position:absolute;
+    left:0;right:0;top:0;
+    width:100%;
+}
+.activity-rule>div{margin-top:1.8rem;}
+.activity-rule .c-d9{margin-bottom:.5rem;}
+.activity-rule p{line-height:1.3rem;}
+.activity-rule a{
+    color:#7e4d2a;
+    text-decoration: underline;
+}
+
+.icon-activity-rule{
+    display: block;
+    width: 4.7rem;
+    height: 1.925rem;
+    background: url("../images/activity-rule.png") center center no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: .9rem;
+}
+
+/*20160720新增样式*/
+.bg-activity-rule{
+    width:100%;height:5.888rem;
+    background:url("../images/bg-activity-rule.png") center center no-repeat;
+    background-size:100% 100%;
+}
+.bg-fff199{background-color:#FFF199;}
+.c-bc2605{color:#bc2605;}
+.icon-windmill-1{
+    display: block;
+    width:1rem;height:1rem;
+    background:url("../images/windmill-1.png") center center no-repeat;
+    background-size:100%;
+    margin-right:.5rem;
+}
+.icon-windmill-2{
+    display: block;
+    width:1rem;height:1rem;
+    background:url("../images/windmill-2.png") center center no-repeat;
+    background-size:100%;
+    margin-right:.5rem;
+}
+.icon-windmill-3{
+    display: block;
+    width:1rem;height:1rem;
+    background:url("../images/windmill-3.png") center center no-repeat;
+    background-size:100%;
+    margin-right:.5rem;
+}
+.icon-kisscat{
+    width:4.864rem;height:4.821rem;
+    background:url("../images/kiss-cat.png") center center no-repeat;
+    background-size:100%;
+}
+.icon-duck{
+       width:1.408rem;height:2.091rem;
+    background:url("../images/duck.png") center center no-repeat;
+    background-size:100%;
+}

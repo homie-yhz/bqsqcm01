@@ -1,0 +1,165 @@
+<include file="./Application/Home/View/header.html" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/wx/css/activityranking.css"/>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/wx/css/activity.css">
+
+<style>
+  .content {
+    margin: 0 auto;
+    max-width: 16rem;
+    position: relative;
+    width:100%;
+    height:100%;
+  }
+  .jd-cover {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
+  .jd-tkn {
+    background: rgba(0, 0, 0, 0) url("/wxokjia/images/jd-sy-tk.png") no-repeat scroll 0 0 / 100% 100%;
+    height: 17rem;
+    left: 2rem;
+    position: absolute;
+    text-align: center;
+    top: 3rem;
+    width: 12.05rem;
+  }
+  .jd-tkn img{width:83%;}/*图片过大撑开  进行缩放*/
+  .jd-tkn .jd-price-title {
+    color: #954d29;
+    font-size: 1.15rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    padding-top: 2.5rem;
+  }
+  .jd-tkn p {
+     font-size: 0.7rem;
+     line-height: 0.95rem;
+  }
+  .jd-prize-name {
+    height: 0.95rem;
+    margin-bottom: 0.3rem;
+    overflow: hidden;
+    padding: 0 1rem;
+  }
+  .color-brown {
+    color: #522712;
+  }
+  .color-gray{color: #f64e29}
+  .color-orange{color:#f64e29;margin:.5rem auto;}
+  .jd-btn-orange{ color: #ffffff; background-color: #f64e29;margin: 0.3rem auto;}
+  .jd-btn-orange1{ color: #ffffff; background-color: #f64e29;margin: 2rem auto;}
+  .jd-close{ display: inline-block; width:1.55rem; height: 1.55rem; background: url("/wxokjia/images/jd-sy-close.png") no-repeat; background-size: 100%; -webkit-background-size: 100%;  position: absolute;top:1.1rem; right: 0.25rem;}
+</style>
+<script type="text/javascript" src="__PUBLIC__/wx/js/activity.js"></script>
+</head>
+
+<body class="bg-f2" onload=prizebool()>
+<div class="wrapper timing-hp">
+  <div class="scroll-1">
+    <header class="header" style="">
+      <h1>活动详情</h1>
+      <a class="btn-back color-ee" href="javascript:;"><i></i>返回</a>
+      <a class="btn-close color-ee" href="javascript:;">关闭</a>
+      <a class="btn-right btn-share"></a>
+    </header>
+    <div class="wrap">
+      <section class="section content">
+        <div class="time">
+          <i class="sign"></i>本次活动排名前  <{$content.actRank}>  位可获得奖品
+        </div>
+        <div class="time m-t-5" style="height:2rem;position:relative;">
+          <i class="sign in-bl"></i><span class="dp-in-bl c-b max-w-14" style="position:absolute;top:-0.45rem;">您当前排名第 <span class="color-ee fz-13"> <{$content.userRank}></span> 位
+          <?php
+          if($content['userRank'] >= 1){
+            if( $content['userRank'] <= $content['actRank'] && $content['userRank'] >= 1){
+                echo '恭喜您获得本次奖品！';
+            }else{
+                echo '，未能获得今天的奖品，不要放弃哦！还有更多的奖品等着你呦！';
+            }
+          }else{
+              echo '看别人抢福利是没有用的!天天关注我们发布的活动,更多的<span class="color-ee">惊喜礼品</span>等你拿!';
+            }
+          ?>
+        </span>
+        </div>
+        <ul class="rank-list">
+          <li class="bb-g"><span class="color-ee">活动排名</span></li>
+          <?php
+           $i=1;
+           foreach($content['list'] as $val){
+             if($i <= $content['actRank']){
+                $rank_style = 'color-ee';
+             }else{
+                $rank_style = '';
+             }
+             if($i == $content['userRank']){ $rank_style='bg-y c-w'; }
+
+           ?>
+          <li class="<{$rank_style}>"><span><{$i}></span><span><{$val.nickName}></span><span><{$val.joinTime}></span></li>
+          <?php
+           $i++;
+           }  ?>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+<div class="jd-cover">
+  <div class="jd-tkn jd-tk4">
+    <p class="jd-price-title">恭喜您</p>
+    <img src="/wxokjia/images/jd-sy-zj.png"/>
+    <p class="color-brown jd-prize-name">获得价值 <{$prize_content.price}>   的奖品<{$prize_content.prizeName}> 一份</p>
+    <p class="color-gray"></p>
+    <!--<p class="color-orange">每日首次分享可额外获得参与机会</p>-->
+
+    <p class="color-orange"><a class="jd-return jd-btn-orange checkprize">查看奖品</a></p>
+    <p><a class="jd-share jd-btn-orange">分享</a></p>
+
+
+    <i class="jd-close" ></i>
+  </div>
+  <div class="jd-tk jd-tk5">
+    <i></i>
+  </div>
+</div>
+</div>
+<script>
+  $(function(){
+    $(".checkprize").click(function(){//成功后去查看我的奖品
+      var ID = '<{$prize_content.ID}>'; //获得中奖ID
+      if("<{$isApp}>"==1){//是否是APP
+        if("<{$isAndroid}>"==1){//是否是APP{
+          window.MyGoldEggAPI.CapturePhoto("<{$shareurl}>/wxokjia/goldegg/act_goldegg_myprizeinfo.php?type=<{$type}>&actId=<{$ID}>&ID="+ID);
+        }else{
+          window.location = "ios&&&GoldEggClick&&&<{$shareurl}>/wxokjia/goldegg/act_goldegg_myprizeinfo.php?type=<{$type}>&actId=<{$ID}>&ID="+ID;
+        }
+      }else{
+        window.location="act_goldegg_checkprize.php?isphp=1&ID=<{$ID}>&type=<{$type}>&userId=<{$userId}>&PID="+ID; //^^^^
+      }
+    });
+  })
+
+  function prizebool(){  // 载入 问问海辉闭包实现 ^^ 实在不行就直接   onload=prizebool()
+    var prize ='<{$prize_content}>';
+    if(prize.length != 0 ){
+      $('.jd-cover').show()
+    }
+  }
+
+
+  $(".jd-close,.jd-reed-close,.jd-share1").click(function(){
+//    location.reload();
+    $('.jd-cover').hide()
+  });
+
+</script>
+</body>
+</html>

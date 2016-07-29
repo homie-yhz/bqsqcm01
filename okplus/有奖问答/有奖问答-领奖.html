@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>有奖问答</title>
+  <link type="text/css" rel="stylesheet" href="../css/reset.css">
+  <link type="text/css" rel="stylesheet" href="../css/base.css">
+  <link type="text/css" rel="stylesheet" href="../css/award-ask-answer-1.css"/>
+  <link rel="stylesheet" href="../css/mask-1.css">
+  <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/activity.js"></script>
+  <script type="text/javascript" src="../js/activity-apply.js"></script>
+  <script type="text/javascript" src="../js/ge.js"></script>
+  <style>
+    html{background-color:#fff;}
+  </style>
+</head>
+<body>
+<div class="wrapper tac">
+  <div class="scroll no-footer" style="padding-bottom:1rem;">
+    <div class="wrap-1 txt-al-ct award" style="background-color:#fff;height:100%;">
+      <p>您本次的答题分数为</p>
+      <div>
+        <div class="splash" id="splash">
+          <div class="splash-inner">
+            <h1></h1>
+            <!--<h2>Make every day matter</h2>-->
+            <div class="loading-circle" id="loadingCircle">
+              <p><span id="loadedNum" class="c-yy fz-250" style="font-size:70px;font-weight:400;">70</span><span class="c-yy score" style="font-size:30px;font-weight:300;">分</span></p>
+              <canvas class="loadingProgress" id="loadingProgress" width="204" height="204"></canvas>
+              <canvas class="bg" width="204" height="204"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>恭喜您，获得价值 <span class="c-yy fz-90">15元 </span> 现代牧业精品牛奶三联包一份，快去领奖吧！</p>
+      <a href="#" class="btn-award btn-award-get">前去领奖</a>
+      <a href="#" class="btn-award btn-award-share">分享给朋友圈炫耀一下</a>
+      <!--未中奖
+      <p>很遗憾，您没有获得本次活动的奖品。</p>
+      <a href="#" class="btn-award btn-award-more">查看更多活动</a>
+      &lt;!&ndash;抢光&ndash;&gt;
+      <p>很遗憾，奖品已经被别人抢光啦！</p>
+      <a href="#" class="btn-award btn-award-more">查看更多活动</a>-->
+    </div>
+  </div>
+</div>
+<div class="mask-1">
+  <div class="mask-pic">
+    <img class="mask-close" src="../images/activity/jd-delete.png" alt="">
+    <p>恭喜您!</p>
+    <img class="mask-cat" src="../images/activity/jd-sy-zj.png" alt="">
+    <p>
+      <span class="c-8f dib">获得价值 <span class="c-r">￥7788</span> 的奖品名称的奖品名称的奖品名称的奖品名称一份</span>
+      <i class="ass"></i>
+    </p>
+    <div class="btns ck-share">
+      <div>
+        <a class="btns-c" href="#">查看奖品</a>
+        <a class="btns-c" href="#">分享喜悦</a>
+      </div>
+      <i class="ass"></i>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  $(function(){
+    $('.mask-close').click(function(){
+      $(this).parents('.mask-1').css('display','none');
+    });
+  });
+</script>
+</html>

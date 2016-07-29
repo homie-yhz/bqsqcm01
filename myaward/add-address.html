@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="css/myaward.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <title>领奖方式</title>
+  <style>
+    html,body,.wrap{
+      height:100%;
+      background-color: #F2F2F2;
+    }
+  </style>
+</head>
+<body>
+<div class="scroll">
+    <ul>
+      <!--顶部占位-->
+      <li class="v-section-space"></li>
+
+      <!--领奖方式-->
+      <!--循环体-->
+      <li class="v-section">
+        <!--单店显示-->
+        <div class="one-address">
+          <div class="pdr-5 v-f">
+            <div class="pdc-5 v-i1">
+              <span class="fz-75">上地怡美家园</span>
+              <p class="line-break">
+                海淀区烦烦哒奥山打算发大水范德萨发范德萨打范德萨
+              </p>
+              <span class="c-9 fz-55">营业时间（9:00-20:00）</span>
+            </div>
+            <div class="v-fm">
+              <div class="line-vertical" style="border-left-color:#E9E9E9;"></div>
+            </div>
+            <div class="v-fcm award-phone por">
+              <a href="tel:110" class="v-oldman"></a>
+              <img class="" src="images/phone.png" alt="">
+            </div>
+          </div>
+        </div>
+      </li>
+      <!--循环体-->
+
+      <!--loading-->
+      <li class="loading">下拉加载更多 <img src="images/loading1.gif" alt="" style="display:inline-block;"></li>
+      <!--底部占位符-->
+      <li class="line-space"></li>
+
+    </ul>
+</div>
+</body>
+<script>
+  $(function(){
+
+
+    //loading 加载高度
+    var $loadHeight = $('.loading').height();
+
+    //.award-no-info 提示信息的高度计算
+    var $windowHeight = $(window).height();
+
+    /*判断：页面加载完毕判断内容是否 加载loading项*/
+    $('ul').height() <= $windowHeight && $('.loading').hide();
+
+    //事件：滚动加载更多
+    $('.scroll').scroll(function(){
+
+      if( $('.scroll').scrollTop() >= $('ul').height() - $(window).height() - $loadHeight ){
+
+        /*
+         * $loadHeight                           加载状态栏的高度
+         * $(window).height()                    窗口的高度
+         * $('.scroll').scrollTop() >= $('ul').height() - $(window).height() - $loadHeight  说明滚动到了底部
+         */
+        /*$('.loading img').show();*/
+        $.ajax({
+          url:'../php/user.php',
+          type:'GET',
+          datatype:'json',
+          success:function(){
+            if(data1!=''){
+              var data1 = [1,2,3,4,5,6,7];
+              var libox = '';
+              for(var i = 0; i < data1.length ; i++ ){
+                libox += '<li class="v-section">' +
+                        '<!--单店显示--> ' +
+                        '<div class="one-address"> ' +
+                        '<div class="pdr-5 v-f"> ' +
+                        '<div class="pdc-5 v-i1"> ' +
+                        '<span class="fz-75">上地怡美家园</span> ' +
+                        '<p class="line-break">' +
+                        '海淀区烦烦哒奥山打算发大水范德萨发范德萨打范德萨 ' +
+                        '</p> ' +
+                        '<span class="c-9 fz-55">营业时间（9:00-20:00）</span> ' +
+                        '</div> ' +
+                        '<div class="v-fm"> ' +
+                        '<div class="line-vertical" style="border-left-color:#E9E9E9;"></div> ' +
+                        '</div> ' +
+                        '<div class="v-fcm award-phone por"> ' +
+                        '<a href="tel:110" class="v-oldman"></a> ' +
+                        '<img class="" src="images/phone.png" alt=""> ' +
+                        '</div> ' +
+                        '</div> ' +
+                        '</div>' +
+                        '</li>'
+              }
+              $('.loading').before(libox);
+              /*$('.loading img').hide();*/
+            }else{
+              $('.loading').html('亲，到底了!');
+              $('.loading img').hide();
+            }
+          }
+        });
+      }
+    });
+  });
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../PUBLIC/css/box.css">
+  <link rel="stylesheet" href="css/statistics.css">
+  <script src="../PUBLIC/js/jquery-1.8.3.min.js"></script>
+  <script src="js/general.js"></script>
+  <title>登录页</title>
+  <style>
+    html,body{height:100%;overflow:scroll;}
+    /*    input::-webkit-outer-spin-button
+        !*input::-webkit-inner-spin-button*!{
+          -webkit-appearance: none !important;
+          margin: 0;
+        }*/
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    progress {
+      width: 95%;
+      height: 25px;
+      border: 1px solid #26B9F2;
+      background-color:#e6e6e6;
+      color: #26B9F2; /*IE10*/
+    }
+
+    progress::-moz-progress-bar { background: #26B9F2; }
+    progress::-webkit-progress-bar { background: #fff; }
+    progress::-webkit-progress-value  { background: #26B9F2; }
+
+    .table-progress{
+      font-size:0;}
+    .table-progress>li{margin-top:10px;}
+    .table-progress>li:first-child{margin-top:0px;}
+    .table-progress div{
+      display: inline-block;
+      height:40px;line-height:40px;
+      font-size:20px;
+    }
+    .table-progress>li>div:first-child{
+      width:28%;
+    }
+    .table-progress>li>div:nth-child(2){
+      width:50%;
+    }
+    .table-progress>li>div:last-child{
+      width:20%;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <ul class="table-progress">
+    <li>
+      <div>公众号搜索</div>
+      <div><progress max="100" value="50"></progress></div>
+      <div>占比 <span>30</span> %</div>
+    </li>
+    <li>
+      <div>公众号搜索</div>
+      <div><progress max="100" value="50"></progress></div>
+      <div>占比 <span>30</span> %</div>
+    </li>
+    <li>
+      <div>公众号搜索</div>
+      <div><progress max="100" value="50"></progress></div>
+      <div>占比 <span>30</span> %</div>
+    </li>
+    <li>
+      <div>公众号搜索</div>
+      <div><progress max="100" value="50"></progress></div>
+      <div>占比 <span>30</span> %</div>
+    </li>
+    <li>
+      <div>公众号搜索</div>
+      <div><progress max="100" value="50"></progress></div>
+      <div>占比 <span>30</span> %</div>
+    </li>
+  </ul>
+</div>
+</body>
+
+</html>

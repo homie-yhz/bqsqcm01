@@ -1,0 +1,141 @@
+.c-r{color:#EB413D;}
+.c-g{color:#4BBF4D;}
+.c-b4{color:#B4B4B4;}
+.left{float:left;}
+.right{float:right;}
+.fz-22{font-size:.55rem;}
+.fz-26{font-size:.65rem;}
+.fz-28{font-size:.70rem;}
+.fz-30{font-size:.75rem;}
+.fz-40{font-size:.8rem;}
+.lh-1{
+    line-height:1rem;}
+.lh-2{line-height:2rem;}
+.ofh{
+    overflow: hidden;
+    margin-bottom: .5rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+}
+.pd-l{padding:.5rem 0 .5rem .9rem;display:inline-block;}
+.point-off{background: url("../images/arclist/icon/no-cover.png") no-repeat left center;}
+.point-on{background: url("../images/arclist/icon/icon-pf.jpg") no-repeat left center;}
+.del{background:url("../images/arclist/icon/del.png") no-repeat left center;)}
+.point{
+    background-size:.9rem .9rem;
+    -webkit-background-size: .9rem .9rem;
+    display:inline-block;
+    height:1rem;
+    padding-left:1.3rem;
+}
+.login-box{
+    padding:.5rem .5rem;
+    max-width: 540px;
+    margin:0 auto;
+    width:100%;
+    height:100%;
+    line-height:1rem;
+}
+.act-message{
+    max-width: 540px;
+    margin:0 auto;
+    width:100%;
+    line-height:1rem;
+    background-color:#fff;
+    border-top:2px solid #DCDCDC;
+    border-bottom:2px solid #DCDCDC;
+}
+.act-message ul li{border-bottom:1px solid #dcdcdc;}
+.act-message span{padding-left:.5rem;padding-right:.5rem; line-height:2.5rem;}
+.act-detail{
+    height:1.2rem;
+    border:none;
+    border-left:1px solid #E3E3E2;
+    padding-left:.7rem;outline: none;display:inline-block;
+    width:60%;
+}
+/*��¼��ҳ��*/
+.login{
+    max-width: 540px;
+    margin:0 auto;
+    width:100%;
+    background-color:#fff;
+    position:relative;
+    height:100%;
+
+
+}
+
+.login .login-sun{
+    padding:0 1.02rem;
+    line-height:2.5rem;
+    overflow:hidden;
+    text-align:center;
+    height:100%;
+    background:url("../images/activity/build.png") no-repeat center bottom;
+    background-size:100%;
+}
+.login .login-sun img{width:4.25rem;height:4.25rem;margin:1.25rem auto 1.45rem;}
+.login .ipt-1{
+    width:100%;height:1.9rem;
+    border-radius:.95rem;display:inline-block;
+    outline:none;border:1px solid #9A9A9A;
+    text-align:center;
+    }
+
+.login .ipt-11{width:44%;color:#fff;line-height:1.9rem;border:none;vertical-align:middle;margin-top:.3rem;}
+.login .ipt-11-l{background-color:#5CBD27;}
+.login .ipt-11-n{background-color:#F65050;}
+.fw{color:#424242;
+    text-decoration:underline;
+    z-index:30;
+}
+.use{text-align:center;width:3.5rem;position:absolute;right:1rem;bottom:1rem;border:1px solid #f65050;color:#F65050;border-radius:7px;z-index:50;}
+.ipt{height:1.95rem;line-height:1.95rem;border:1px solid #E3E3E2;padding-left:1rem;border-radius:3px;outline: none;display:inline-block;}
+.ipt-l{width:100%;}
+.ipt-m{width:60%;vertical-align:top;}
+.ipt-l-p{padding-left:4.7rem;}
+.btn-sun{border:none;outline:none;height:1.95rem;line-height:1.95rem;color:#fff;text-align:center;border-radius:3px;display:inline-block;}
+.btn-l{width:100%;background-color:#eb413d;}
+.btn-m{width:33%;background-color:#4bbf4d;}
+.btn-g{width:33%;
+    background-color: #9A9A9A;}
+.btn-s{width:50%;background-color:#eb413d;position:absolute;left:50%;top:50%;margin-left:-25%;margin-top:-2.025rem;}
+
+.btn-mask{height:1.5rem;line-height:1.5rem;width:3rem;border-radius:3px;text-align:center;}
+.btn-login{border:1px solid #eb413d;color:#eb413d;display:inline-block;}
+.btn-cancel{border:1px solid black;color:black;display:inline-block;}
+.icon{}
+
+.pass-word{}
+.pass-word>span{position:absolute;margin-left:.9rem;margin-right:2rem;
+margin-top: .28rem;
+    height: 1.95rem;
+    line-height: 1.95rem;}
+/*���ֲ�*/
+.mask{position:absolute;left:0;right:0;bottom:0;top:0;background:rgba(0,0,0,0.3);z-index:1000;}
+.mask-notice{
+    height:6.45rem;width:11rem;
+    background-color:#fff;border-radius:10px;
+    position:absolute;
+    left:50%;top:50%;
+    margin:-3.225rem 0 0 -5.5rem;
+    text-align: center;
+}
+/*.mask-cat{
+    position: absolute;
+    z-index: 5;
+    width: 10rem;
+    margin-left: -1.47rem;
+    margin-top: -4.9rem;
+}*/
+.mask-notice div{
+    height:4rem;margin:0 .5rem;}
+.mask-notice div span{
+    display: inline-block;
+    vertical-align: middle;}
+.mask-notice p{margin:0 auto;width:70%;}
+/*�ײ�bulid*/
+.build{width:100%;position:absolute;bottom:0;}

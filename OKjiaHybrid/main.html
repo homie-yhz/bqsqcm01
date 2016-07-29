@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/box.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/fastclick.js"></script>
+  <title>ok家主页</title>
+  <style>
+    html,body{height:100%;}
+    .header{position:absolute;top:0;width:100%;height:2.45rem;background-color:#FF6537;color:#fff;
+      font-size:1rem;}
+    .footer{position:absolute;bottom:0;width:100%;height:2.45rem;color:#999;border-top:1px solid #ccc;}
+    .scroll-tb{padding:2.45rem 0;
+      overflow: hidden;
+      height:100%;
+
+    }
+    .i-info{
+      display: block;
+      margin:0 auto;
+      width:1rem;height:1rem;
+      background:url("images/icon/share.png") center center no-repeat;
+      background-size:100%;
+    }
+    .i-okplus{
+      display: block;
+      height:1.5rem;width:1.5rem;
+      background:url("images/icon/okplus-header.png") center center no-repeat;
+      background-size:100%;
+    }
+    .c-ff{color:#FF6537;}
+
+    .icon{position:absolute;height:2.45rem;width:2.45rem;left:0;top:0;}
+  </style>
+</head>
+<body>
+  <!--头部位置-->
+  <div class="header v-fcm">
+    <div class="icon v-fcm">
+      <i class="i-okplus"></i>
+    </div>
+    <div class="title">测试文字</div>
+  </div>
+  <div class="scroll-tb">
+    <div>1</div>
+    <div class="dn">2</div>
+    <div class="dn">3</div>
+    <div class="dn">4</div>
+    <div class="dn">5</div>
+  </div>
+  <!--底部切换栏位-->
+  <div class="footer v-fm">
+    <div class="E-tabs v-i1 tac c-ff">
+      <i class="i-info"></i>资讯1
+    </div>
+    <div class="E-tabs v-i1 tac">
+      <i class="i-info"></i>资讯2
+    </div>
+    <div class="v-i1 tac">
+      <i class=" i-info"></i>资讯3
+    </div>
+    <div class="E-tabs v-i1 tac">
+      <i class="i-info"></i>资讯4
+    </div>
+    <div class="E-tabs v-i1 tac">
+      <i class="i-info"></i>资讯5
+    </div>
+  </div>
+</body>
+<script>
+  $(function(){
+    /*事件：底部栏位切换事件*/
+  	$('.E-tabs').click(function(){
+
+      var $index = $(this).index();    //获取点击的 下标
+
+      /*给底部的栏位增加样式*/
+      $('.E-tabs').removeClass('c-ff');
+      $(this).addClass('c-ff');
+
+      /*显示相应的页面*/
+      $('.scroll-tb')
+              .find('div').hide()
+              .end()
+              .find('div').eq($index).show();
+    });
+  });
+</script>
+</html>

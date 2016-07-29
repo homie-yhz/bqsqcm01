@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="format-detection" content="telephone=no, email=no"/>
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-reset.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-box.css">
+  <link rel="stylesheet" href="../PUBLIC/css/okplus-mask.css">
+  <link rel="stylesheet" href="css/lucky-cards.css">
+  <script src="../PUBLIC/js/jquery-1.8.3.min.js"></script>
+  <script src="../PUBLIC/js/fastclick.js"></script>
+  <script src="../PUBLIC/js/jQuery.textSlider.js"></script>
+  <script src="../PUBLIC/js/okplus-mask.js"></script>
+  <title>活动名称</title>
+  <style>
+    .borderfff{
+      border:2px solid #fff;
+      border-radius:5px;
+    }
+    .bd-b63{
+      border:2px solid #B63B00;
+      border-radius:5px;
+    }
+    .item{background:url("images/card-shadow.png") center bottom no-repeat;background-size:100%;}
+  </style>
+</head>
+<body>
+<div class="scroll">
+  <div class="main">
+    <div class="left-chance v-fcm fz-80 fw-b c-62 tac" style="padding:0 .5rem;line-height: normal;">
+      <!-- 用户本链接的机会未使用时：-->
+      <p>您获得<span class="fz-120">1</span>次翻盘机会，仅在当日有效！</p>
+   <!--中奖话术-->
+<!--      <div class="fz-70" style="line-height: 1rem;">
+        <p>超赞，今天人品大爆发了~</p>
+        <p>点击中奖卡牌，现在就去领奖吧！</p>
+      </div>
+      &lt;!&ndash;未中奖话术&ndash;&gt;
+      <div class="fz-70" style="line-height: 1rem;">
+        <p>哎呀，就差那么一点点~</p>
+        <p>别灰心，去公众号看新闻，还有更多惊喜哦~</p>
+      </div>-->
+    </div>
+
+
+
+
+    <!--展示页面-->
+    <div class="cards-box" style="display: none;">
+      <!--无奖品  无选中-->
+      <div class="item-show">
+        <a class="card-no-award" style="">
+        </a>
+      </div>
+      <!--无奖品  已选中-->
+      <div class="item-show">
+        <a class="card-no-award-checked" style="">
+        </a>
+      </div>
+      <!--有奖品 未选中-->
+      <div class="item-show">
+        <a class="card-back-show" style="">
+          <p class="v-fcm prize-name">谢谢参与</p>
+          <img src="images/unhappy-cat.png" alt="" class="award-img-s">
+        </a>
+      </div>
+      <!--有奖品 已选中-->
+      <div class="item-show">
+        <a class="bg-award-checked" style="">
+          <p class="v-fcm prize-name">奖品名称</p>
+          <img src="images/unhappy-cat.png" alt="" class="award-img-s">
+          <p class="get-award">领取奖品</p>
+          <input type="hidden" value="" id="award-Prize">
+        </a>
+      </div>
+
+
+    </div>
+
+
+
+
+    <!--可点击页面-->
+    <div class="cards-box">
+      <div class="o-item item">
+        <img alt="" src="images/card.png" class="bg"/>
+        <a class="card-back" style="">
+
+        </a>
+      </div>
+      <div class="o-item item">
+        <img alt="" src="images/card.png" class="bg"/>
+        <a class="card-back" style=""></a>
+      </div>
+      <div class="o-item item">
+        <img alt="" src="images/card.png" class="bg"/>
+        <a class="card-back" style=""></a>
+      </div>
+      <div class="o-item item">
+        <img alt="" src="images/card.png" class="bg"/>
+        <a class="card-back " style=""></a>
+      </div>
+      <div class="o-item item">
+        <img alt="" src="images/card.png" class="bg"/>
+        <a class="card-back " style=""></a>
+      </div>
+      <div class="o-item item">
+        <img alt="" src="images/card.png" class="bg"/>
+        <a class="card-back" style="">
+
+        </a>
+      </div>
+    </div>
+    <a href="活动规则.html" class="icon-activity-rule"></a>
+  </div>
+  <!--获奖名单-->
+  <div class="bg-ffb v-fc">
+    <div class="award-list v-fc"  id="scrollDiv">
+      <div style="overflow: hidden;">
+        <ul>
+          <li class="v-f">
+            <div>9.12</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>获得#iphone6s#一台获得#iphone6s#一台获得#iphone6s#一台获得#iphone6s#一台获得#iphone6s#一台</div>
+          </li>
+          <li class="v-f">
+            <div>9.12</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>获得#iphone6s#一台</div>
+          </li>
+          <li class="v-f">
+            <div>9.12</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>测试文字范德萨范德萨获得#iphone6s#一台</div>
+          </li>
+          <li class="v-f">
+            <div>9.12</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>二色入味儿获得#iphone6s#一台</div>
+          </li>
+          <li class="v-f">
+            <div>9.12</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>获得#iphone6s#一台</div>
+          </li>
+          <li class="v-f">
+            <div>9.12</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>获得#iphone6s#一台</div>
+          </li>
+          <li class="v-f">
+            <div>9.12</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>获得#iphone6s#一台</div>
+          </li>
+          <li class="v-f">
+            <div>9.12</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>获得#iphone6s#一台</div>
+          </li>
+          <li class="v-f">
+            <div>9</div>
+            <div>19:30</div>
+            <div>大大的牛魔王</div>
+            <div>获得#iphone6s#一台</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="bg-ffb v-fcm suprise-award">
+    <div class="suprise-award-bg"></div>
+  </div>
+  <div class="bg-ffb awards-detail ofh">
+    <!--奖品循环项 开始   只循环4个-->
+    <div class="por">
+      <img src="../PUBLIC/images/test1.jpg" alt="">
+      <p class="poa tac">测试文字测试文字</p>
+    </div>
+    <!--奖品循环项 结束-->
+    <!--      <div class="por">
+            <img src="../PUBLIC/images/test1.jpg" alt="">
+            <p class="poa">测试文字测试文字测试文字测试文字测试文字</p>
+          </div>
+          <div class="por">
+            <img src="../PUBLIC/images/test1.jpg" alt="">
+            <p class="poa">测试文字测试文字测试文字测试文字测试文字</p>
+          </div>
+          <div class="por">
+            <img src="../PUBLIC/images/test1.jpg" alt="">
+            <p class="poa">测试文字测试文字测试文字测试文字测试文字</p>
+          </div>-->
+
+  </div>
+  <a class="check-more" style="display: none;">查看更多奖品</a>
+</div>
+</body>
+<script>
+  mask_no_bg3();
+  /*mask_come_late('1','2');*/
+/*  mask_card();*/
+  FastClick.attach(document.body);
+
+  var awardNumber = 15;                        /*php 奖品总个数 */
+  var leftawardNumber = awardNumber - 4;       /*隐藏奖品总个数*/
+  awardNumber > 4 && $('.check-more').show();  /*加载：如果 奖品数量大于 4 ，则显示 查看更多奖品*/
+
+  $(function () {
+
+    /*奖品名单滚动*/
+    $('#scrollDiv').textSlider({
+      line:1,   //滚动几行；
+      speed:500,   //滚动速度
+      timer:2000   //滚动时间间隔
+    });
+
+    /*事件：点击查看加载更多奖品*/
+    $('.check-more').click(function () {
+
+      var page = 2;
+      var awardListHtml = '';
+      /*ajax 获取全部奖品数据*/
+      $.ajax({
+        url: '',
+        type: 'POST',
+        data: '',
+        success: function (data) {
+          if ('返回数据' != '') {
+            for (var i = 0; i < leftawardNumber; i++) {
+              awardListHtml +=
+                      '<div class="por">' +
+                      '<img src="' + '图片地址 变量' + '" alt="">' +
+                      '<p class="poa">' + '图片描述文字 变量' + '</p>' +
+                      '</div>';
+            }
+            $('.awards-detail').append(awardListHtml);
+            /*隐藏点击按钮*/
+            $('.check-more').hide();
+          }
+        },
+        error: function () {
+          console.log('error');
+        }
+      });
+    });
+
+
+    //卡牌翻转
+    var turn = function (target, time, opts) {
+      target.find('.o-item').click(function () {
+        /*解绑 click 事件*/
+        target.find('.o-item').unbind();
+        /*事件：获取被点击卡片的下标 */
+        var $index = $(this).index();
+        console.log('第 '+$index+' 个卡片被点击');
+
+        /*事件css: 添加选中黄色背景样式 */
+       /* console.log($(this));*/
+
+        $(this).find('.card-back').addClass('card-checked');
+        $.ajax({
+          url:'',
+          type:'POST',
+          async:false,
+          data:'',
+          success:function(){
+            /*获取后台数据  控制卡牌样式  传递信息数据*/
+            var cardsMsg =
+                    '[' +
+                    '{"isPrize":0,"prizeName":"海尔彩电海尔彩电","prizeImg":"images/unhappy-cat.png","prizePrize":"150"},' +
+                    '{"isPrize":1,"prizeName":"海尔彩电海尔彩电","prizeImg":"images/unhappy-cat.png","prizePrize":"150"},' +
+                    '{"isPrize":1,"prizeName":"海尔彩电","prizeImg":"images/unhappy-cat.png","prizePrize":"150"},' +
+                    '{"isPrize":0,"prizeName":"海尔彩电","prizeImg":"images/unhappy-cat.png","prizePrize":"150"},' +
+                    '{"isPrize":1,"prizeName":"海尔彩电","prizeImg":"images/unhappy-cat.png","prizePrize":"150"},' +
+                    '{"isPrize":1,"prizeName":"海尔彩电","prizeImg":"images/unhappy-cat.png","prizePrize":"150"}' +
+                    ']';
+
+            cardsMsg = JSON.parse(cardsMsg);
+
+            /*console.table(cardsMsg);*/
+            for(var i=0;i<cardsMsg.length;i++){
+              /*
+               * 事件css: 没有奖品的卡片  添加 ‘谢谢参与’ 固定样式
+               *         有奖品的卡片    增加奖品样式以及数据   并添加标识符  .win  来区分是否中奖
+               */
+              /*if(cardsMsg[i].isPrize==0){
+                $('.card-back').eq(i).html(
+                        '<img src="images/unhappy-cat.png" alt="" class="award-img-s" style="margin-top:.7rem;"> ' +
+                        '<p style="margin-top:.5rem;">谢谢参与</p>');
+              }else{
+
+                $('.card-back').eq(i).html(
+                        '<p class="v-fcm prize-name">'+cardsMsg[i].prizeName+'</p>'+
+                        '<img src="'+cardsMsg[i].prizeImg+'" alt="" class="award-img-s">').addClass('win');
+              }*/
+
+
+              if(i == $index){
+                if(cardsMsg.list[i].isPrize==0){
+                  $('.card-back').eq(i).addClass('card-checked').html(
+                          '<img src="__PUBLIC__/wx/images/wcrotate/unhappy-cat.png" alt="" class="award-img-s" style="margin-top:.7rem;"> ' +
+                          '<p style="margin-top:.5rem;font-weight:bold;">谢谢参与</p>');
+
+                }else{
+                  $('.card-back').eq(i).addClass('card-checked  win').html(
+                          '<p class="v-fm prize-name">'+cardsMsg.list[i].prizeName+'</p>'+
+                          '<img src="'+cardsMsg.list[i].prizeImg+'" alt="" class="award-img-s">');
+
+                }
+              }else{
+                if(cardsMsg.list[i].isPrize==0){
+                  $('.card-back').eq(i).html(
+                          '<img src="__PUBLIC__/wx/images/wcrotate/unhappy-cat.png" alt="" class="award-img-s" style="margin-top:.7rem;"> ' +
+                          '<p style="margin-top:.5rem;font-weight:bold;">谢谢参与</p>');
+
+                }else{
+                  $('.card-back').eq(i).html(
+                          '<p class="v-fm prize-name">'+cardsMsg.list[i].prizeName+'</p>'+
+                          '<img src="'+cardsMsg.list[i].prizeImg+'" alt="" class="award-img-s">');
+                }
+              }
+            }
+
+         /*
+            setInterval("$('.card-checked.win').toggleClass('borderblue')",1000);*/
+            $('.card-checked').addClass('bd-b63');
+
+           /* css事件：含有.win(中奖的)并且含有.card-checked(选中的) 在底部 增加 ‘领取奖品’ 的样式*/
+            $('.card-checked.win').append('<p class="get-award">点击获奖</p>').on('click',function(){
+
+              /*事件：点击中奖卡牌 弹框提示中奖信息*/
+          /*    mask_no_bg3(cardsMsg[$index].prizePrize,cardsMsg[$index].prizeName);*/
+
+            }).find('.prize-name').html('获得奖品');
+
+            if($('.card-checked').hasClass('win')){
+              console.log('1');
+              setTimeout('mask_no_bg3()',2000);
+            }
+          },
+          error:function(){
+            alert('ajax false');
+          }
+        });
+
+        /*事件css: 卡牌翻转方法*/
+        $(this).children().eq(0).stop().animate(opts[0], time, function () {
+          $(this).hide().next().show();
+         /* console.log($(this).next());*/
+          $(this).next().animate(opts[1], time);
+        });
+        setTimeout("$('.bg').stop().animate({'height':0,'top':'2.9rem'}, 100, function () {$('.bg').hide().next().show();$('.bg').next().animate({'height':'5.8rem','top':'0'}, 100)});", 1000);
+
+
+      });
+
+    };
+    var horizontalOpts = [{'height': 0, 'top': '2.9rem'}, {'height': '5.8rem', 'top': '0'}];
+    turn($('.cards-box'), 100, horizontalOpts);
+
+    $('.bg-award-checked').click(function(){
+    	mask_card($(this).find('.prize-name').html(),$(this).find('#award-Prize').val());
+    });
+  });
+</script>
+<script type="text/javascript">
+
+
+
+
+
+
+  //静态展示页面数据请求
+
+</script>
+</html>
