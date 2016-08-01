@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="../../css/nxm/okplus-reset.css">
+  <link rel="stylesheet" href="../../css/nxm/okplus-box.css">
+  <link rel="stylesheet" href="../../css/nxm/Tong.css">
+  <script src="../../js/nxm/jquery-1.8.3.min.js"></script>
+  <script src="../../js/nxm/general.js"></script>
+  <script src=""></script>
+  <title>全部公众号纵览</title>
+  <style>
+    html,body{height:100%;overflow:scroll;}
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+    .mask{position:absolute;z-index:10;left:0;top:0;bottom:0;right:0;background:rgba(0,0,0,.7);}
+  </style>
+</head>
+<body>
+<div class="header-main">
+  <div class="v-f-b header">
+    <div class="v-fm">
+      <img src="../../images/nxm/okplus.png" alt=""><span>数据统计系统</span><div class="border-right"></div>
+    </div>
+    <div class="v-fm por o-btns">
+      <span class="fz-14 c-3c" style="margin-right:3px;">17744559519 </span> <span class="fz-14">账号</span><i class="icon-bottom"></i>
+      <div class=" btns poa fz-16 v-fc" style="display:none;">
+        <div>
+<!--          <div class="btn-send v-fcm" style="margin-top:21px;">修改密码</div>-->
+          <div class="btn-send v-fcm" style="">退出登录</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--开启的数据模块添加 class  block-open -->
+  <div class="tab pdr-50 v-fm">
+    <span class="block-open">资讯管理<i class="triangle-up-white"></i></span>
+  </div>
+</div>
+
+<!--二级标签-->
+<div class="tab2">
+  <div class="tab2-main" style="display: inline-flex">
+    <div class="v-fcm">
+      <div class="por">
+        <img src="../../images/nxm/icon-content-control.png" alt="">
+        <p class="fz-15 tac">内容管理</p>
+        <i class="poa triangle-up-gray"></i>
+      </div>
+    </div>
+    <div class="v-fcm">
+      <div class="por">
+        <img src="../../images/nxm/icon-focus-picture.png" alt="">
+        <p class="fz-15 tac">焦点图</p>
+        <i class="poa"></i>
+      </div>
+    </div>
+  </div>
+  <!--三级标签 1号-->
+  <div class="tab2-info v-f-b">
+    <div class="ml-30 v-fm">资讯数量：<span>138</span></div>
+    <div class="v-fm">
+      <input type="text" class="search-ipt" placeholder="请输入资讯标题关键词"><div class="search-button v-fcm">搜索</div>
+    </div>
+  </div>
+  <!--三级标签 2号-->
+  <div class="tab2-info v-f-b" style="display: none;">
+    <div class="v-f v-fm">
+      <div class="ml-30">焦点图数量：<span>8</span></div><div class="ml-30">正在展现：5</div>
+    </div>
+    <div class="v-fm">
+      <input type="text" class="search-ipt" placeholder="请输入资讯标题关键词"><div class="search-button v-fcm">搜索</div>
+    </div>
+  </div>
+</div>
+
+<!--发布新资讯-->
+<div class="pdr-60" style="margin-bottom:15px;">
+  <div class="publish-news v-fcm">+ 发布新资讯</div>
+</div>
+
+<div class="publish-list pdr-60 bg-FBFBFB">
+  <ul>
+    <li class="v-fm" style="">
+      <div>图片</div>
+      <div>标题</div>
+      <div class="por v-fcm o-show-mask" id="channel">
+        频道<div class="icon-bottom"></div>
+        <div class="por little-mask dn">
+          <!--全部频道、美食、亲子、游玩、招聘-->
+          <div class="v-fm c-1d84ff"><div class="icon-right-blue" style="margin-left:0;"></div>全部频道</div>
+          <div class="v-fm">美食</div>
+          <div class="v-fm">亲子</div>
+          <div class="v-fm">游玩</div>
+          <div class="v-fm">招聘</div>
+        </div>
+      </div>
+      <div class="por v-fcm o-show-mask" id="label">
+        标签<div class="icon-bottom"></div>
+        <div class="por little-mask dn">
+          <!--不限、开业、打折、免费、试吃、买送、领券-->
+          <div class="v-fm c-1d84ff"><div class="icon-right-blue" style="margin-left:0;"></div>不限</div>
+          <div class="v-fm">开业</div>
+          <div class="v-fm">打折</div>
+          <div class="v-fm">免费</div>
+          <div class="v-fm">试吃</div>
+          <div class="v-fm">买送</div>
+          <div class="v-fm">领券</div>
+        </div>
+      </div>
+      <div>更新时间</div>
+      <div class="por v-fcm o-show-mask" id="reading-quantity">
+        阅读量<div class="icon-bottom"></div>
+        <div class="por little-mask dn">
+          <!--不限、由高到低、由低到高-->
+          <div class="v-fm c-1d84ff"><div class="icon-right-blue" style="margin-left:0;"></div>不限</div>
+          <div class="v-fm">由高到低</div>
+          <div class="v-fm">由低到高</div>
+        </div>
+      </div>
+      <div class="por v-fcm o-show-mask" id="published">
+        已发布<div class="icon-bottom"></div>
+        <div class="por little-mask dn">
+          <!--不限、已发布、未发布-->
+          <div class="v-fm c-1d84ff"><div class="icon-right-blue" style="margin-left:0;"></div>不限</div>
+          <div class="v-fm">已发布</div>
+          <div class="v-fm">未发布</div>
+        </div>
+      </div>
+      <div>焦点图</div>
+      <div>操作</div>
+    </li>
+    <li class="bg-d0f1ff">
+      <div><img src="../../images/nxm/okplus.png" alt=""></div>
+      <div class="tal">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</div>
+      <div><p>美食</p><p>亲子</p></div>
+      <div>折扣</div>
+      <div>2016.01.01 99:99</div>
+      <div>12,345</div>
+      <div>是</div>
+      <div><a href="">发布</a></div>
+      <div><a href="">预览</a><a href="">编辑</a><a href="">取消置顶</a><a href="" class="c-d62c16">删除</a></div>
+    </li>
+
+    <li class="bg-d0f1ff">
+      <div><img src="../../images/nxm/okplus.png" alt=""></div>
+      <div class="tal">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</div>
+      <div><p>美食</p><p>亲子</p></div>
+      <div>折扣</div>
+      <div>2016.01.01 99:99</div>
+      <div>12,345</div>
+      <div>是</div>
+      <div><a class="unable-a">发布</a></div>
+      <div><a href="">预览</a><a href="">编辑</a><a href="">取消置顶</a><a href="" class="c-d62c16">删除</a></div>
+    </li>
+    <li class="bg-d0f1ff">
+      <div><img src="../../images/nxm/okplus.png" alt=""></div>
+      <div class="tal">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</div>
+      <div><p>美食</p><p>亲子</p></div>
+      <div>折扣</div>
+      <div>2016.01.01 99:99</div>
+      <div>12,345</div>
+      <div>是</div>
+      <div><a class="unable-a">发布</a></div>
+      <div><a href="">预览</a><a href="">编辑</a><a href="">取消置顶</a><a href="" class="c-d62c16">删除</a></div>
+    </li>
+    <li class="">
+      <div><img src="../../images/nxm/okplus.png" alt=""></div>
+      <div class="tal">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</div>
+      <div><p>美食</p><p>亲子</p></div>
+      <div>折扣</div>
+      <div>2016.01.01 99:99</div>
+      <div>12,345</div>
+      <div>是</div>
+      <div><a class="unable-a">发布</a></div>
+      <div><a href="">预览</a><a href="">编辑</a><a href="">取消置顶</a><a href="" class="c-d62c16">删除</a></div>
+    </li>
+
+  </ul>
+</div>
+
+<!--页标-->
+<div class="pdr-60 ">
+  <div class="page-num v-fcm">
+    <div class="v-fm">
+      <p class="c-0199d9" id="prev-page" style="margin-right:18px;">上一页</p>
+      <div class="">1</div>
+      <div>2</div>
+      <div>3</div>
+      <div class="checked-page">4</div>
+      <p class="c-0199d9" id="next-page" style="margin-left:21px;">下一页</p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+<script>
+  $(function(){
+    /*事件：按钮框 hover 事件*/
+    $('.o-btns').hover(function(){
+      $('.btns').show();
+    },function(){
+      $('.btns').hide();
+    });
+
+    /*样式事件：点击标签  出现指示三角*/
+    $('.tab>span').click(function(){
+      if($(this).hasClass('block-open')){
+        $('.tab i').removeClass('triangle-up-white');
+        $(this).children('i').addClass('triangle-up-white');
+      }else{
+        /*提示信息*/
+        $('body').append(
+                '<div class="mask v-fcm"> ' +
+                '<div class="mask-info v-fcm">' +
+                '此数据模块尚未开通，请您耐心等待！ ' +
+                '</div> ' +
+                '</div>'
+        );
+        setTimeout("$('.mask').remove()",1000);
+      }
+    });
+
+    /*样式事件：点击二级标签  出现 指示三角*/
+    $('.tab2-main>div').click(function(){
+      var $index = $(this).index();
+      $('.tab2-main i').removeClass('triangle-up-gray');
+      $('.tab2-info').hide();
+      $(this).find('i').addClass('triangle-up-gray');
+      $('.tab2-info').eq($index).show();
+    });
+
+    /*样式事件：点击三级标签   突出显示背景*/
+    $('.tab2-info>div').click(function(){
+      $('.tab2-info>div>div').removeClass('bg-icon');
+      $(this).find('div').addClass('bg-icon');
+    });
+
+
+    /*事件：点击出现 小选项 框*/
+    $('.o-show-mask').click(function(e){
+      if($(this).find('.little-mask').hasClass('dn')){
+        $('.little-mask').addClass('dn');
+        $(this).find('.little-mask').toggleClass('dn');
+        e.stopPropagation()
+      }else{
+        $(this).find('.little-mask').toggleClass('dn');
+        e.stopPropagation()
+      }
+    });
+
+    $(document).on('click',function(){
+      $('.little-mask').addClass('dn');
+    });
+
+    /*事件：点击  小选项框 里面的内容*/
+    $('.little-mask>div').click(function(){
+      console.log('click');
+      $(this).parents('.little-mask').find('.c-1d84ff').removeClass('c-1d84ff').find('.icon-right-blue').remove();
+      $(this).addClass('c-1d84ff').prepend('<div class="icon-right-blue" style="margin-left:0;"></div>');
+    });
+
+    /*事件：*/
+    $('.page-num>div>div').click(function(){
+      $('.page-num>div>div').removeClass('checked-page');
+      $(this).addClass('checked-page');
+    });
+  });
+</script>
+</html>

@@ -261,6 +261,18 @@ input::-webkit-input-placeholder{
     background-size:100% 100%;
     margin:0 5px;
 }
+.icon-top{
+    width:12px!important;
+    height:7px;
+    background:url("../../images/nxm/icon-bottom.png") center center no-repeat;
+    background-size:100% 100%;
+    margin:0 5px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
 .icon-right-blue{
     width:7px!important;
     height:12px;

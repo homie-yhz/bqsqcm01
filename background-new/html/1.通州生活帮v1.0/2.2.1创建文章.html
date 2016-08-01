@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="../../css/nxm/okplus-reset.css">
+  <link rel="stylesheet" href="../../css/nxm/okplus-box-pc.css">
+  <link rel="stylesheet" href="../../css/nxm/Tong.css">
+  <script src="../../js/nxm/jquery-1.8.3.min.js"></script>
+  <script src="../../js/nxm/general.js"></script>
+  <title>Title</title>
+  <style>
+    .header-news{ height: 115px; }
+    .header-news>.title{height:65px;padding-left:60px;}
+    .header-news>.return{height:50px;padding-left:130px;border:1px solid #ddd;}
+    .scroll{
+      position: absolute;
+      left:0;top:115px;right:0;bottom:0;
+    }
+    .section{
+      margin-bottom:35px;
+      border:1px solid #ddd;
+      -webkit-border-radius:2px;
+      -moz-border-radius:2px;
+      border-radius:2px;
+    }
+    .section .title{
+      height: 65px;border-bottom:1px solid #ddd;
+      padding-left:30px;
+
+    }
+    .section .info{
+      padding:40px 30px;
+    }
+    input[type=checkbox],input[type=radio]{
+     /* width:30px;height:30px;*/
+
+/*      opacity: 0;*/
+      /*opacity: 0;
+      display: block;
+
+
+      background:url("../../images/nxm/icon-radio-2.png") center center no-repeat;
+      background-size:100% 100%;*/
+    }
+    .section .info input.checked{
+      background:url("../../images/nxm/icon-radio-2-on.png") center center no-repeat;
+    }
+    .section .info .ipt-box{
+      margin-top:20px;
+    }
+    .section .info input:first-child{
+      margin-left:0;
+    }
+    .news-ipt{
+      height: 40px;border:1px solid #65A7D6;
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+      background-color:#E4F4FB;
+      padding-left: 15px;
+    }
+    .news-button{
+      display: block;
+      text-align: center;
+      width:200px;height:40px;line-height: 40px;
+      color:#fff;  background-color:#1BB8FA;
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+    }
+    .addPic{
+      border:1px solid #65A7D6;
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+      background-color:#E4F4FB;
+    }
+    .c-bbb{
+      color:#bbb;
+    }
+/*    input[type=checkbox],input[type=radio]{
+      width:30px;height:30px;
+     !* opacity:0;*!
+      !* width:30px;height:30px;*!
+      !*      opacity: 0;*!
+      !*opacity: 0;
+      display: block;
+
+
+      background:url("../../images/nxm/icon-radio-2.png") center center no-repeat;
+      background-size:100% 100%;*!
+    }*/
+    .icon-radio-2{
+      width:20px;height:20px;
+      background:url("../../images/nxm/icon-radio-2.png") center center no-repeat;
+      background-size:100% 100%;
+    }
+    .icon-radio-2.checked{
+      background:url("../../images/nxm/icon-radio-2-on.png") center center no-repeat;
+      background-size:100% 100%;
+    }
+    .icon-addInfo{
+      width:48px;height:48px;margin-right:20px;
+      background:url("../../images/nxm/icon-addInfo.png") center center no-repeat;
+      background-size:100% 100%;
+    }
+    .ipt-box>div{margin-left:30px;}
+    .ipt-box>div:first-child{margin-left:0;}
+    .map-addr:after{
+      content: '';
+      display: block;
+      width: 33px;
+      height: 33px;
+      background: url("../../images/nxm/map-addr.png") center center no-repeat;
+      background-size: 100% 100%;
+      right: 4px;
+      position: absolute;
+      top: 4px;
+    }
+    .pack-up{
+      width:320px;
+      height: 45px;
+      border:1px solid #ddd;
+      border-bottom:none;
+      margin:0 auto;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+
+
+/*    .news-ipt{
+      position: relative;
+    }
+    .news-ipt:hover {
+      content: attr(data-title); //取到data-title属性的值
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      position: absolute;
+      top: -50px;
+      left: -30px;
+    }*/
+    .news-ipt:before{
+      content:'ceshiwenzi';
+      width:100px;height:100px;
+      border:1px solid red;
+    }
+    .noticeInfo{padding:5px;background:rgba(0,0,0,.6);border-radius:4px;color:#fff;position:absolute;    margin-top: -47px;}
+    .noticeInfo:before{
+      content: '';
+      border-top: 11px solid rgba(0,0,0,.6);
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      position: absolute;
+      border-bottom: 0;
+      display: block;
+      margin-top: 29px;
+      /* width: 5px; */
+      /* height: 10px; */
+    }
+  </style>
+</head>
+<body>
+<!--头部信息-->
+  <div class="header-news bg-f9">
+    <div class="title v-fm fz-30">OK家 通州生活帮 <div style="height:40px;border-left:1px solid #ddd;margin-left:55px;"></div> </div>
+    <div class="return v-fm"><a class=" v-fm">< 返回</a> <div style="height:30px;border-left:1px solid #B5B5B5;"></div>发布新资讯</div>
+  </div>
+  <div class="scroll pdr-60">
+    <!--资讯标题-->
+    <section class="section">
+      <div class="title v-fm">资讯标题</div>
+      <div class="info v-fm">
+        <div class="w-100">资讯标题 <span class="c-EB6877">*</span></div>
+        <input type="text" class="news-ipt v-i1" placeholder="请输入文章标题（不多于26个汉字）">
+      </div>
+    </section>
+    <!--资讯正文-->
+    <section class="section">
+      <div class="title v-fm">资讯正文</div>
+      <!--编辑器放置位置-->
+      <div class="" style="padding:40px;">
+        <div>编辑器放置位置</div>
+      </div>
+      <!--地标信息-->
+      <div class="info v-fm">
+        <div class="w-100">地标信息: <span class="c-EB6877">*</span></div>
+        <div class="w-300"><input type="text" class="news-ipt" placeholder="例如：新华大街"></div>
+      </div>
+      <!--新闻小图-->
+      <div class="info v-f">
+        <div class="w-100">新闻小图 <span class="c-EB6877">*</span></div>
+        <div class="w-300 h-300 v-fcm addPic">
+          <a class="icon icon-addPic"></a>
+        </div>
+        <div class="" style="margin-left:35px;">
+          <a class="news-button">点击上传图片</a>
+          <p style="margin-top:35px;">1. 图片大小：小于2M（jpg、png、bmp）</p>
+          <p>2. 图片尺寸： 300*300 px</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="title v-fm">频道选择</div>
+      <div class="info">
+        <div class="w-100">发布频道 :<span class="c-EB6877">*</span></div>
+        <div class="v-fm ipt-box">
+          <div class="o-radio v-fm"><div class="icon icon-radio-2"></div><div>美食</div></div>
+          <div class="o-radio v-fm"><div class="icon icon-radio-2"></div><div>教育</div></div>
+          <div class="o-radio v-fm"><div class="icon icon-radio-2"></div><div>亲子</div></div>
+          <div class="o-radio v-fm"><div class="icon icon-radio-2"></div><div>娱乐</div></div>
+          <!--<label for="food" class="icon-radio-2"><input type="checkbox" id="food"></label>      <label for="food">美食</label>
+          <label for="food" class="icon-radio-2"><input type="checkbox" id="education"></label> <label for="education">教育</label>
+          <label for="food" class="icon-radio-2"><input type="checkbox" id="family"></label>    <label for="family">亲子</label>
+          <label for="food" class="icon-radio-2"><input type="checkbox" id="play"></label>      <label for="play">娱乐</label>-->
+        </div>
+        <div class="v-f" style="margin-top:30px;">
+          <div class="w-100">资讯标签:</div><div class="c-bbb">（温馨提示：为了更好的引导用户阅读，请对营销资讯选择相关标签）</div>
+        </div>
+        <div class="v-fm ipt-box">
+          <!--<input type="o-checkbox" name="info-label" id="privilege"><label for="privilege">优惠</label>
+          <input type="o-checkbox" name="info-label" id="discount"><label for="discount">折扣</label>
+          <input type="o-checkbox" name="info-label" id="try"><label for="try">试吃</label>-->
+          <div class="o-checkbox v-fm"><div class="icon icon-radio-2"></div><div>优惠</div></div>
+          <div class="o-checkbox v-fm"><div class="icon icon-radio-2"></div><div>折扣</div></div>
+          <div class="o-checkbox v-fm"><div class="icon icon-radio-2"></div><div>试吃</div></div>
+        </div>
+      </div>
+    </section>
+    <!--添加店铺信息-->
+    <section class="section">
+
+      <div class="title v-fm">添加店铺信息</div>
+      <div class="info">
+        <div class="add-info v-fm" style="padding:40px 85px;">
+          <div class="icon icon-addInfo"></div><div>如果您需要在资讯中推荐相关商铺，可添加此项设置</div>
+        </div>
+        <div class="info-detail dn">
+          <div class="v-fm">
+            <div class="w-100">店铺名称<span class="c-EB6877">*</span>:</div>
+            <input style="width:370px;" type="text" class="news-ipt" id="showName" placeholder="请输入店铺名称（不超过10个字）">
+          </div>
+          <div class="v-fm" style="margin-top:23px;">
+            <div class="w-100">优惠特点<span class="c-EB6877">*</span>:</div>
+            <input style="width:370px;" type="text" class="news-ipt v-i1" id="sellInfo" placeholder="请输入优惠的卖点信息（不超过30个字）">
+          </div>
+          <div class="v-fm" style="margin-top:23px;">
+            <div class="v-i1 v-fm">
+              <div class="w-100">店铺地址<span class="c-EB6877">*</span>:</div>
+              <input type="text" class="news-ipt v-i1" id="shopAddr" placeholder="请详细输入区县街道楼号门牌等信息">
+            </div>
+            <div class="v-i1 v-fm  por">
+              <div class="w-100" style="margin-left:25px;">地图位置<span class="c-EB6877">*</span>:</div>
+              <input type="text" class="news-ipt v-i1" id="mapAddr" placeholder="例如：北京市朝阳区姚家园路">
+              <div class="map-addr"></div>
+            </div>
+          </div>
+          <div class="v-fm" style="margin-top:23px;">
+            <div class="v-i1 v-fm">
+              <div class="w-100">店铺电话<span class="c-EB6877">*</span>:</div>
+              <input style="width:105px;margin-right:15px;padding-left:11px;" type="text" class="news-ipt" id="areaCode" placeholder="请输入区号">
+
+              <input type="text" class="news-ipt v-i1" id="phoneNum" placeholder="请输入活动咨询的热线电话" data-title="ceshiwenzi">
+
+            </div>
+            <div class="v-i1"></div>
+          </div>
+        </div>
+      </div>
+      <div class="v-fcm pack-up o-pack-up dn">
+        <div class="v-fm">
+          <div class="icon icon-top"></div><div class="c-bbb">收起表单，放弃录入</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+  <script>
+    $(function(){
+      /*单选按钮*/
+      $('.o-radio').click(function(){
+        $('.o-radio>.icon-radio-2').removeClass('checked');
+        $(this).find('.icon-radio-2').addClass('checked');
+      });
+      /*多选按钮*/
+      $('.o-checkbox').click(function(){
+        $(this).find('.icon-radio-2').toggleClass('checked');
+      });
+      /*地图小图标点击事件*/
+      $('.map-addr').click(function(){
+        alert(1);
+      });
+      /*填写信息*/
+      $('.add-info').click(function(){
+        $(this).addClass('dn').parents('section').find('.o-pack-up,.info-detail').removeClass('dn');
+      });
+      /*收起按钮*/
+      $('.o-pack-up').click(function(){
+        $(this).addClass('dn').parents('section').find('.add-info').removeClass('dn').next().addClass('dn');
+      });
+      /*提示信息弹框*/
+      $('.news-ipt').focus(function(){
+        if($(this).attr('data-title')){
+          var html = '<div class="noticeInfo">'+$(this).attr("data-title")+'</div>';
+          $(this).before(html);
+        }
+      }).focusout(function(){
+        $('.noticeInfo').remove();
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="../../css/nxm/okplus-reset.css">
+  <link rel="stylesheet" href="../../css/nxm/okplus-box.css">
+  <link rel="stylesheet" href="../../css/nxm/Tong.css">
+  <script src="../../js/nxm/jquery-1.8.3.min.js"></script>
+  <script src="../../js/nxm/general.js"></script>
+  <title>登录页</title>
+  <style>
+    html,body{height:100%;}
+
+  </style>
+</head>
+<body>
+<div class="header">
+  <img src="../../images/nxm/okplus.png" alt=""><span>通州生活帮</span>
+</div>
+<div class="login-bg">
+
+
+  <div class="login">
+    <div class="fz-16">
+      <span>用户名</span>
+      <input type="text" class="user-phone" placeholder="请使用开通账号的手机号码登录" >
+    </div>
+
+    <div class="">
+      <span>密码</span>
+      <input type="password" class="user-password" placeholder="公司邮箱/手机号">
+    </div>
+
+    <div class="btn-box v-f-b">
+        <div class="radiobox v-fm o-radiobox">
+          <div class="v-fcm icon radio-1"></div>
+          记住密码
+        </div>
+        <a class="btn-login tac">登录</a>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+<script>
+  $(function(){
+    /*验证：用户名*/
+    var reg_phone = /^1[34578]\d{9}$/;         /*手机号*/
+    /*验证：密码*/
+    var reg_password = /^[0-9a-zA-Z]{6,8}$/;
+
+    /*事件：模拟单选按钮*/
+    $('.o-radiobox').click(function(){
+      $(this).find('.icon').toggleClass('radio-on-1');
+    });
+
+    $('.btn-login').click(function(){
+      /*获取用户名和密码*/
+      console.log('click');
+      var $user_phone = $('.user-phone').val();
+      var $user_password = $('.user-password').val();
+      if(!reg_phone.test($user_phone)){
+        $('.user-phone').before('<div class="poa c-f phone-info" style="margin-left: 403px;width: 174px;margin-top: 7px;">请输入正确的手机号码</div>');
+        setTimeout("$('.phone-info').hide()",1000);
+      }else if(!reg_password.test($user_password)){
+        $('.user-password').before('<div class="poa c-f password-info" style="margin-left: 403px;width: 174px;margin-top: 7px;">请输入6-8位的密码</div>');
+        setTimeout("$('.password-info').hide()",1000);
+      }else{
+
+        $.ajax({
+          url:'',
+          data:'',
+          methord:'POST',
+          dataType:'json',
+          success:function(){
+            window.location.href = '';
+          },
+          error:function(){
+
+          }
+        });
+      }
+
+    });
+
+
+
+
+
+
+
+  });
+</script>
+</html>
