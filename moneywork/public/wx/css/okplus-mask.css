@@ -1,0 +1,250 @@
+/*通用mask框架*/
+*[data-click]{cursor:pointer;}
+.v-mask{position:absolute;left:0;right:0;bottom:0;top:0;background:rgba(0,0,0,0.3);z-index:1000;}
+.v-mask a{display:inline-block;text-align:center;}
+.v-mask p{/*display:table-cell;vertical-align:middle;*/}
+.v-mc{
+    /*position:absolute;
+    z-index:1000;
+    left:50%;top:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack: center;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-justify-content: center;/* Chrome 21+ */
+    -ms-flex-pack: center;/* WP IE 10 */
+    justify-content: center;/* android 4.4 */
+    -webkit-box-align: center;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-align-items: center;/* Chrome 21+ */
+    -ms-flex-align: center;/* WP IE 10 */
+    align-items: center;/* android 4.4 */
+}
+.v-f{
+    display:-webkit-box;/* android 2.1-3.0, ios 3.2-4.3 */
+    display:-webkit-flex;/* Chrome 21+ */
+    display:-ms-flexbox;/* WP IE 10 */
+    display:flex;/* android 4.4 */
+}
+.v-fm{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align: center;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-align-items: center;/* Chrome 21+ */
+    -ms-flex-align: center;/* WP IE 10 */
+    align-items: center;/* android 4.4 */
+}
+.v-i1{
+    -webkit-box-flex:1;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-flex:1;/* Chrome 21+ */
+    -ms-flex:1;/* WP IE 10 */
+    flex:1;/* android 4.4 */
+}
+.por{position:relative;}
+.poa{position:absolute;}
+.c-ff{color:#FF7F2A;}
+.v-btns{
+    width:100%;
+    margin:0 auto;
+    overflow:hidden;
+    height:2.7rem;
+}
+
+/*okplus 遮罩层*/
+/*有北京猫*/
+.mask-cat{
+    padding-top: 4rem;
+    background: url("../images/icon/cat.png") center top no-repeat;
+    background-size: 8.15rem 4.9rem;
+    -webkit-background-size: 8.15rem 4.9rem;
+    width:12.65rem;
+}
+.mask-okplus-container{
+    width: 12.65rem;
+    /*    height: 8rem;*/
+    border-radius: 5px;
+    background-color: #fff;
+}
+.mask-info{
+    /*height:5rem;*/
+    /*width:15rem;*/
+    text-align:center;
+    padding:1rem .5rem;
+    min-height:3rem;
+    height:auto!important; height:5rem;
+    font-size: .7rem;
+    line-height: 1.5;
+}
+.btn-close{
+    width:4rem;height:1.5rem;line-height:1.5rem;
+    color:#999;
+    border:1px solid #999;
+    border-radius:5px;
+    position:static;
+}
+.btn-link{
+    width:4rem;height:1.5rem;line-height:1.5rem;
+    color:#ee7800;
+    border:1px solid #ee7800;
+    border-radius:5px;
+    margin-left:1rem;
+}
+
+.mask-toggle{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:14rem;
+    z-index:10;
+}
+.mask-toggle>.mask-shadow{
+    background-color:rgba(0,0,0,.7);
+    width:10.4rem;
+    height:3.5rem;
+    color:#fff;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    font-size:.8rem;
+    text-align: center;
+    padding:0 .5rem;
+}
+
+.v-fc{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack: center;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-justify-content: center;/* Chrome 21+ */
+    -ms-flex-pack: center;/* WP IE 10 */
+    justify-content: center;/* android 4.4 */
+}
+.v-fcm{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack: center;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-justify-content: center;/* Chrome 21+ */
+    -ms-flex-pack: center;/* WP IE 10 */
+    justify-content: center;/* android 4.4 */
+    -webkit-box-align: center;/* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-align-items: center;/* Chrome 21+ */
+    -ms-flex-align: center;/* WP IE 10 */
+    align-items: center;/* android 4.4 */
+}
+.focus-on{
+    box-sizing: padding-box;
+    margin: 0 auto;
+    width: 13.3rem;
+}
+.focus-box{
+    margin-top:1rem;
+}
+.icon-close{
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    right: -0.1rem;
+    top: -1.1rem;
+}
+.por{
+    position: relative;
+}
+.c-f{color:#fff;}
+.QR-code2{
+    width:6rem;
+    height:6rem;
+}
+.tac{
+    text-align: center;
+}
+.fz-75{font-size:.75rem;}
+.fz-90{
+    font-size:.9rem;}
+/*翻牌活动 弹框*/
+.mask-card{
+    position:absolute;
+    left:0;top:0;right:0;bottom:0;
+    z-index: 1000;
+    background:rgba(0,0,0,.7);
+}
+.mask-card>.mask-card-bg{
+    background:url("../images/icon/mask-card-bg.png") center center no-repeat;
+    background-size:100% 100%;
+    width: 15rem;
+   /* height: 21rem;*/
+    position:relative;
+    padding-top: 3.2rem;
+}
+.mask-card .icon-card-close{
+    background:url("../images/icon/mask-card-close.png") center center no-repeat;
+    background-size:100%;
+    width:2rem;height:2rem;
+    position:absolute;
+    right:-.5rem;
+    top:-.5rem;
+}
+.mask-card .info{
+    margin-top: .7rem;
+    padding: 0 1rem;
+    line-height:1.3rem;
+}
+.mask-card .QR-code3{
+    width:6rem;
+    height:6rem;
+    background-color:#fff;
+    margin:1rem auto;
+}
+.mask-card .QR-code3>img{
+    width:100%;
+}
+/*翻牌活动 来晚了  弹框*/
+.mask-come-late{
+    box-sizing: padding-box;
+    margin: 0 auto;
+    width: 13.3rem;
+    color:#fff;
+}
+.mask-come-late .QR-code4{
+    width:6rem;height:6rem;
+    background-color:#fff;
+}
+.mask-come-late .QR-code4>img{width:100%;}
+.mask-come-late>div{
+    margin-top:.7rem;
+}
+.mask-icon-close{
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    right: -0.1rem;
+    top: -1.1rem;
+    background:url("../images/activity/close.png") center center no-repeat;
+    background-size:100%;
+}
+.icon-winning{
+    width:6.571rem;height:1.771rem;
+    background:url("../images/icon/winning.png") center center no-repeat;
+    background-size:100%;
+}
+.icon-come-late{
+    display: inline-block;
+    width: 5rem;height: 1.5rem;
+    background:url("../images/icon/come-late.png") center center  no-repeat;
+    background-size: 100%;
+}
+
+.ibg-QRcat{
+    width:8.192rem;height:8.11rem;
+    background:url("../images/icon/ibg-QRcat.png") center center no-repeat;
+    background-size:100% 100%;
+}

@@ -1,0 +1,319 @@
+<include file="./Application/Home/View/header.html" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/wx/css/activity.css">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/wx/css/activityranking.css">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/wx/css/award-ask-answer.css"/>
+<link rel="stylesheet" href="__PUBLIC__/wx/css/mask_okplus.css">
+<script type="text/javascript" src="__PUBLIC__/wx/js/mask_okplus.js"></script>
+<script type="text/javascript" src="__PUBLIC__/wx/js/arrows.js"></script>
+<script type="text/javascript" src="__PUBLIC__/wx/js/activity.js"></script>
+<script type="text/javascript" src="__PUBLIC__/wx/js/img.js"></script>
+<style>
+    .oldman{position:absolute;width:100%;height:80%;display:block;z-index:500;}
+    .ps-r{position:relative;}
+    .img-list{
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .img-list img{width: 4.85rem!important;
+        height: 3.5rem!important;
+    }
+
+</style>
+</head>
+<body class="bg-f2">
+<div class="wrapper timing-hp">
+    <div class="scroll">
+
+        <div class="wrap<?php if(!empty($isApp)) echo '-1'; ?>">
+            <section class="section content">
+                <img class="img" src="<{$content.actPic}>">
+                <p class="describe"><{$content.actName}></p>
+                <div class="time" style="padding-bottom:.3rem;">
+                    <i class="sign"></i><{$act_time_show}>
+                    <?php if($remind_flag){ ?>
+                        <i class="logo<?php echo $content.isHadRemind?'ed':''; ?>"></i>
+                    <?php } ?>
+                </div>
+				<if condition= "$content.actProvideway neq 0">
+                <div class="line"></div>
+
+                <div class="time" style="padding-top:.5rem;">
+
+                    <i class="important"></i><span class="color-eb"><{$activi_provide}></span>
+
+                </div></if>
+            </section>
+            <section class="section prize">
+                <p class="color-ee b-bottom">奖品展示<if condition="$count gt 4"><a href="<{:U('prize/prizeList',array('act_id'=>I('act_id')))}>" class="show-all">查看全部<i class="arr-right arrows"></i></a></if> </p>
+                <volist name="prize_content" id="prize_content" offset="0" length="3">
+
+
+                    <div class="info l-table ps-r">
+                        <a href="<?php echo U('prize/mydetails',array('act_id'=>$prize_content['ID'])) ?>" class="oldman"></a>
+                        <div class="l-cell img-list">
+                            <img class="l-cell" src="<{$prize_content.prizeImg}>">
+                        </div>
+                        <div class="intro l-cell" style="width:15rem;">
+                            <p><{$prize_content.awardsName}></p>
+                        </div>
+                        <div class="l-cell">
+                            <i class="arrows arr-right"></i>
+                        </div>
+                    </div>
+                </volist>
+
+            </section>
+            <section class="section details no-margin">
+                <p class="color-ee b-bottom">活动详情</p>
+                <div class="con max-height">
+                 <{$content.actContent}>
+                </div>
+                <div class="bottom">
+                    <i class="fold arrows"></i>
+                </div>
+            </section>
+            <p class="tips">此活动与苹果公司无关，最终解释权归OK家APP所有。</p>
+           <!-- comment BEGIN
+            <?php if($content['isHadComments']){ ?>
+            <section class="section comment">
+                <p class="color-ee b-bottom">全部评论(<{$content.comments}>)<span class="title-btn"><a href="<?php echo U('comment/clist',array('id'=>I('act_id'))) ?>" class="c-999">评论</a></span></p>
+                <div id="morenewlist">
+                    <{$comments}>
+                </div>
+                <?php if($content['comments'] >0){?>
+                <div class="comment-all"><a href="<?php echo U('comment/clist',array('id'=>I('act_id'))) ?>">查看全部评论</a></div>
+                <?php }?>
+            </section>
+            <?php }?>
+            comment END -->
+        </div>
+    </div>
+    <footer class="footer">
+	 <input type="hidden" id="state" value="<{$content['state']}>">
+        <input type="hidden" id="startTime" value="<{$act_startTime}>000">
+        <input type="hidden" id="endTime" value="<{$act_endTime}>000">
+        <input type="hidden" id="dateTime" value="<?php echo time() ?>000">
+        <!--进行中 未参与-->
+		<if condition= "($content['state'] eq 0) and ($content['userStat'] neq 1) ">
+        <div class="timing-footer l-table" >
+            <div class="l-cell"><a class="btn-answer" data-click style="background-color:#fff;color:#ee7800;" >开始答题</a></div>
+            <div class="l-cell consult"><a href="<?php echo U('advisory/index',array('id'=>I('act_id',1554))) ?>">咨询</a></div>
+        </div>
+
+
+		<elseif condition= "(($content['state'] eq 2) and ($content['userStat'] eq 1)) or (($content['state'] eq 0) and ($content['userStat'] eq 1))"/>
+		        <div class="timing-footer l-table" >
+            <div class="l-cell"><a class="btn-answer" style="background-color:#fff;color:#ee7800;" href="<{:U('yjwd/winner',array('act_id'=>I('act_id')))}>">查看成绩</a></div>
+            <div class="l-cell consult"><a href="<?php echo U('advisory/index',array('id'=>I('act_id'))) ?>">咨询</a></div>
+        </div>
+		<elseif condition= "($content['state'] eq 2) and ($content['userStat'] eq 0)"/>
+		        <div class="timing-footer l-table" >
+            <div class="l-cell"><a class="btn-over"  style="background-color:#fff;color:#ee7800;" href="#">己结束</a></div>
+            <div class="l-cell consult"><a href="<?php echo U('advisory/index',array('id'=>I('act_id'))) ?>">咨询</a></div>
+        </div>
+
+		<elseif condition="$content['state'] eq 1" />
+        <div class="timing-footer l-table">
+            <div class="l-cell count-down" id="stateButton">
+                <a class="a-btn-ee" data-click  style="background-color:#fff;color:#ee7800!important;" >开始答题</a>
+            </div>
+            <div class="l-cell consult"><a href="<?php echo U('advisory/index',array('id'=>I('act_id'))) ?>">咨询</a></div>
+        </div>
+		</if>
+    </footer>
+</div>
+<!--<div class="mask-1">
+    <div class="mask-pic">
+        <img class="mask-close" src="__PUBLIC__/wx/images/activity/jd-delete.png" alt="">
+        <p>恭喜您!</p>
+        <img class="mask-cat" src="__PUBLIC__/wx/images/activity/jd-sy-zj.png" alt="">
+        <p>
+            <span class="c-8f dib">获得价值 <span class="c-r">￥7788</span> 的奖品名称的奖品名称的奖品名称的奖品名称一份</span>
+            <i class="ass"></i>
+        </p>
+        <div class="btns ck-share">
+            <div>
+                <a class="btns-c" href="#">查看奖品</a>
+                <a class="btns-c" href="#">分享喜悦</a>
+            </div>
+            <i class="ass"></i>
+        </div>
+    </div>
+</div>-->
+<script>
+    function MyFootBallItemIOS(){
+        var appTitle= '<{$content.actName}>'; // 分享标题
+        var appLink='<{$wxurl}>'; // 分享链接
+        var appImgUrl='<{$content.appPic}>'; // 分享图标
+        var  iosgoldegg=appTitle+","+appLink+","+appImgUrl;
+        return iosgoldegg;
+    }
+
+    $(".btns-share").click(function(){
+        if("<{$isAndroid}>"==1){//是否是APP{
+            var appTitles='<{$content.actName}>'; // 分享标题
+            var appLinks='<{$wxurl}>'; // 分享链接
+            var appImgUrls='<{$content.appPic}>'; // 分享图标
+            try {
+                window.MyGoldEggShare.CapturePhoto(appTitles,appLinks,appImgUrls);
+            } catch (e) {
+            }
+        }else{
+            window.location = "ios&&&GoldEggShare&&&<{$ID}>";
+        }
+
+    })
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    // 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+    // 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+    // 完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
+    wx.config({
+        //debug: true,
+        appId: '<{$wxconfig.appId}>',
+        timestamp: '<{$wxconfig.timestamp}>',
+        nonceStr: '<{$wxconfig.nonceStr}>',
+        signature: '<{$wxconfig.signature}>',
+        jsApiList: [
+            'checkJsApi',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo'
+        ]
+    });
+    wx.ready(function () {
+        // 在这里调用 API
+
+        wx.onMenuShareTimeline({
+            title: '【OK家】<{$content.actName}>', // 分享标题
+            link: '<{$wxurl}>&staComId=<{$wxstaComId}>', // 分享链接
+            imgUrl: '<{$content.appPic}>', // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            /*    $.ajax({
+                            type: "POST",
+                            url: "<{$shareurl}>/wxokjia/goldegg/ajax_goldegg_share.php",
+                            data:{'userId':<{$userId}>,'ID':<{$ID}>},
+                success: function(msg){
+                    if(msg==200){
+                        window.location="act_goldegg_index.php?isphp=1&ID=<{$ID}>&type=<{$type}>";
+                    }
+                }
+            });*/
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+
+        wx.onMenuShareAppMessage({
+            title: '【OK家】社区活动嗨翻天', // 分享标题
+            desc: '<{$content.actName}>', // 分享描述
+            link: '<{$wxurl}>&staComId=<{$wxstaComId}>', // 分享链接
+            imgUrl: '<{$content.appPic}>', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+     /*           $.ajax({
+                            type: "POST",
+                            url: "<{$shareurl}>/wxokjia/goldegg/ajax_goldegg_share.php",
+                            data:{'userId':<{$userId}>,'ID':<{$ID}>},
+                success: function(msg){
+                    if(msg==200){
+                        window.location="act_goldegg_index.php?isphp=1&ID=<{$ID}>&type=<{$type}>";
+                    }
+                }
+            });*/
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+
+
+    });
+</script>
+<script>
+    (function(downtime){
+        var currState = $('#state').val();
+        if(currState==0 || currState==2) return;
+        downtime.target = $(downtime.target);
+        downtime.start = +new Date(parseInt(downtime.start)) || console.error("开始时间格式错误");
+        downtime.end = +new Date(parseInt(downtime.end)) || console.error("开始时间格式错误");
+        now=+new Date(parseInt(downtime.time));
+        var i = 1;
+        var counter = function(){
+            i++;
+            now=now+1000;
+            if(now<downtime.start) {
+                var delta = parseInt((downtime.start - now)/1000),
+                        day  = ("0"+parseInt(delta/86400)).substr(-2),
+                        hour = ("0"+parseInt((delta%86400)/3600)).substr(-2),
+                        min  = ("0"+parseInt((delta%3600)/60)).substr(-2),
+                        sec  = ("0"+(delta%60)).substr(-2);
+                downtime.target.html(downtime.format.replace("dd1",day.substring(0,1)).replace("dd2",day.substring(1)).replace("hh1",hour.substring(0,1)).replace("hh2",hour.substring(1)).replace("mm1",min.substring(0,1)).replace("mm2",min.substring(1)).replace("ss1",sec.substring(0,1)).replace("ss2",sec.substring(1)));
+
+            }else if(now>downtime.start&&now<downtime.end){
+                var target_page ='<a class="a-btn-ee" data-click style="color:#ee7800!important;" >开始答题</a>';
+                $("#stateButton").html(target_page);
+                clearInterval(time);
+            }
+            if(i==3){
+                i = 0;
+                /*$.ajax({
+                    url: '/community/service/activities/getTime.json',
+                    cache: false,
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (data) {
+                        //eval('data=' + data);
+                        if(data.errorCode == 200) {
+                            now=+new Date(data.content.time);
+                        }
+                    },
+                    error: function() {
+                    }
+                });*/
+            }
+        }
+        counter();
+        time = setInterval(counter, 1000);
+    })({
+        target : "#stateButton",
+        format : '<span class="fir">dd1</span><span class="sec">dd2</span>天<span class="fir">hh1</span><span class="sec">hh2</span>时<span class="fir">mm1</span><span class="sec">mm2</span>分<span class="fir">ss1</span><span class="sec">ss2</span>秒',
+        after : "已结束",
+        start : '<{$act_startTime}>000',
+        end : '<{$act_endTime}>000',
+        time:'<?php echo time()?>000'
+    });
+
+    $(document).on('click','.a-btn-ee,.btn-answer',function(){
+        /*alert(<{$isApp}>);*/
+        if('<{$userId}>'=='0'){
+            if('<{$isApp}>'=='1'){
+            if("<{$isAndroid}>"=='1'){//是否是APP{
+                try {
+                    window.MyDengLu.CapturePhoto("");
+                } catch (e) {
+                }
+            }else{
+
+                window.location = "ios&&&buttonLogn&&&";
+            }
+            return;
+        }
+            $(document).on('click','.btn-link',function(){
+                window.location.href = '/wxokjia/login.php';
+            })
+            mask_okplus('您还没有登录！','取消','去登录');
+    }else{
+        window.location.href = '<?php echo $tager_url?>';
+    }
+
+    });
+</script>
+</body>
+</html>

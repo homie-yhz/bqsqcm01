@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../../public/wx/css/okplus-reset.css">
+  <link rel="stylesheet" href="../../public/wx/css/okplus-box.css">
+  <link rel="stylesheet" href="../../public/wx/css/swiper-3.3.1.min.css">
+  <link rel="stylesheet" href="../../public/wx/css/news.css">
+  <script src="../../public/wx/js/jquery-1.8.3.min.js"></script>
+  <script src="../../public/wx/js/swiper-3.3.1.min.js"></script>
+  <script src="../../public/wx/js/jquery.lazyload.min.js"></script>
+  <script src="../../public/wx/js/fastclick.js"></script>
+  <title>通州生活帮</title>
+    <style>
+
+  </style>
+</head>
+<body class="bg-f2">
+  <div class="scroll o-scroll">
+    <div class="header-top">
+      <!--轮播图-->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href=""><img src="../../public/wx/images/vote4.jpg" alt=""></a>
+            <p><a>测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</a></p>
+          </div>
+          <div class="swiper-slide">
+            <a href=""><img src="../../public/wx/images/vote3.jpg" alt=""></a>
+            <p><a>测试文字</a></p>
+          </div>
+          <div class="swiper-slide">
+            <a href=""><img src="../../public/wx/images/vote2.jpg" alt=""></a>
+            <p><a>测试文字</a></p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <!--标签选项-->
+      <div class="nav v-fc mb-5 bg-f">
+        <div class="v-i1 v-fcm">
+          <div class="">
+            <div class="icon icon-food"></div>
+            <div class="tac mt-2">美食</div>
+          </div>
+        </div>
+        <div class="v-i1 v-fcm">
+          <div class="">
+            <div class="icon icon-family"></div>
+            <div class="tac mt-2">亲子</div>
+          </div>
+        </div>
+        <div class="v-i1 v-fcm">
+          <div class="">
+            <div class="icon icon-play"></div>
+            <div class="tac mt-2">游玩</div>
+          </div>
+        </div>
+        <div class="v-i1 v-fcm">
+          <div class="">
+            <div class="icon icon-recruit"></div>
+            <div class="tac mt-2">招聘</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--选项卡-->
+    <div class="tabs bg-f">
+      <!--头部-->
+      <header class="v-fm" id="header">
+        <div class="v-i1 v-fcm header-checked" id="tabs-1">记者探店</div><div class="v-i1 v-fcm" id="tabs-2">占便宜</div>
+      </header>
+      <!--体部-->
+      <div id="list">
+        <div class="tabs-1">
+          <a class="pd-5 v-f" href="">
+            <img src="../../public/wx/images/vote1.jpg" alt="" style="margin-right:.5rem;">
+            <div class="v-i1 por">
+              <p class="fz-70">探店   不是所有的好餐厅都会被你发现！</p>
+              <div class="poa v-fb" style="bottom:0;width:100%;">
+                <div class="v-fm">
+                  <div class="icon icon-addr"></div><p class="fz-60 c-9">新华大街</p>
+                </div>
+                <div class="v-fm">
+                  <div class="sign-s">美食</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="line-row"></div>
+          <div class="v-fcm loading loading-checked loading-1"><div class="v-fm c-9">正在加载更多内容<div class="icon icon-loading"></div></div></div>
+        </div>
+        <div class="tabs-2" style="display:none;">
+
+          <div class="v-fcm loading loading-2"><div class="v-fm c-9">正在加载更多内容<div class="icon icon-loading"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  FastClick.attach(document.body);
+  var mySwiper = new Swiper('.swiper-container', {
+    pagination : '.swiper-pagination'
+  });
+
+  var $partTop = $('.header-top').height();
+  var $window = $(window).height();
+  var $header = $('#header').height();
+  var $part1 = $('.tabs-1').height();
+  var $part2 = $('.tabs-2').height();
+  var $loadHeight = $('.loading').height();
+
+  var page1 = 1;
+  var page2 = 1;
+
+  var ajaxison = 0;   // ajax 是否在进行中   0为未进行   1为进行中
+
+  /*loading 隐藏事件  */
+  (($partTop + $part2 + $header) < $window) && $('.loading-2').remove();
+  (($partTop + $part1 + $header) < $window) && $('.loading-1').remove();
+
+  $(function(){
+
+
+    /*css事件：点击选项卡 切换 样式*/
+
+    $('#tabs-1').click(function(){
+      cssChange();
+      $('.tabs-1').show();
+      $(this).addClass('header-checked');
+      $('.loading-1').addClass('loading-checked');
+    });
+    $('#tabs-2').click(function(){
+      cssChange();
+      $('.tabs-2').show();
+      $(this).addClass('header-checked');
+      $('.loading-2').addClass('loading-checked');
+    });
+    var a=1;
+    /*滚动加载更多事件*/
+    $('.o-scroll').scroll(function(){
+
+      if($('.o-scroll').scrollTop() >=  $('.tabs').height()+$partTop - $(window).height() - $loadHeight){
+        if(ajaxison==1){
+          console.log('ajax is on');
+        }else{
+          ajaxison = 1;
+          $.ajax({
+            /* type:'POST',
+             url:'',
+             data:'',
+             dataType:'json',*/
+            success:function(msg){
+              msg = {'name':'ad'};
+              var html = '';
+              if(msg!=''){
+                for(var i = 0,len = 3;i<len;i++){
+                  html +=
+                          '<a class="pd-5 v-f" href=""> ' +
+                          '<img src="../../public/wx/images/vote1.jpg" alt="" style="margin-right:.5rem;"> ' +
+                          '<div class="v-i1 por"> ' +
+                          '<p class="fz-70">探店   不是所有的好餐厅都会被你发现！</p> ' +
+                          '<div class="poa v-fb" style="bottom:0;width:100%;"> ' +
+                          '<div class="v-fm"> ' +
+                          '<div class="icon icon-addr"></div><p class="fz-60 c-9">新华大街</p> ' +
+                          '</div> ' +
+                          '<div class="v-fm"> ' +
+                          '<div class="sign-s">美食</div> ' +
+                          '</div> ' +
+                          '</div> ' +
+                          '</div> ' +
+                          '</a> ' +
+                          '<div class="line-row"></div>';
+                }
+                $('.loading-checked').before(html);
+                ajaxison = 0;
+              }else{
+                $('.loading-checked').html('亲！没有内容了');
+              }
+            },
+            error:function(){
+              alert('ajax error');
+            }
+          });
+        }
+      }
+
+    });
+  });
+  function cssChange(){
+    $('.tabs-1,.tabs-2').hide();
+    $('#header').find('div').removeClass('header-checked');
+    $('.loading').removeClass('loading-checked');
+  }
+</script>
+</html>

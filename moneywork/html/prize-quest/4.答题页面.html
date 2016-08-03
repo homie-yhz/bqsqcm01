@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../../public/wx/css/okplus-reset.css">
+  <link rel="stylesheet" href="../../public/wx/css/okplus-box.css">
+  <link rel="stylesheet" href="../../public/wx/css/prize-quest.css?v=1">
+  <script src="../../public/wx/js/jquery-1.8.3.min.js"></script>
+  <script src="../../public/wx/js/fastclick.js"></script>
+  <title>Title</title>
+  <style>
+    /*#box-shadow2{
+      -moz-box-shadow:0 -5px 0 #999 inset;             !* For Firefox3.6+ *!
+      -webkit-box-shadow:0 -5px 0 #999 inset;          !* For Chrome5+, Safari5+ *!
+      box-shadow:0 -5px 80px #eee inset;                  !* For Latest Opera *!\
+      width:100px;height:100px;
+    }*/
+    .scroll{height:100%;}
+    .quest-choose-radio{padding:1.067rem .853rem 1.067rem 0;line-height:1.7;
+      -moz-box-shadow:0 -5px 0 #999 inset;
+      -webkit-box-shadow:0 -5px 0 #999 inset;
+      box-shadow: 0 -26px 60px #eee inset;
+    }
+  </style>
+</head>
+<body class="bg-f2">
+  <div class="scroll scroll-center" style="background-color:#fff;">
+    <!--题目-->
+    <div class="quest-title por">
+      <div class="icon ibg-quest-top"><div class="poa icon icon-cat-top"></div></div>
+      <div class="icon ibg-quest-middle lh-18" style="">
+        <div class="c-fff200 fz-55">单选题 <span>1</span>/15</div>
+        <p class="fz-65">测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测测试文字测试文字</p>
+      </div>
+      <div class="icon ibg-quest-bottom"><div class="icon icon-cat-bottom"></div></div>
+    </div>
+    <!--选项-->
+    <div class="quest-choose-radio v-fm">
+      <div class="v-f">
+        <div class="v-fcm" style="width:3.52rem;">
+          <div class="icon-radio1"></div>
+        </div>
+        <div>A.</div>
+        <div style="" class="v-i1">测试文字测试文字测试文字测试文字</div>
+      </div>
+    </div>
+    <div class="quest-choose-radio v-fm">
+      <div class="v-f">
+        <div class="v-fcm" style="width:3.52rem;">
+          <div class="icon-radio1 icon-radio1-on"></div>
+        </div>
+        <div>B.</div>
+        <div class="v-i1">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</div>
+      </div>
+    </div>
+
+
+    <div class="v-fcm" style="height:5.333rem;">
+      <a class="bg-ff c-f v-fcm" id="next-q" style="width:12.639rem;height:1.984rem;border-radius:3px;">下一题</a>
+    </div>
+  </div>
+</body>
+<script>
+  FastClick.attach(document.body);
+$(function(){
+  /*单选按钮样式改变*/
+  $('.quest-choose-radio').click(function(){
+    $('.icon-radio1').removeClass('icon-radio1-on');
+    $(this).find('.icon-radio1').toggleClass('icon-radio1-on');
+  });
+
+
+  $('#next-q').click(function(){
+    $.ajax({
+      url:'',
+      data:'',
+      dataType:'JSON',
+      success:function(){
+
+      },
+      error:function(){
+
+      }
+    });
+  });
+
+});
+
+</script>
+</html>

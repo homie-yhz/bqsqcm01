@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../../public/wx/css/okplus-reset.css">
+  <link rel="stylesheet" href="../../public/wx/css/okplus-box.css">
+  <link rel="stylesheet" href="../../public/wx/css/prize-quest.css">
+  <script src="../../public/wx/js/jquery-1.8.3.min.js"></script>
+  <script src="../../public/wx/js/fastclick.js"></script>
+  <title>活动详情</title>
+  <style>
+    body{line-height:normal;}
+    #countdown{line-height:normal;}
+    #countdown>div{
+      height:1.066rem;
+      width:.811rem;
+      background-color:#fff;
+      border-radius:3px;
+      color:#FF7F2B;
+      margin:0 .15rem;
+      line-height: 1.066rem;
+      text-align: center;
+    }
+    #countdown>div:first-child{margin-left:.3rem;}
+  </style>
+</head>
+<body class="bg-e8">
+<div class="scroll scroll-center" style="padding-bottom:2.5rem;">
+  <!--活动介绍-->
+  <div class="activity-info mb-5">
+    <img src="../../public/wx/images/vote1.jpg" class="img-info">
+    <div class="pdc-4">
+      <div class="pdr-5 fz-75">
+        11月前最后一次,130元石锅大虾免费吃!手慢可就没有啦！
+      </div>
+      <div class="line-row"></div>
+      <div class="pdr-5 v-fm">
+        <div class="icon icon-time2"></div>
+        <div class="v-i1"><span>06月12日 10:00</span> ~~ <span>06月13日 10:00</span></div>
+      </div>
+      <div class="line-row"></div>
+      <a href="" class="pdr-5 v-fm">
+        <div class="icon icon-jewel"></div>
+        <div class="v-i1">活动奖品</div>
+        <div class="c-9">剩余 <span>2000</span> 个</div>
+        <div class="v-fcm">
+          <div class="icon-arrows icon-arrows-r mr-4"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!--活动详情-->
+  <div class="v-section pdc-4">
+    <div class="v-fm c-ff" style="height:2rem;line-height:normal;">活动详情</div>
+    <div class="line-row"></div>
+    <div class="lh-17 max-height fz-75" style="padding:.3rem 0;">
+      <p>Apple iPhone 6s(A1700) 16G 玫瑰金色全网通4G手机 一台，手机一台一台又一台。 </p>
+      <img src="../../public/wx/images/vote1.jpg" class="img-detail">
+      <p>
+        Apple iPhone 6s(A1700) 16G 玫瑰金色全网通4G手机 一台，手机一台一台又一台。
+        Apple iPhone 6s(A1700) 16G 玫瑰金色全网通4G手机 一台，手机一台一台又一台。
+      </p>
+    </div>
+    <div class="o-icon-arrows-b v-fcm"  style="height:1.5rem;">
+      <div class="icon-arrows-b"></div>
+    </div>
+  </div>
+
+</div>
+<div class="scroll-center" style="">
+  <!--未开始：倒计时-->
+  <a class="footer2 v-fcm">
+    <div class="v-fm " id="countdown"></div>
+  </a>
+   <!--已开始：开始答题-->
+  <a class="footer2 v-fm" href="">
+    <div class="v-i1 v-fcm">开始答题</div>
+  </a>
+  <!--手机号已经获得奖品-->
+  <a class="footer2 v-fm">
+    <div class="v-i1 v-fcm">查看我的奖品</div>
+  </a>
+  <!--以报满-->
+  <a class="footer2 v-fm bg-b4">
+    <div class="v-i1 v-fcm">答题已截止</div>
+  </a>
+  <!--报名已截止-->
+  <!--<a class="footer2 v-fm bg-b4">
+    <div class="v-i1 v-fcm">报名已截止</div>
+  </a>-->
+</div>
+
+</body>
+<script>
+
+  FastClick.attach(document.body);
+
+  $(function(){
+    $('.o-icon-arrows-b').click(function(){
+      $(this).hide().prev('.max-height').removeClass('max-height');
+    });
+
+
+  });
+  /*倒计时部分*/
+  var time = 1470123481576;  //时间戳
+  ShowCountDown(time);
+  function ShowCountDown(time) {
+    var now = new Date();
+    var leftTime=time-now.getTime();
+    var leftsecond = parseInt(leftTime/1000);
+    //var day1=parseInt(leftsecond/(24*60*60*6));
+    var day1=Math.floor(leftsecond/(60*60*24));
+    var hour=Math.floor((leftsecond-day1*24*60*60)/3600);
+    var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60);
+    /*var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60);*/
+    var dd1 = parseInt(day1/10);
+    var dd2 = parseInt(day1%10);
+    var hh1 = parseInt(hour/10);
+    var hh2 = parseInt(hour%10);
+    var mm1 = parseInt(minute/10);
+    var mm2 = parseInt(minute%10);
+    /*var ss1 = parseInt(second/10);
+    var ss2 = parseInt(second%10);*/
+    var cc = document.getElementById('countdown');
+    cc.innerHTML = '倒计时<div class="v-fcm">'+dd1+'</div><div class="v-fcm">'+dd2+'</div>天<div>'+hh1+'</div><div>'+hh2+'</div>时<div>'+mm1+'</div><div>'+mm2+'</div>分';
+    //测试代码 ↓
+    /*cc.innerHTML = '倒计时<div class="v-fcm">'+dd1+'</div><div class="v-fcm">'+dd2+'</div>天<div>'+hh1+'</div><div>'+hh2+'</div>时<div>'+mm1+'</div><div>'+mm2+'</div>分<div class="v-fcm">'+ss1+'</div><div class="v-fcm">'+ss2+'</div>秒';*/
+
+    /*根据条件判断是否有必要继续启动下一个定时器*/
+    if(leftTime>=1000){
+      timer=setTimeout('ShowCountDown(time)',1000);
+    }else{//如果不满足继续的条件，就清除timer
+      timer=null;
+    }
+  }
+</script>
+</html>

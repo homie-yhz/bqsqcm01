@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="../../public/wx/css/okplus-reset.css">
+  <link rel="stylesheet" href="../../public/wx/css/okplus-box.css">
+  <link rel="stylesheet" href="../../public/wx/css/okplus-mask.css">
+  <link rel="stylesheet" href="../../public/wx/css/prize-quest.css">
+  <script src="../../public/wx/js/jquery-1.8.3.min.js"></script>
+  <script src="../../public/wx/js/okplus-mask.js"></script>
+  <script src="../../public/wx/js/regExp.js"></script>
+  <script src="../../public/wx/js/fastclick.js"></script>
+  <title>登录</title>
+  <style>
+    .ipts-box{height:2.389rem;border-bottom:1px solid #ababab;}
+    .ipts-box input{border:none;background-color:transparent;height:100%;outline: none;padding:0;}
+    .send-code{
+      background-color:#FF7F2A;color:#fff;
+      width:4.416rem;height:1.8rem;
+    }
+    body{line-height: normal;overflow: hidden;}
+    .login{height:1.75rem;margin-top:5.461rem;}
+    .unable{
+      background-color:#919191!important;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll scroll-center">
+    <div class="pdc-5 mt-10">
+      <div class="ipts-box v-fm v-fb"><input type="tel" class="v-i1" id="phoneNum" placeholder="请输入手机号"><a class="send-code o-sendCode v-fcm">发送验证码</a></div>
+      <div class="ipts-box v-fm"><input type="tel" class="v-i1" id="verifyCode" placeholder="请输入短信验证码"></div>
+      <p class="c-a5 fz-55 lh-17" style="margin-top:.75rem;"><span class="fw-b">提示 : </span>为了保证您顺利参与活动，请您通过手机号进行快速登录。如果您获得奖品，获奖信息也将发送至此手机。</p>
+      <!--登录按钮-->
+      <a class="v-fcm v-i1 c-f bg-ff login o-login unable">确认登录</a>
+    </div>
+  </div>
+</body>
+<script>
+  FastClick.attach(document.body);
+  $(function(){
+
+    /* 事件:点击重新发送验证码
+    * 逻辑：1.判断手机号正确
+    *      2.判断 unable 属性是否存在
+    *      3.判断成功后 进行发送验证码 读秒
+    *      配置： 找到lefttime 并修改 倒数时间
+    * */
+    $('.o-sendCode').click(function(){
+      var $this = $(this);
+      if(!reg_phone.test($('#phoneNum').val())) {
+        mask_toggle('请输入正确的手机号码',1000);
+      }
+      else if($('.send-code').hasClass('unable')) {
+        console.log('等待60s');
+      }
+      else {
+        /*倒数读秒部分*/
+        var leftTime = 90;   //初始化 读秒时间
+        var timer = null;   //初始化 定时器
+        $this.addClass('unable');
+        reset();
+        function reset(){
+          if(leftTime>=0){
+            $this.html('重新发送('+leftTime-- +')');
+            timer = setTimeout(reset,1000);
+          }else{
+            console.log('读秒结束');
+            leftTime = 90;
+            timer = null;
+            $this.removeClass('unable').html('发送验证码');
+          }
+        }
+        /*倒数读秒部分*/
+      }
+    });
+
+    /* 验证:*/
+    $(document).on('click','.o-login.able',function(){
+      if(!reg_phone.test($('#phoneNum').val())){
+        mask_toggle('请输入正确的手机号码',1000);
+      }else{
+        $.ajax({
+          /* url:'',*/
+          data:'phoneNum='+$('#phoneNum').val()+'&verifyCode='+$('#verifyCode').val()+'',
+          dataType:'JSON',
+          success:function(msg){
+            if(msg){
+              window.location.href = '';
+            }else{
+              mask_toggle('请输入正确的验证码',1000);
+            }
+          },
+          error:function(){
+            alert('Ajax fault');
+          }
+        });
+      }
+    });
+
+    /*事件：动态 监听 表单的填选信息 正确后 让其可以点击 */
+    $('input').bind('input propertychange', function() {
+      if(reg_phone.test($('#phoneNum').val()) && ($('#verifyCode').val()!='')){
+        $('.o-login').addClass('able').removeClass('unable');
+      }else{
+        $('.o-login').addClass('unable').removeClass('able');
+      }
+    });
+  });
+
+</script>
+</html>
