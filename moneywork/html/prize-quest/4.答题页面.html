@@ -33,8 +33,8 @@
     <div class="quest-title por">
       <div class="icon ibg-quest-top"><div class="poa icon icon-cat-top"></div></div>
       <div class="icon ibg-quest-middle lh-18" style="">
-        <div class="c-fff200 fz-55">单选题 <span>1</span>/15</div>
-        <p class="fz-65">测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测测试文字测试文字</p>
+        <div class="c-fff200 fz-55">单选题 <span  id="askNum">1</span>/15</div>
+        <p class="fz-65" id="askInfo">测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测测试文字测试文字</p>
       </div>
       <div class="icon ibg-quest-bottom"><div class="icon icon-cat-bottom"></div></div>
     </div>
@@ -45,16 +45,16 @@
           <div class="icon-radio1"></div>
         </div>
         <div>A.</div>
-        <div style="" class="v-i1">测试文字测试文字测试文字测试文字</div>
+        <div style="" class="optionDetail v-i1" id="1">测试文字测试文字测试文字测试文字</div>
       </div>
     </div>
     <div class="quest-choose-radio v-fm">
       <div class="v-f">
         <div class="v-fcm" style="width:3.52rem;">
-          <div class="icon-radio1 icon-radio1-on"></div>
+          <div class="icon-radio1 icon-radio1-on" id="2"></div>
         </div>
         <div>B.</div>
-        <div class="v-i1">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</div>
+        <div class="v-i1 optionDetail">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</div>
       </div>
     </div>
 
@@ -75,19 +75,40 @@ $(function(){
 
 
   $('#next-q').click(function(){
-    $.ajax({
-      url:'',
-      data:'',
-      dataType:'JSON',
-      success:function(){
-          console.log('ceshiwenzi');
-      },
-      error:function(){
 
-      }
-    });
+    var questNum = 1; //初始化题目 序号
+
+    if(questNum<=15){
+
+      $.ajax({
+        url:'',
+        data:'answerNum='+$('.icon-radio1-on').attr('id'),   //将题号 传过去
+        dataType:'JSON',
+        success:function(msg){
+
+          //reset radio
+          $('.icon-radio1').removeClass('icon-radio1-on');
+          $('#1').addClass('.icon-radio1-on');
+          //reset radio
+
+          $('#askNum').html(questNum++);    //change askNum
+          $('#askInfo').html(msg);        //change askInfo
+
+          for(var i = 0,len = msg.length; i < len;i++){
+            $('.optionDetail').eq(i).html(msg[i]);
+          }
+
+        },
+        error:function(){
+          alert('ajax fault');
+        }
+      });
+
+    }
+    else{
+
+    }
   });
-
 });
 
 </script>
