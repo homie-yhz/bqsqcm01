@@ -8,8 +8,11 @@
   <meta name="format-detection" content="telephone=no, email=no" />
   <link rel="stylesheet" href="../../public/wx/css/okplus-reset.css">
   <link rel="stylesheet" href="../../public/wx/css/okplus-box.css">
+  <link rel="stylesheet" href="../../public/wx/css/okplus-mask.css">
   <link rel="stylesheet" href="../../public/wx/css/prize-quest.css?v=1">
   <script src="../../public/wx/js/jquery-1.8.3.min.js"></script>
+  <script src="../../public/wx/js/okplus-mask.js"></script>
+  <script src="../../public/wx/js/radialIndicator.js"></script>
   <script src="../../public/wx/js/fastclick.js"></script>
   <title>Title</title>
   <style>
@@ -19,7 +22,7 @@
       box-shadow:0 -5px 80px #eee inset;                  !* For Latest Opera *!\
       width:100px;height:100px;
     }*/
-    .scroll{height:100%;}
+    html,body,#questBox,#result,.scroll{height:100%;overflow:scroll;}
     .quest-choose-radio{padding:1.067rem .853rem 1.067rem 0;line-height:1.7;
       -moz-box-shadow:0 -5px 0 #999 inset;
       -webkit-box-shadow:0 -5px 0 #999 inset;
@@ -27,89 +30,195 @@
     }
   </style>
 </head>
-<body class="bg-f2">
-  <div class="scroll scroll-center" style="background-color:#fff;">
-    <!--题目-->
+<body class="bg-f">
+<div class="scroll scroll-center">
+  <!--题目-->
+  <div id="questBox" class="bg-f">
     <div class="quest-title por">
       <div class="icon ibg-quest-top"><div class="poa icon icon-cat-top"></div></div>
       <div class="icon ibg-quest-middle lh-18" style="">
-        <div class="c-fff200 fz-55">单选题 <span  id="askNum">1</span>/15</div>
-        <p class="fz-65" id="askInfo">测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测测试文字测试文字</p>
+        <div class="c-fff200 fz-55">单选题 <span id="askNum">1</span>/15</div>
+        <p class="fz-65" id="askInfo" data-id="300">测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测试文字测试文字测试文字测测试文字测试文字测试文字测测试文字测试文字</p>
       </div>
       <div class="icon ibg-quest-bottom"><div class="icon icon-cat-bottom"></div></div>
     </div>
     <!--选项-->
-    <div class="quest-choose-radio v-fm">
+    <div class="quest-choose-radio v-fm" data-id="306">
       <div class="v-f">
         <div class="v-fcm" style="width:3.52rem;">
           <div class="icon-radio1"></div>
         </div>
         <div>A.</div>
-        <div style="" class="optionDetail v-i1" id="1">测试文字测试文字测试文字测试文字</div>
+        <div style="" class="optionDetail v-i1">测试文字测试文字测试文字测试文字</div>
       </div>
     </div>
-    <div class="quest-choose-radio v-fm">
+    <div class="quest-choose-radio v-fm"  data-id="103">
       <div class="v-f">
         <div class="v-fcm" style="width:3.52rem;">
-          <div class="icon-radio1 icon-radio1-on" id="2"></div>
+          <div class="icon-radio1"></div>
         </div>
         <div>B.</div>
         <div class="v-i1 optionDetail">测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</div>
       </div>
     </div>
-
-
     <div class="v-fcm" style="height:5.333rem;">
       <a class="bg-ff c-f v-fcm" id="next-q" style="width:12.639rem;height:1.984rem;border-radius:3px;">下一题</a>
     </div>
   </div>
+  <div id="result" class="bg-f2 dn">
+    <div class="splash" id="splash">
+      <div class="splash-inner">
+        <h1 class="v-fcm fz-70" style="height:3.84rem;font-weight:bold;">您本次答题的分数为</h1>
+        <!--<h2>Make every day matter</h2>-->
+        <div class="loading-circle" id="loadingCircle">
+          <p><span id="loadedNum" class="c-yy fz-250" style="font-size:70px;font-weight:400;">0</span><span class="c-yy score" style="font-size:30px;font-weight:300;">分</span></p>
+          <canvas class="loadingProgress" id="loadingProgress" width="204" height="204"></canvas>
+          <canvas class="bg" width="204" height="204"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="v-fcm" style="margin-top:1.387rem;line-height:1.7;padding:0 2.05rem;" id="winInfo">
+      恭喜您，获得价值 <span class="c-ff">65</span><span class="c-ff">元</span><span>奖品名称</span>一份，快去领奖吧！
+    </div>
+    <div class="v-fcm" style="height:7.5rem;overflow: hidden;">
+      <a class="bg-ff c-f v-fcm" id="winBtn" href="" style="width:10.923rem;height:2.453rem;border-radius:5px;">前去领奖</a>
+    </div>
+    <img src="../../public/wx/images/prize-quest/ad-bjskpj.png" alt="" style="width:100%;height:5.163rem;">
+  </div>
+</div>
+
 </body>
 <script>
+
+  var hasAward = true;
+  !hasAward && (mask_no_bg_top());
+
   FastClick.attach(document.body);
-$(function(){
-  /*单选按钮样式改变*/
-  $('.quest-choose-radio').click(function(){
-    $('.icon-radio1').removeClass('icon-radio1-on');
-    $(this).find('.icon-radio1').toggleClass('icon-radio1-on');
-  });
 
+  $(function(){
 
-  $('#next-q').click(function(){
+    var questNum = 1;//   初始化题目 序号   改变前端样式用
+    var isLastQ = false; //初始化  是否是最后一题
+    var win = false;    //初始化  是否中奖
 
-    var questNum = 1; //初始化题目 序号
+    //剩余奖品数量
+    /*单选按钮样式改变*/
+    $('.quest-choose-radio').click(function(){
+      $('.icon-radio1').removeClass('icon-radio1-on');
+      $(this).find('.icon-radio1').toggleClass('icon-radio1-on');
+    });
 
-    if(questNum<=15){
+    /*点击下一题*/
+    $('#next-q').click(function(){
+      (questNum==3) && (isLastQ=true);
+      var qid = $('#askInfo').attr('data-id');                                                       //   qid(questionid):题目id
+      var oinfo = $('.icon-radio1-on').parents('.quest-choose-radio').find('.optionDetail').html();  //   oinfo(option infomation)：选项 的内容
 
-      $.ajax({
-        url:'',
-        data:'answerNum='+$('.icon-radio1-on').attr('id'),   //将题号 传过去
-        dataType:'JSON',
-        success:function(msg){
+      //判断：是否点击了选项
+        if(oinfo){
+          console.log('send-题号:'+questNum+';所选内容:'+oinfo);
+          $.ajax({
+            /*url:'',
+            data:'qid='+qid+'&oid='+oinfo,
+            dataType:'JSON',*/
+            success:function(msg){
 
-          //reset radio
-          $('.icon-radio1').removeClass('icon-radio1-on');
-          $('#1').addClass('.icon-radio1-on');
-          //reset radio
+              answerisright=true;
 
-          $('#askNum').html(questNum++);    //change askNum
-          $('#askInfo').html(msg);        //change askInfo
+              if(answerisright){
+                mask_toggle2('回答正确',1000);
+                setTimeout(newQ,1000);
 
-          for(var i = 0,len = msg.length; i < len;i++){
-            $('.optionDetail').eq(i).html(msg[i]);
-          }
+              }else{
+                mask_toggle2('回答错误',1000);
+                setTimeout(newQ,1000);
+              }
+              /*下一题 */
+              function newQ(){
+                //判断是否为最后一题
+                if(!isLastQ){
 
-        },
-        error:function(){
-          alert('ajax fault');
+                  /*重置按钮样式*/
+
+                  $('.icon-radio1').removeClass('icon-radio1-on');
+
+                  $('#askNum').html(++questNum);    //change askNum
+                  $('#askInfo').html('下一题目下一题目下一题目下一题目下一题目下一题目');        //change askInfo
+
+                  for(var i = 0,len = 2; i < len;i++){
+                    $('.optionDetail').eq(i).html('下一题内容');
+                  }
+
+                }else{
+                  console.log('题目回答完毕');
+                  $('#questBox').addClass('dn');
+                  $('#result').removeClass('dn');
+                  /*判断是否中奖*/
+                  if(win){
+
+                  }else{
+                    $('#winInfo').html('很遗憾，您没有获得本次活动的奖品。奖品还有 <span class="c-ff">'+'剩余奖品数量'+'</span> 个，您还有机会哦~~');
+                    $('#winBtn').attr('href','');
+                  }
+                  ulp(score);
+                }
+              }
+              /*下一题 */
+
+            },
+            error:function(){
+              alert('ajax fault');
+            }
+          });
         }
-      });
+        else{
+          mask_toggle2('请选择',1000);
+        }
 
-    }
-    else{
-
-    }
+    });
   });
-});
+
+</script>
+<script>
+  var score = document.getElementById("loadedNum").innerHTML;
+  console.log(score);
+  var slots={},c=document.getElementById('loadingProgress'),ctx=c.getContext('2d');
+  window.hasLoaded = 0;
+  window.loading = false;
+  window.ulp = ulp;
+  function ulp(percent){
+    window.loading = true;
+    var i = 0, draw = null;
+    draw = setInterval(function(){
+      if (window.hasLoaded > 100) {
+        window.loading = false;
+        clearInterval(draw);
+        draw = null;
+        return true;
+      }
+
+      if (i<percent) {
+        d();
+        i++;
+        window.hasLoaded += 1;
+      } else {
+        clearInterval(draw);
+        draw = null;
+      }
+    }, 10);
+  }
+
+  function d(){
+    var lp = document.getElementById('loadedNum');
+    lp.innerHTML = window.hasLoaded;
+    var loaded = window.hasLoaded * 2 / 100 * Math.PI, cw = 204, hcw = 102;
+    ctx.clearRect (0,0,cw,cw);
+    ctx.beginPath();
+    ctx.arc(hcw,hcw,hcw-4, 0, loaded, false);
+    ctx.lineWidth = 8;
+    ctx.strokeStyle = '#FD7D00';
+    ctx.stroke();
+  }
 
 </script>
 </html>

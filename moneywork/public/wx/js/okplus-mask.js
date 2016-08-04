@@ -204,3 +204,61 @@ function mask_come_late(address,QRcode){
 
 }
 
+/*moneywork 顶部弹出层*/
+function mask_no_bg_top(info){
+  var maskHtml = '<div class="mask-top v-f"> ' +
+      '<div style="width:1.5rem;"></div> ' +
+        '<div class="v-i1" style="padding:.7rem 1rem;line-height: 1.5;"> ' +
+          '<p class="tac">已经没有奖品了</p> ' +
+          '<p class="tac">回答问题 , 展示一下您的才华吧！</p> ' +
+        '</div> ' +
+        '<div class="v-fcm o-close" data-click style="width:1.5rem;"> ' +
+          '<div class="icon icon-close2"></div> ' +
+        '</div>' +
+      '</div>';
+  $('body').append(maskHtml);
+  $(document).on('click','.o-close',function(){
+    $('.mask-top').remove();
+  });
+}
+
+/*moneywork 提示一秒信息*/
+function mask_toggle2(info,time){
+  (function mask_toggle(){
+    var maskHtml =
+        '<div class="mask-toggle2 v-fcm"> ' +
+        '<div class="mask-shadow v-fcm">' +
+        info+
+        '</div> ' +
+        '</div>';
+    $('body').append(maskHtml);
+  })(info);
+  setTimeout('$(".mask-toggle2").remove()',time);
+}
+
+/**/
+function mask_prize_quest(arr){
+  var optionHtml = '';
+  for(var i= 0;i<arr.length;i++){
+    optionHtml+='<div class="prize-quset-option v-fcm" data-click>'+arr[i]+'</div>';
+  }
+  var maskHtml =
+                  '<div class="v-mask v-fcm"> ' +
+                    '<div class="ofh" style="margin-top:-13rem;border-radius:5px;width:13.931rem;"> ' +
+                      '<div class="mask-title v-fcm fw-b fz-60 bg-ea" style="height:1.152rem;">请选择一个选项</div> ' +
+                      '<div class="line-row"></div> ' +
+                        /*选项内容*/
+                        optionHtml+
+                    '</div> ' +
+                  '</div>';
+  $('body').append(maskHtml);
+  $(document).on('click','.prize-quset-option',function(event){
+    $('.prize-quset-option').removeClass('checked');
+    $(this).addClass('checked');
+    event.stopPropagation();
+  });
+
+  $(document).on('click','.v-mask',function(){
+    $(this).remove();
+  });
+}

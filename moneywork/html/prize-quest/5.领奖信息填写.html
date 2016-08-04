@@ -8,11 +8,122 @@
   <meta name="format-detection" content="telephone=no, email=no" />
   <link rel="stylesheet" href="../../public/wx/css/okplus-reset.css">
   <link rel="stylesheet" href="../../public/wx/css/okplus-box.css">
+  <link rel="stylesheet" href="../../public/wx/css/okplus-mask.css">
+  <link rel="stylesheet" href="../../public/wx/css/prize-quest.css">
   <script src="../../public/wx/js/jquery-1.8.3.min.js"></script>
+  <script src="../../public/wx/js/okplus-mask.js?v=1"></script>
   <script src="../../public/wx/js/fastclick.js"></script>
+  <style>
+    html,body{height:100%;line-height:normal;}
+    .ipt-personal-box{
+      padding:0 .5rem;
+    }
+    .ipt-personal{
+      margin-left:.5rem;padding:0 .5rem;
+      border:1px solid #afafaf;
+      background-color:#E2E2E2;
+      outline:none;height:1.429rem;
+      -webkit-appearance: none;
+      border-radius:0;
+    }
+  </style>
   <title>Title</title>
 </head>
-<body>
+<body class="bg-e8">
+  <div class="scroll scroll-center fz-70">
+    <div class="icon ibg-personal"></div>
+    <div class="ipt-personal-box">
+      <div class="v-f" style="margin-top:.768rem;">
+        <div class="v-fm">姓 名</div><input type="text" class="ipt-personal v-i1" maxlength="8" id="name">
+      </div>
+      <div class="v-f" style="margin-top:.768rem;">
+        <div class="v-fm">年 龄</div>
+        <div class="ipt-personal v-i1 v-fb v-fm">
+          <div class="choose-option">请选择一个选项</div>
+          <div class="icon icon-bottom-ff" id="age"></div>
+        </div>
+      </div>
+      <div class="v-f" style="margin-top:.768rem;">
+        <div class="v-fm">性 别</div>
+        <div class="ipt-personal v-i1 v-fb v-fm">
+          <div class="choose-option">请选择一个选项</div>
+          <div class="icon icon-bottom-ff" id="sex"></div>
+        </div>
+      </div>
+      <div class="v-f" style="margin:.768rem 0;">
+        <div class="v-fm">学 历</div>
+        <div class="ipt-personal v-i1 v-fb v-fm">
+          <div class="choose-option">请选择一个选项</div>
+          <div class="icon icon-bottom-ff" id="edu"></div>
+        </div>
+      </div>
+      <div class="line-row" style="margin-top:1.024rem;border-top:1px solid #e2e2e2;"></div>
+    </div>
+    <!--您是否愿意去现场参加决赛？-->
+    <p class="m-auto tac" style="margin-top:1.022rem;">您是否愿意去现场参加决赛？</p>
+    <div class="v-fb" style="padding:0 2.432rem;margin-top:.5rem;">
+      <div class="v-fm radio-box">
+        <div class="v-fcm">
+          <div class="icon-radio1"></div>
+        </div>
+        <div class="c-6">愿意参加</div>
+      </div>
+      <div class="v-fm radio-box">
+        <div class="v-fcm">
+          <div class="icon-radio1"></div>
+        </div>
+        <div class="c-6">不愿意去</div>
+      </div>
+    </div>
+    <a id="submit" class="c-f bg-ff v-fcm m-auto" style="width:12.651rem;height:2.048rem;border-radius:5px;margin-top:1.813rem;">提 交</a>
+  </div>
 
 </body>
+  <script>
+    FastClick.attach(document.body);
+    var reg_chinese = /^[\u4e00-\u9fa5]{8}$/;   /*真是姓名*/
+  $(function(){
+
+
+
+    $('.radio-box').click(function(){
+      $('.icon-radio1').removeClass('icon-radio1-on');
+      $(this).find('.icon-radio1').toggleClass('icon-radio1-on');
+    });
+    $('#name').focus(function(){
+      $(this).addClass('bdc-FF7F2A');
+    }).focusout(function(){
+      $(this).removeClass('bdc-FF7F2A');
+    });
+    /*提交验证*/
+    $('#submit').click(function(){
+
+
+      if($('.mask-toggle2').length>0){
+
+      }else{
+        //alert($('.mask_toggle2').length);
+        var $name = $('#name').val();
+
+        if(!reg_chinese.test($name)){
+          mask_toggle2('请输入8位以内的中文名',1000);
+        }else if($('#nage').html()==''){
+          mask_toggle2('请选择年龄',1000);
+        }else if($('#sex').html()==''){
+          mask_toggle2('请选择性别',1000);
+        }else if($('#edu').html()==''){
+          mask_toggle2('请选择教育程度',1000);
+        }else if($('.icon-radio1-on').length==0){
+          mask_toggle2('请勾选想不想去',1000);
+        }else{
+          window.location.href = '';
+        }
+      }
+    });
+
+
+
+  });
+
+</script>
 </html>

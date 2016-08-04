@@ -86,7 +86,7 @@
 .right{float:right;}
 .por{position: relative;}
 .poa{position: absolute;}
-
+.dn{  display: none;}
 .ofh{overflow: hidden;}
 .tac{ text-align: center;}
 /*.d-t{display:table;}
@@ -115,10 +115,12 @@
 .c-f7{color:#F71616!important;}
 .c-d9{color:#d92717;}
 .c-06{color:#06558c;}
+.c-6{color:#666;}
 .c-fff200{color:#fff200;}
 .bg-f{background-color:#fff;}
 .bg-e8{background-color:#e8e8e8;}
 .bg-ee{background-color:#ee7800;}
+.bg-ea{background-color:#eaeaea;}
 .bg-ff{background-color:#FF7F2A!important;}
 .bg-f2{background-color: #F2F2F2;}
 .bg-b4{  background-color:#b4b4b4!important;}
