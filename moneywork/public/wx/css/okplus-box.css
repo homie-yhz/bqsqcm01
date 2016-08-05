@@ -164,6 +164,7 @@
 .pdc-5{padding:0 .5rem;}
 .mb-0{margin-bottom:0;}
 .mr-3{margin-right:.3rem;}
+.ml-5{margin-left:.5rem;}
 .m-auto{  margin:0 auto;}
 /*换行*/
 .line-break{
@@ -370,7 +371,7 @@
 }
 
 .icon-bg-note{
-    background:url("../images/apply-moneyapply/note.png") center top no-repeat;
+    background:url("../images/prize-quest/note.png") center top no-repeat;
     width:100%;
     background-size:100% 100%;
     overflow: hidden;
@@ -384,6 +385,10 @@
     background:url("../images/wcapp/QRcode.png") center center no-repeat;
     vertical-align: -.25rem;
     background-size:.9rem;
+}
+.icon-color-bar{
+    width:100%;height:.265rem;
+    background: url("../images/icon-color-bar.png") center center no-repeat;
 }
 .textarea{
     width: 11rem;

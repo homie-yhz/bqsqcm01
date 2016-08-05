@@ -237,14 +237,15 @@ function mask_toggle2(info,time){
 }
 
 /**/
-function mask_prize_quest(arr){
+function mask_prize_quest(arr,index){
   var optionHtml = '';
+  var checkedHtml = '';
   for(var i= 0;i<arr.length;i++){
     optionHtml+='<div class="prize-quset-option v-fcm" data-click>'+arr[i]+'</div>';
   }
   var maskHtml =
-                  '<div class="v-mask v-fcm"> ' +
-                    '<div class="ofh" style="margin-top:-13rem;border-radius:5px;width:13.931rem;"> ' +
+                  '<div class="v-mask"> ' +
+                    '<div class="ofh m-auto" style="margin-top:5rem;border-radius:5px;width:13.931rem;"> ' +
                       '<div class="mask-title v-fcm fw-b fz-60 bg-ea" style="height:1.152rem;">请选择一个选项</div> ' +
                       '<div class="line-row"></div> ' +
                         /*选项内容*/
@@ -256,9 +257,13 @@ function mask_prize_quest(arr){
     $('.prize-quset-option').removeClass('checked');
     $(this).addClass('checked');
     event.stopPropagation();
+    checkedHtml = $('.prize-quset-option.checked').html();
   });
 
-  $(document).on('click','.v-mask',function(){
-    $(this).remove();
+  $(document).one('click','.v-mask',function(){
+    $('.v-mask').remove();
+    if(checkedHtml!=''){
+      $('.choose-option').eq(index).html(checkedHtml);
+    }
   });
 }
