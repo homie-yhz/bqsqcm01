@@ -1,1 +1,38 @@
-fdsafdsa
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度一下</title>
+    <style>
+        .v-fcm{
+            display: flex;
+            align-items:center;
+            justify-content: center;
+        }
+        .v-i1{
+            flex:1;
+        }
+        .v-f{
+            display: flex;
+        }
+        *{margin:0;padding:0;}
+    </style>
+</head>
+<body><!--
+<div class="v-f">
+    <input type="text" style="width:80%;height:3rem;border:1px solid #e3e3e3;"><div style="color:#fff;background-color:#317ef3;height:3rem;" class="v-fcm v-i1">百度</div>
+</div>-->
+<form action="http://www.baidu.com/baidu" target="_blank">
+    <table bgcolor="#FFFFFF"><tr><td>
+        <input name="tn" type="hidden" value="SE_zzsearchcode_shhzc78w">
+        <a href="http://www.baidu.com/"></a>
+        <input type="text"  name="word" size="30" baiduSug="1">
+        <input type="submit"  value="百度搜索">
+    </td></tr></table>
+</form>
+<script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script>
+</body>
+</html>
